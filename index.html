@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso de Bateria do Zero ao Avan&ccedil;ado | Tocando Bateria do Zero</title>
+<meta name="description" content="Aprenda bateria do zero com o Mateus Kerr: videoaulas, partituras em PDF, MP3 de aplica&ccedil;&atilde;o e corre&ccedil;&atilde;o dos seus v&iacute;deos feita por ele. Mais de 12.500 alunos. Garantia de 7 dias.">
+<meta property="og:title" content="Curso de Bateria do Zero ao Avan&ccedil;ado | Tocando Bateria do Zero">
+<meta property="og:description" content="Videoaulas em ordem, partitura em PDF, MP3 para aplicar e corre&ccedil;&atilde;o dos seus v&iacute;deos feita pelo Mateus. Mais de 12.500 alunos.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-mateus.jpg">
+<link rel="icon" type="image/png" href="assets/logo-branco.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   LP PREMIUM — Tocando Bateria do Zero (Mateus Kerr)
+   Tema: BLACK + accent VERMELHO (identidade visual do logo)
+   Tipografia definida pelo Elton: Montserrat (titulos) + Poppins (texto)
+   Linguagem visual: catalogo de efeitos em katia-drop/_brain/referencias-efeitos.md
+   (refs aprovadas: KATIA, DIOGO, KETOX, AMBIBRAS)
+   ===================================================================== */
+:root{
+  --preto:#0B0B0D;
+  --carvao:#131318;
+  --carvao2:#1B1C24;
+  --vermelho:#E93A3A;
+  --vermelho-claro:#FF6E5C;
+  --vermelho-esc:#8E1616;
+  --branco:#F4F5F7;
+  --texto:#A8AEBA;
+  --texto2:#767D8B;
+  --linha:rgba(233,58,58,.24);
+  --grad-red:linear-gradient(135deg,#FF6E5C 0%,#E93A3A 45%,#A31C1C 100%);
+  --grad-red-claro:linear-gradient(135deg,#FF8A72 0%,#F04A44 100%);
+  --grad-escuro:linear-gradient(160deg,#0B0B0D 0%,#191319 100%);
+  --grad-card:linear-gradient(150deg,#151519 0%,#22222C 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+@property --angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes angleSpin{to{--angle:360deg}}
+@keyframes circSpin{to{transform:rotate(360deg)}}
+@keyframes sealSpin{to{transform:rotate(360deg)}}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--branco);background:var(--preto);line-height:1.65;overflow-x:hidden;font-weight:300}
+h1,h2,h3,h4,.display{font-family:'Montserrat',sans-serif;font-weight:800;line-height:1.08;letter-spacing:-.6px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+section{position:relative}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.center{text-align:center}
+.maxw{max-width:780px;margin:0 auto}
+.red{color:var(--vermelho)}
+.red-grad{background:linear-gradient(120deg,#FF8A72 0%,#F04A44 45%,#C42222 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#F04A44}
+.sec{padding:96px 0;position:relative}
+.sec h2{font-size:clamp(29px,3.6vw,48px);margin-bottom:18px;color:var(--branco)}
+.sec .lead{font-size:17px;color:var(--texto);font-weight:300}
+.sec .lead strong{color:var(--branco);font-weight:600}
+
+/* ===== EYEBROW ===== */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--grad-red-claro);color:#160404;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:8px 17px;border-radius:50px;box-shadow:0 4px 18px rgba(233,58,58,.32);max-width:max-content}
+.eyebrow.outline{background:transparent;border:1.5px solid var(--vermelho);color:var(--vermelho);box-shadow:none}
+.center .eyebrow{margin-left:auto;margin-right:auto;margin-bottom:16px}
+
+/* ===== BOTAO glow + shine (ref: as 4) ===== */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--grad-red);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;letter-spacing:.4px;text-transform:uppercase;padding:19px 34px;border-radius:14px;border:none;cursor:pointer;outline:1.5px solid var(--linha);outline-offset:4px;box-shadow:0 10px 30px rgba(233,58,58,.3);transition:transform .25s,box-shadow .25s,background .25s;animation:btn-glow 2.8s ease-out infinite}
+.btn::before{content:"";position:absolute;top:0;left:0;width:60%;height:100%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.5) 50%,transparent 100%);transform:translateX(-180%) skewX(-18deg);animation:btn-shine 8s ease-in-out infinite;pointer-events:none}
+.btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 42px rgba(233,58,58,.5)}
+.btn.lg{font-size:16.5px;padding:22px 42px}
+.btn.full{width:100%}
+.btn.wa{background:linear-gradient(135deg,#37C26A 0%,#1FA855 55%,#12703A 100%);box-shadow:0 10px 30px rgba(37,190,105,.26);animation:none;outline-color:rgba(55,194,106,.3)}
+.btn.wa:hover{box-shadow:0 16px 42px rgba(37,190,105,.42)}
+.btn.ghost{background:transparent;border:1.5px solid var(--linha);color:var(--branco);box-shadow:none;animation:none;outline:none}
+.btn.ghost:hover{border-color:var(--vermelho);background:rgba(233,58,58,.08)}
+.btn svg{width:18px;height:18px;flex:0 0 auto}
+@keyframes btn-glow{0%{box-shadow:0 10px 30px rgba(233,58,58,.3),0 0 0 0 rgba(233,58,58,.5)}60%{box-shadow:0 10px 30px rgba(233,58,58,.3),0 0 0 13px rgba(233,58,58,0)}100%{box-shadow:0 10px 30px rgba(233,58,58,.3),0 0 0 0 rgba(233,58,58,0)}}
+@keyframes btn-shine{0%{transform:translateX(-180%) skewX(-18deg)}40%{transform:translateX(230%) skewX(-18deg)}100%{transform:translateX(230%) skewX(-18deg)}}
+@media(prefers-reduced-motion:reduce){.btn{animation:none}.btn::before{display:none}}
+
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.center .cta-row{justify-content:center}
+.cta-seals{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-size:13px;font-weight:400;color:var(--texto)}
+.cta-seals span{display:inline-flex;align-items:center;gap:7px}
+.cta-seals span::before{content:"\2713";color:var(--vermelho);font-weight:700}
+.center .cta-seals{justify-content:center}
+/* CTA de secao — sempre aponta para #oferta, texto diferente em cada secao */
+.sec-cta{position:relative;z-index:4;display:flex;justify-content:center;margin-top:48px}
+@media(max-width:600px){.sec-cta{margin-top:34px}}
+
+/* ===== MARCACAO DE PENDENCIA (preview interna) ===== */
+.conf{position:relative;display:inline-block;margin-top:7px;background:rgba(255,193,7,.13);border:1px dashed #E0B341;color:#F2D69A;font-weight:500;padding:1px 8px;border-radius:6px;white-space:nowrap}
+.conf::after{content:"a confirmar";position:absolute;top:-9px;right:-7px;background:#E0B341;color:#1a1204;font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:1px 5px;border-radius:5px;line-height:1.35;pointer-events:none}
+body.has-preview-bar{padding-top:42px}
+body.has-preview-bar .head{top:42px}
+.preview-bar{position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(90deg,#E0B341,#F2C96A);color:#1a1204;font-family:'Poppins',sans-serif;font-weight:600;font-size:.8rem;line-height:1.35;text-align:center;padding:10px 46px 10px 18px}
+.preview-bar .close{position:absolute;top:50%;right:12px;transform:translateY(-50%);background:rgba(0,0,0,.2);color:#1a1204;border:none;width:24px;height:24px;border-radius:50%;cursor:pointer;font-size:1rem;line-height:1;font-weight:800;display:grid;place-items:center}
+
+/* ===== ORBE RESPIRANDO ===== */
+.orb{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(233,58,58,.15),rgba(142,22,22,.06) 42%,transparent 70%);filter:blur(30px);pointer-events:none;z-index:0;animation:orbBreath 9s ease-in-out infinite}
+.orb.tl{top:-180px;left:-140px}
+.orb.br{bottom:-180px;right:-140px;animation-delay:-4.5s}
+@keyframes orbBreath{0%,100%{opacity:.22;transform:scale(.94)}50%{opacity:.58;transform:scale(1.04)}}
+@media(prefers-reduced-motion:reduce){.orb{animation:none;opacity:.34}}
+@media(max-width:560px){.orb{width:320px;height:320px;filter:blur(22px)}}
+
+/* ===== SCROLL REVEAL (IntersectionObserver) ===== */
+.sr-hidden{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+.sr-hidden.sr-visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.sr-hidden,.sr-hidden.sr-visible{opacity:1;transform:none;transition:none}*{scroll-behavior:auto}}
+
+/* ===== HEADER (glass / backdrop-filter) ===== */
+.head{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(11,11,13,.55);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s,border-color .3s,padding .3s}
+.head.scrolled{background:rgba(11,11,13,.86);border-bottom-color:var(--linha)}
+.head-in{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.head img{height:46px;width:auto;transition:height .3s}
+.head.scrolled img{height:40px}
+.head-nav{display:flex;align-items:center;gap:26px;font-size:13.5px;font-weight:400;color:var(--texto)}
+.head-nav a{transition:color .25s}
+.head-nav a:hover{color:var(--vermelho)}
+.head .btn{padding:12px 22px;font-size:12.5px;animation:none;box-shadow:0 6px 20px rgba(233,58,58,.25)}
+@media(max-width:900px){.head-nav .lnk{display:none}}
+@media(max-width:520px){.head img{height:38px}.head .btn{padding:11px 16px;font-size:11.5px}}
+
+/* ===== HERO ===== */
+.hero{padding:150px 0 96px;background:var(--grad-escuro);overflow:hidden;isolation:isolate}
+.hero-media{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:72% 38%;filter:brightness(1.06) contrast(1.04) saturate(1.05)}
+.hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(9,9,11,.97) 0%,rgba(9,9,11,.94) 30%,rgba(9,9,11,.84) 47%,rgba(12,10,12,.42) 64%,rgba(12,10,12,.12) 84%,rgba(12,10,12,.04) 100%),
+    linear-gradient(180deg,rgba(9,9,11,.72) 0%,rgba(9,9,11,.12) 26%,rgba(9,9,11,.1) 62%,rgba(9,9,11,.9) 100%)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center;position:relative;z-index:2}
+.hero .pretitle{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--vermelho);border:1px solid var(--linha);border-radius:50px;padding:8px 16px;margin-bottom:22px;background:rgba(233,58,58,.06)}
+.hero .pretitle svg{width:15px;height:15px;stroke:var(--vermelho);stroke-width:2;fill:none}
+.hero h1{font-size:clamp(35px,4.8vw,62px);margin:0 0 20px;line-height:1.04;color:var(--branco);font-weight:900;letter-spacing:-1.4px}
+.hero .sub{font-size:clamp(15px,1.2vw,17px);max-width:560px;color:var(--texto);margin-bottom:30px;font-weight:300}
+.hero .sub strong{color:var(--branco);font-weight:600}
+.hero-visual{position:relative;min-height:380px;display:none}
+
+/* barra de credibilidade */
+.cred{position:relative;z-index:2;margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);border-radius:18px;overflow:hidden}
+.cred-item{background:rgba(15,15,19,.78);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);padding:24px 18px;text-align:center;transition:background .3s}
+.cred-item:hover{background:rgba(28,20,22,.9)}
+.cred-item b{display:block;font-family:'Montserrat',sans-serif;font-size:clamp(24px,2.6vw,34px);font-weight:900;line-height:1;background:linear-gradient(120deg,#FF8A72,#E93A3A);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:6px}
+.cred-item span{font-size:12.5px;color:var(--texto2);line-height:1.4;display:block}
+
+/* indicador de scroll — animacao scrollPulse (ref: AMBIBRAS) */
+.scroll-ind{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none}
+.scroll-ind span{font-size:9.5px;letter-spacing:2.6px;text-transform:uppercase;color:var(--texto2);font-weight:500}
+.scroll-line{width:1px;height:46px;background:linear-gradient(to bottom,var(--vermelho),transparent);animation:scrollPulse 2s ease infinite;transform-origin:top}
+@keyframes scrollPulse{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.25)}}
+@media(prefers-reduced-motion:reduce){.scroll-line{animation:none}}
+
+/* ===== TICKER / MARQUEE X DUPLO (ref: as 4 + AMBIBRAS) ===== */
+.marquee{background:transparent;height:120px;overflow-x:clip;overflow-y:visible;position:relative;z-index:40;margin-top:-60px;margin-bottom:-60px}
+.marquee-bar{position:absolute;left:50%;top:50%;width:150%;overflow:hidden;white-space:nowrap;padding:11px 0;box-shadow:0 8px 26px rgba(0,0,0,.55)}
+.marquee-bar.back{background:#1E1E27;transform:translate(-50%,-50%) rotate(-3.2deg);z-index:1;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.marquee-bar.front{background:var(--grad-red);transform:translate(-50%,-50%) rotate(3.2deg);z-index:2}
+.marquee-track{display:inline-flex;width:max-content;will-change:transform}
+.marquee-track .mq-seg{display:inline-flex;flex:0 0 auto;align-items:center}
+.marquee-bar.front .marquee-track{animation:mq-scroll 32s linear infinite}
+.marquee-bar.back .marquee-track{animation:mq-scroll-rev 38s linear infinite}
+.marquee-track span{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;padding:0 13px;white-space:nowrap}
+.marquee-bar.front .marquee-track span{color:#fff}
+.marquee-bar.back .marquee-track span{color:var(--vermelho-claro)}
+.marquee-track .dot{opacity:.5}
+@keyframes mq-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes mq-scroll-rev{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none!important}}
+@media(max-width:700px){.marquee{height:96px;margin-top:-48px;margin-bottom:-48px}.marquee-bar{width:260%;padding:9px 0}.marquee-bar.back{transform:translate(-50%,-50%) rotate(-7deg)}.marquee-bar.front{transform:translate(-50%,-50%) rotate(7deg)}.marquee-track span{font-size:13px;letter-spacing:1.6px;padding:0 10px}}
+
+/* barras retas (ticker minimalista, ref: MLA .strips) */
+.strips{position:relative;z-index:30}
+.strip{overflow:hidden;white-space:nowrap}
+.strip .marquee-track{padding:16px 0}
+.strip.red{background:var(--grad-red);box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.strip.dark{background:#14141A;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.strip .strip-a{animation:mq-scroll 42s linear infinite}
+.strip .strip-b{animation:mq-scroll-rev 48s linear infinite}
+.strip span{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;padding:0 20px;white-space:nowrap}
+.strip.red span{color:#fff}
+.strip.dark span{color:var(--vermelho)}
+.strip .dot{opacity:.5}
+@media(prefers-reduced-motion:reduce){.strip .marquee-track{animation:none!important}}
+
+/* ===== SECAO DORES ===== */
+.sec-dor{background:var(--preto);overflow:hidden}
+.dor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:980px;margin:46px auto 0}
+.dor-card{position:relative;background:var(--grad-card);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:22px 24px 22px 30px;overflow:hidden;transition:opacity .35s ease,filter .35s ease,transform .35s ease,box-shadow .35s ease}
+/* barra lateral shimmer (ref: DIOGO .dor-card) */
+.dor-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#8E1616,#FF6E5C,#E93A3A,#5E0E0E);background-size:100% 300%;animation:dor-shimmer 4s linear infinite}
+@keyframes dor-shimmer{0%{background-position:0% 0%}100%{background-position:0% 300%}}
+.dor-card p{font-size:15px;color:var(--texto);line-height:1.6;font-weight:300}
+.dor-card p strong{color:var(--branco);font-weight:600}
+/* hover desfoca os irmaos (ref: KETOX) — efeito filter pedido pelo Elton */
+@media(hover:hover){
+  .dor-grid:hover .dor-card{opacity:.5;filter:blur(2.5px)}
+  .dor-grid:hover .dor-card:hover{opacity:1;filter:blur(0);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.55)}
+}
+@media(max-width:760px){.dor-grid{grid-template-columns:1fr}.dor-grid:hover .dor-card{opacity:1;filter:none}}
+
+/* ===== METODO / 3 PILARES ===== */
+.sec-metodo{background:linear-gradient(180deg,#0B0B0D 0%,#141118 55%,#0B0B0D 100%);overflow:hidden}
+.pil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px}
+.pil-card{position:relative;background:var(--grad-card);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:34px 26px 30px;overflow:hidden;transition:transform .35s,box-shadow .35s,opacity .35s,filter .35s}
+/* borda gradient parcial via mask (ref: KETOX .pare-card) */
+.pil-card::before{content:"";position:absolute;inset:0;border-radius:18px;padding:1px;background:linear-gradient(140deg,rgba(233,58,58,.65),transparent 62%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none;z-index:0}
+.pil-card>*{position:relative;z-index:1}
+/* barrinha curta no topo do card (ref: DIOGO) */
+.pil-card::after{content:"";position:absolute;top:0;left:28px;width:52px;height:4px;border-radius:0 0 4px 4px;background:var(--grad-red);z-index:2}
+.pil-ico{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:radial-gradient(circle at 34% 28%,rgba(233,58,58,.3),rgba(142,22,22,.12));border:1px solid var(--linha);margin-bottom:18px}
+.pil-ico svg{width:26px;height:26px;stroke:var(--vermelho-claro);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.pil-card h3{font-size:20px;margin-bottom:10px;color:var(--branco);letter-spacing:-.3px}
+.pil-card p{font-size:14.5px;color:var(--texto);font-weight:300;line-height:1.6}
+@media(hover:hover){
+  .pil-grid:hover .pil-card{opacity:.55;filter:blur(2px)}
+  .pil-grid:hover .pil-card:hover{opacity:1;filter:blur(0);transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.55)}
+}
+@media(max-width:860px){.pil-grid{grid-template-columns:1fr}.pil-grid:hover .pil-card{opacity:1;filter:none}}
+
+/* ===== O QUE VOCE RECEBE — bento assimetrico ===== */
+.sec-recebe{background:var(--preto)}
+.ben-bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(190px,auto);gap:16px;margin-top:50px}
+.ben-card{position:relative;background:var(--grad-card);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:28px 26px 30px;overflow:hidden;transition:transform .35s,box-shadow .35s,opacity .35s,filter .35s;display:flex;flex-direction:column;justify-content:center}
+.ben-card:nth-child(1){grid-column:1;grid-row:1/3}
+.ben-card:nth-child(2){grid-column:2/4;grid-row:1}
+.ben-card:nth-child(3){grid-column:2;grid-row:2}
+.ben-card:nth-child(4){grid-column:3;grid-row:2}
+.ben-card:nth-child(5){grid-column:1/4;grid-row:3}
+.ben-card.feat{background:linear-gradient(150deg,#26161A 0%,#3A1A1C 100%);border-color:var(--linha)}
+.ben-ico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(233,58,58,.12);border:1px solid var(--linha);margin-bottom:16px}
+.ben-ico svg{width:22px;height:22px;stroke:var(--vermelho-claro);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ben-card h3{font-size:18px;margin-bottom:8px;color:var(--branco)}
+.ben-card p{font-size:14px;color:var(--texto);font-weight:300;line-height:1.58}
+/* numero fantasma (ref: KETOX .pare-card .num) */
+.ben-card .num{position:absolute;bottom:-14px;right:12px;font-family:'Montserrat',sans-serif;font-size:82px;font-weight:900;line-height:1;background:linear-gradient(160deg,#FF6E5C,#8E1616);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;opacity:.16;pointer-events:none}
+@media(hover:hover){
+  .ben-bento:hover .ben-card{opacity:.55;filter:blur(2px)}
+  .ben-bento:hover .ben-card:hover{opacity:1;filter:blur(0);transform:translateY(-5px);box-shadow:0 18px 44px rgba(0,0,0,.55)}
+}
+@media(max-width:900px){
+  .ben-bento{grid-template-columns:1fr;grid-auto-rows:auto}
+  .ben-card:nth-child(n){grid-column:auto;grid-row:auto}
+  .ben-bento:hover .ben-card{opacity:1;filter:none}
+}
+
+/* ===== CATALOGO / TRILHAS ===== */
+.sec-catalogo{background:linear-gradient(180deg,#0B0B0D 0%,#15101A 50%,#0B0B0D 100%);overflow:hidden}
+.tri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.tri-card{position:relative;background:rgba(19,19,24,.72);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:26px 24px 24px;overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .35s,opacity .35s,filter .35s}
+.tri-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.tri-num{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:1.4px;color:var(--vermelho);border:1px solid var(--linha);border-radius:8px;padding:5px 9px;background:rgba(233,58,58,.07)}
+.tri-card h3{font-size:19px;color:var(--branco);letter-spacing:-.2px}
+.tri-card ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.tri-card li{position:relative;padding-left:22px;font-size:14px;color:var(--texto);font-weight:300;line-height:1.5}
+.tri-card li::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:3px;background:var(--grad-red);box-shadow:0 0 8px rgba(233,58,58,.5)}
+.tri-card:hover{border-color:var(--linha);transform:translateY(-5px);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+@media(hover:hover){
+  .tri-grid:hover .tri-card{opacity:.6;filter:blur(1.8px)}
+  .tri-grid:hover .tri-card:hover{opacity:1;filter:blur(0)}
+}
+@media(max-width:900px){.tri-grid{grid-template-columns:1fr}.tri-grid:hover .tri-card{opacity:1;filter:none}}
+.cat-nota{margin-top:26px;font-size:13px;color:var(--texto2);text-align:center}
+
+/* ===== TIMELINE / MARCOS (linha preenchendo no scroll) ===== */
+.sec-marcos{background:var(--preto);overflow:hidden}
+.tline{position:relative;max-width:800px;margin:56px auto 0;padding-left:8px}
+.tline::before{content:"";position:absolute;left:24px;top:20px;bottom:20px;width:2px;background:rgba(233,58,58,.28)}
+.tline::after{content:"";position:absolute;left:24px;top:20px;width:2px;height:calc((100% - 40px) * var(--fill,0));background:linear-gradient(180deg,#FF8A72,#E93A3A);box-shadow:0 0 10px rgba(233,58,58,.6);will-change:height}
+.tl-item{position:relative;padding-left:74px;margin-bottom:34px;opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.tl-item:last-child{margin-bottom:0}
+.tl-item.show{opacity:1;transform:none}
+.tl-mark{position:absolute;left:12px;top:2px;width:26px;height:26px;border-radius:50%;background:var(--preto);border:2px solid var(--vermelho);display:grid;place-items:center;z-index:2}
+.tl-mark::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--grad-red);box-shadow:0 0 10px rgba(233,58,58,.8)}
+.tl-item h3{font-size:19px;color:var(--vermelho-claro);margin-bottom:5px}
+.tl-item p{font-size:15px;color:var(--texto);font-weight:300}
+.tl-nota{margin-top:28px;font-size:13px;color:var(--texto2);text-align:center;font-style:italic}
+@media(prefers-reduced-motion:reduce){.tl-item{opacity:1;transform:none}.tline::after{height:calc(100% - 40px)}}
+
+/* ===== SOBRE ===== */
+.sec-sobre{background:linear-gradient(180deg,#0B0B0D 0%,#171219 100%);overflow:hidden}
+/* barras ate a metade da pagina (ref: DIOGO .sec-autoridade) */
+.sec-sobre::before{content:"";position:absolute;top:0;right:0;width:68%;height:7px;background:linear-gradient(270deg,var(--vermelho-claro),var(--vermelho) 40%,transparent);filter:drop-shadow(0 0 8px rgba(233,58,58,.45));z-index:3}
+.sec-sobre::after{content:"";position:absolute;bottom:0;left:0;width:52%;height:2px;background:linear-gradient(90deg,var(--vermelho),transparent);z-index:3}
+.sobre-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}
+.sobre-visual{position:relative}
+.sobre-foto{position:relative;border-radius:20px;overflow:hidden;z-index:2;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+.sobre-foto img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(1.03)}
+/* aneis tracejados girando (ref: MLA .hero-orb / DIOGO .aut-orbit) */
+.deco-ring{position:absolute;border-radius:50%;border:1.5px dashed rgba(233,58,58,.3);top:50%;left:50%;pointer-events:none;z-index:1}
+.deco-ring.r1{width:112%;padding-bottom:0;aspect-ratio:1;transform:translate(-50%,-50%);animation:circSpin 34s linear infinite}
+.deco-ring.r2{width:128%;aspect-ratio:1;transform:translate(-50%,-50%);animation:circSpin 50s linear infinite reverse;border-color:rgba(233,58,58,.16)}
+@media(prefers-reduced-motion:reduce){.deco-ring{animation:none}}
+.sobre-txt h2{margin-bottom:20px}
+.sobre-txt p{font-size:15.5px;color:var(--texto);font-weight:300;margin-bottom:16px;line-height:1.72}
+.sobre-txt p strong{color:var(--branco);font-weight:600}
+.selos{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.selo{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:50px;padding:9px 16px;font-size:12.5px;color:var(--texto);font-weight:400;transition:border-color .3s,color .3s,transform .3s}
+.selo::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--grad-red)}
+.selo:hover{border-color:var(--linha);color:var(--branco);transform:translateY(-2px)}
+@media(max-width:900px){.sobre-grid{grid-template-columns:1fr;gap:40px}.sobre-visual{max-width:420px;margin:0 auto}}
+
+/* ===== PROVA SOCIAL ===== */
+.sec-prova{background:var(--preto);overflow:hidden}
+.dep-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:50px}
+.dep-card{position:relative;background:linear-gradient(150deg,#141A16 0%,#1B2620 100%);border:1px solid rgba(55,194,106,.18);border-radius:18px;border-top-left-radius:4px;padding:24px 26px;transition:transform .35s,box-shadow .35s,opacity .35s,filter .35s}
+.dep-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#37C26A,#12703A);border-radius:3px 0 0 3px}
+.dep-card p{font-size:15px;color:#E6ECE8;font-weight:300;line-height:1.66;font-style:italic}
+.dep-meta{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:12.5px;color:var(--texto2)}
+.dep-meta .av{width:32px;height:32px;border-radius:50%;background:linear-gradient(140deg,#2A3A31,#16211B);border:1px solid rgba(55,194,106,.28);display:grid;place-items:center;color:#4FD787;font-size:13px;font-weight:700;font-family:'Montserrat',sans-serif}
+.dep-check{display:inline-flex;align-items:center;gap:5px;color:#4FD787;font-size:11.5px;margin-left:auto}
+.dep-check svg{width:13px;height:13px;stroke:#4FD787;stroke-width:2.4;fill:none}
+@media(hover:hover){
+  .dep-grid:hover .dep-card{opacity:.55;filter:blur(2px)}
+  .dep-grid:hover .dep-card:hover{opacity:1;filter:blur(0);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.5)}
+}
+@media(max-width:820px){.dep-grid{grid-template-columns:1fr}.dep-grid:hover .dep-card{opacity:1;filter:none}}
+
+/* ===== OFERTA ===== */
+.sec-oferta{background:linear-gradient(180deg,#0B0B0D 0%,#1A1016 55%,#0B0B0D 100%);overflow:hidden}
+.of-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:22px;margin-top:52px;align-items:start}
+.of-col{display:flex;flex-direction:column;gap:18px}
+.of-card{position:relative;background:var(--grad-card);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:30px 28px;overflow:hidden}
+.of-card h3{font-size:21px;margin-bottom:10px;color:var(--branco)}
+.of-card p{font-size:14.5px;color:var(--texto);font-weight:300;line-height:1.6}
+.of-price{font-family:'Montserrat',sans-serif;font-size:34px;font-weight:900;color:var(--branco);margin:16px 0 4px;line-height:1}
+.of-desc-tab{width:100%;border-collapse:collapse;margin-top:16px;font-size:14px}
+.of-desc-tab td{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.07);color:var(--texto);font-weight:300}
+.of-desc-tab tr:last-child td{border-bottom:none}
+.of-desc-tab td:last-child{text-align:right;color:var(--vermelho-claro);font-weight:600;font-family:'Montserrat',sans-serif;white-space:nowrap}
+/* card principal com borda conic girando (ref: KETOX .price-box) */
+.of-main{position:relative;background:linear-gradient(155deg,#1A1016 0%,#2A141A 100%);border:none;border-radius:24px;padding:38px 34px 34px;overflow:hidden}
+.of-main::before{content:"";position:absolute;inset:0;border-radius:24px;padding:2px;
+  background:conic-gradient(from var(--angle),rgba(233,58,58,0) 0deg,rgba(233,58,58,0) 195deg,var(--vermelho-esc) 255deg,var(--vermelho) 305deg,#fff 327deg,var(--vermelho) 348deg,rgba(233,58,58,0) 360deg);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;
+  animation:angleSpin 6.5s linear infinite;pointer-events:none;z-index:0}
+.of-main>*{position:relative;z-index:1}
+.of-badge{position:absolute;top:0;right:0;z-index:2;background:var(--grad-red);color:#fff;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;padding:8px 18px;border-radius:0 24px 0 14px}
+.of-main h3{font-size:27px;margin-bottom:12px}
+.of-old{font-size:16px;color:var(--texto2);text-decoration:line-through;font-weight:300}
+.of-new{font-family:'Montserrat',sans-serif;font-size:clamp(42px,5vw,58px);font-weight:900;line-height:1;background:linear-gradient(120deg,#FF8A72,#E93A3A);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin:4px 0 8px}
+.of-list{list-style:none;margin:22px 0 26px;display:flex;flex-direction:column;gap:11px}
+.of-list li{position:relative;padding-left:28px;font-size:14.5px;color:var(--texto);font-weight:300;line-height:1.5}
+.of-list li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--vermelho);font-weight:800}
+.of-list li strong{color:var(--branco);font-weight:600}
+.pag{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px;justify-content:center}
+.pag span{font-size:12px;color:var(--texto2);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:7px 13px;background:rgba(255,255,255,.03)}
+.obj{max-width:760px;margin:44px auto 0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--vermelho);border-radius:0 14px 14px 0;padding:22px 26px}
+.obj h4{font-size:16.5px;margin-bottom:8px;color:var(--branco)}
+.obj p{font-size:14.5px;color:var(--texto);font-weight:300;line-height:1.62}
+@media(max-width:940px){.of-grid{grid-template-columns:1fr}}
+
+/* ===== GARANTIA ===== */
+.sec-gar{background:var(--preto);overflow:hidden}
+.gar-grid{display:grid;grid-template-columns:250px 1fr;gap:44px;align-items:center;max-width:900px;margin:0 auto;background:var(--grad-card);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:40px 44px}
+.gar-seal{position:relative;width:210px;height:210px;margin:0 auto;display:grid;place-items:center}
+.gar-seal svg.seal-rot{position:absolute;inset:0;width:100%;height:100%;animation:sealSpin 24s linear infinite;will-change:transform}
+.gar-seal svg.seal-rot text{font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:6.2px;fill:var(--vermelho);text-transform:uppercase}
+.gar-core{position:relative;width:126px;height:126px;border-radius:50%;background:radial-gradient(circle at 34% 28%,#2A141A,#120A0C);border:1.5px solid var(--linha);display:grid;place-items:center;text-align:center}
+.gar-core b{display:block;font-family:'Montserrat',sans-serif;font-size:38px;font-weight:900;line-height:1;background:linear-gradient(120deg,#FF8A72,#E93A3A);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.gar-core span{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--texto2)}
+.gar-txt h2{font-size:clamp(26px,3.2vw,38px);margin-bottom:14px}
+.gar-txt p{font-size:15.5px;color:var(--texto);font-weight:300;line-height:1.7}
+@media(prefers-reduced-motion:reduce){.gar-seal svg.seal-rot{animation:none}}
+@media(max-width:820px){.gar-grid{grid-template-columns:1fr;gap:30px;padding:34px 26px;text-align:center}}
+
+/* ===== FAQ (details nativo + glass) ===== */
+.sec-faq{background:linear-gradient(180deg,#0B0B0D 0%,#141019 100%)}
+.faq-list{max-width:820px;margin:48px auto 0;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:linear-gradient(150deg,rgba(21,21,26,.8) 0%,rgba(34,34,44,.72) 100%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;transition:border-color .3s}
+.faq-item[open]{border-color:var(--linha)}
+.faq-item summary{list-style:none;cursor:pointer;padding:19px 54px 19px 22px;font-family:'Montserrat',sans-serif;font-size:15.5px;font-weight:600;color:var(--branco);position:relative;transition:color .25s}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--vermelho-claro)}
+.faq-item summary::after{content:"";position:absolute;right:22px;top:50%;width:9px;height:9px;border-right:2px solid var(--vermelho);border-bottom:2px solid var(--vermelho);transform:translateY(-70%) rotate(45deg);transition:transform .3s}
+.faq-item[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq-item .faq-a{padding:0 22px 20px;font-size:14.5px;color:var(--texto);font-weight:300;line-height:1.68}
+
+/* ===== CTA FINAL ===== */
+.sec-final{background:var(--preto);overflow:hidden;padding:100px 0;isolation:isolate}
+.final-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.final-bg img{width:100%;height:100%;object-fit:cover;object-position:center 34%;filter:grayscale(.35) contrast(1.05)}
+.final-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.94) 0%,rgba(11,11,13,.88) 45%,rgba(11,11,13,.97) 100%)}
+.final-inner{position:relative;max-width:920px;margin:0 auto;background:linear-gradient(155deg,#150C10 0%,#26121A 100%);border-radius:26px;padding:60px 44px;text-align:center;overflow:hidden;isolation:isolate}
+.final-inner::before{content:"";position:absolute;inset:0;border-radius:26px;padding:1.6px;background:conic-gradient(from var(--angle),transparent 0deg,transparent 150deg,var(--vermelho-esc) 230deg,var(--vermelho) 285deg,#fff 315deg,var(--vermelho) 340deg,transparent 360deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;animation:angleSpin 7s linear infinite;pointer-events:none;z-index:0}
+.final-inner>*{position:relative;z-index:1}
+.final-inner h2{font-size:clamp(28px,4vw,48px);margin-bottom:18px}
+.final-inner p{font-size:16.5px;color:var(--texto);font-weight:300;max-width:620px;margin:0 auto 32px}
+@media(max-width:600px){.final-inner{padding:44px 22px}}
+
+/* ===== RODAPE ===== */
+.foot{background:#08080A;border-top:1px solid rgba(255,255,255,.06);padding:56px 0 30px;position:relative}
+.foot::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--vermelho),transparent)}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;align-items:start}
+.foot img{height:64px;width:auto;margin-bottom:16px}
+.foot p{font-size:13.5px;color:var(--texto2);font-weight:300;line-height:1.7}
+.foot h4{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--branco);margin-bottom:14px}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot li a{font-size:13.5px;color:var(--texto);font-weight:300;transition:color .25s}
+.foot li a:hover{color:var(--vermelho)}
+.foot-bot{margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.06);text-align:center;font-size:12.5px;color:var(--texto2)}
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+
+/* ===== BOTAO WHATSAPP FLUTUANTE ===== */
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:950;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#37C26A,#12703A);display:grid;place-items:center;box-shadow:0 10px 30px rgba(18,112,58,.45);transition:transform .3s,box-shadow .3s}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 14px 38px rgba(18,112,58,.6)}
+.wa-float svg{width:29px;height:29px;fill:#fff}
+.wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid rgba(55,194,106,.55);animation:waPulse 2.6s ease-out infinite}
+@keyframes waPulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.55);opacity:0}}
+@media(prefers-reduced-motion:reduce){.wa-float::after{animation:none}}
+
+/* ===== RESPONSIVO GERAL ===== */
+@media(max-width:960px){
+  .hero{padding:130px 0 84px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-media img{object-position:60% 24%}
+  .hero-scrim{background:linear-gradient(180deg,rgba(9,9,11,.58) 0%,rgba(9,9,11,.86) 30%,rgba(9,9,11,.9) 62%,rgba(9,9,11,.96) 100%)}
+  .cred{grid-template-columns:repeat(2,1fr);margin-top:48px}
+  .sec{padding:74px 0}
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  .btn{width:100%;padding:17px 22px;font-size:13.5px}
+  .head .btn{width:auto}
+  .cta-row{flex-direction:column}
+  .sec{padding:62px 0}
+  .of-card,.of-main{padding:26px 20px}
+  .gar-seal{width:180px;height:180px}
+}
+</style>
+</head>
+<body>
+
+<div class="preview-bar" id="previewBar">
+  Preview interna — os itens marcados <strong>&ldquo;a confirmar&rdquo;</strong> aguardam resposta do Mateus antes de a p&aacute;gina ir ao ar.
+  <button class="close" onclick="document.getElementById('previewBar').remove();document.body.classList.remove('has-preview-bar')" aria-label="Fechar aviso">&times;</button>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="head" id="head">
+  <div class="head-in">
+    <a href="#topo" aria-label="Tocando Bateria do Zero"><img src="assets/logo-branco.png" alt="Tocando Bateria do Zero — Mateus Kerr"></a>
+    <nav class="head-nav">
+      <a class="lnk" href="#metodo">O m&eacute;todo</a>
+      <a class="lnk" href="#cursos">Cursos</a>
+      <a class="lnk" href="#sobre">Quem sou</a>
+      <a class="lnk" href="#faq">D&uacute;vidas</a>
+      <a class="btn" href="#oferta">Come&ccedil;ar agora</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="topo">
+  <div class="hero-media"><img src="assets/hero-mateus.jpg" alt="Mateus Kerr tocando bateria no est&uacute;dio do Tocando Bateria do Zero" fetchpriority="high"></div>
+  <div class="hero-scrim"></div>
+  <div class="orb tl"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="pretitle">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          M&eacute;todo do zero ao avan&ccedil;ado &middot; 10 anos de canal &middot; +12.500 alunos
+        </span>
+        <h1>Aprenda a tocar bateria do zero e <span class="red-grad">assuma o seu lugar no louvor</span></h1>
+        <p class="sub">Do primeiro toque na baqueta &agrave;s viradas lineares e ao gospel chops: videoaulas em ordem, <strong>partitura em PDF</strong>, MP3 para aplicar e <strong>corre&ccedil;&atilde;o dos seus v&iacute;deos feita por mim</strong>, direto.</p>
+        <div class="cta-row">
+          <a class="btn lg" href="#oferta">Quero come&ccedil;ar a tocar</a>
+          <a class="btn wa" href="https://wa.me/5516988347173?text=Ol%C3%A1%2C%20Mateus!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20cursos%20de%20bateria." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Z"/></svg>
+            Falar com o Mateus
+          </a>
+        </div>
+        <div class="cta-seals">
+          <span>Acesso imediato</span>
+          <span>Garantia de 7 dias na Hotmart</span>
+          <span>Suporte direto comigo, sem rob&ocirc;</span>
+        </div>
+      </div>
+      <div class="hero-visual"></div>
+    </div>
+
+    <div class="cred">
+      <div class="cred-item"><b>+12.500</b><span>alunos j&aacute; passaram pelos cursos</span></div>
+      <div class="cred-item"><b>29 anos</b><span>tocando bateria</span></div>
+      <div class="cred-item"><b>25 anos</b><span>dando aula</span></div>
+      <div class="cred-item"><b>10 anos</b><span>de canal ensinando do zero</span></div>
+    </div>
+  </div>
+  <div class="scroll-ind"><span>Role</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- ================= TICKER (marquee X duplo) ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-bar back">
+    <div class="marquee-track">
+      <div class="mq-seg"><span>Ritmos b&aacute;sicos</span><span class="dot">&bull;</span><span>Viradas lineares</span><span class="dot">&bull;</span><span>Partitura</span><span class="dot">&bull;</span><span>Rudimentos</span><span class="dot">&bull;</span><span>T&eacute;cnica de p&eacute;s</span><span class="dot">&bull;</span><span>Din&acirc;micas</span><span class="dot">&bull;</span><span>Metr&ocirc;nomo</span><span class="dot">&bull;</span><span>Worship</span><span class="dot">&bull;</span></div>
+      <div class="mq-seg"><span>Ritmos b&aacute;sicos</span><span class="dot">&bull;</span><span>Viradas lineares</span><span class="dot">&bull;</span><span>Partitura</span><span class="dot">&bull;</span><span>Rudimentos</span><span class="dot">&bull;</span><span>T&eacute;cnica de p&eacute;s</span><span class="dot">&bull;</span><span>Din&acirc;micas</span><span class="dot">&bull;</span><span>Metr&ocirc;nomo</span><span class="dot">&bull;</span><span>Worship</span><span class="dot">&bull;</span></div>
+    </div>
+  </div>
+  <div class="marquee-bar front">
+    <div class="marquee-track">
+      <div class="mq-seg"><span>Gospel chops</span><span class="dot">&bull;</span><span>Hinos da Harpa</span><span class="dot">&bull;</span><span>Bateria no louvor</span><span class="dot">&bull;</span><span>60 grooves</span><span class="dot">&bull;</span><span>Rock</span><span class="dot">&bull;</span><span>Forr&oacute;</span><span class="dot">&bull;</span><span>Reggae</span><span class="dot">&bull;</span><span>Tribais</span><span class="dot">&bull;</span><span>Afina&ccedil;&atilde;o</span><span class="dot">&bull;</span></div>
+      <div class="mq-seg"><span>Gospel chops</span><span class="dot">&bull;</span><span>Hinos da Harpa</span><span class="dot">&bull;</span><span>Bateria no louvor</span><span class="dot">&bull;</span><span>60 grooves</span><span class="dot">&bull;</span><span>Rock</span><span class="dot">&bull;</span><span>Forr&oacute;</span><span class="dot">&bull;</span><span>Reggae</span><span class="dot">&bull;</span><span>Tribais</span><span class="dot">&bull;</span><span>Afina&ccedil;&atilde;o</span><span class="dot">&bull;</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= DORES ================= -->
+<section class="sec sec-dor">
+  <div class="wrap">
+    <div class="center maxw sr-hidden">
+      <span class="eyebrow outline">Por que voc&ecirc; ainda trava</span>
+      <h2>Voc&ecirc; n&atilde;o precisa de mais um v&iacute;deo solto. <span class="red-grad">Precisa de uma ordem.</span></h2>
+      <p class="lead">Voc&ecirc; j&aacute; assistiu dezenas de v&iacute;deos de bateria. Aprendeu uma virada aqui, um ritmo ali. Mas na hora do culto trava: a virada n&atilde;o entra no tempo, o andamento corre, e a din&acirc;mica n&atilde;o acompanha o momento da m&uacute;sica.</p>
+      <p class="lead" style="margin-top:14px"><strong>N&atilde;o &eacute; falta de talento. &Eacute; falta de sequ&ecirc;ncia.</strong> Ningu&eacute;m aprende a tocar juntando peda&ccedil;os fora de ordem &mdash; aprende seguindo um caminho, do primeiro toque at&eacute; o avan&ccedil;ado.</p>
+    </div>
+
+    <h3 class="center sr-hidden" style="margin-top:56px;font-size:20px;color:var(--branco)">Se voc&ecirc; se reconhece aqui, este m&eacute;todo &eacute; para voc&ecirc;</h3>
+    <div class="dor-grid">
+      <div class="dor-card sr-hidden"><p>Sabe alguns ritmos, mas <strong>n&atilde;o consegue tirar uma m&uacute;sica inteira sozinho</strong>.</p></div>
+      <div class="dor-card sr-hidden"><p>A virada sai, mas voc&ecirc; <strong>perde o tempo quando volta pro ritmo</strong>.</p></div>
+      <div class="dor-card sr-hidden"><p><strong>Coordena&ccedil;&atilde;o entre m&atilde;os e p&eacute;s</strong> ainda &eacute; o seu maior obst&aacute;culo.</p></div>
+      <div class="dor-card sr-hidden"><p>Sua igreja precisa de baterista e voc&ecirc; <strong>quer estar pronto para servir</strong>.</p></div>
+      <div class="dor-card sr-hidden"><p>Nunca leu uma partitura de bateria e <strong>acha que isso &eacute; para poucos</strong>.</p></div>
+      <div class="dor-card sr-hidden"><p>J&aacute; tentou escola de m&uacute;sica e <strong>sentiu que evoluiu pouco perto do que investiu</strong>.</p></div>
+    </div>
+
+    <div class="sec-cta sr-hidden"><a class="btn" href="#oferta">Quero seguir um caminho, n&atilde;o v&iacute;deos soltos</a></div>
+  </div>
+</section>
+
+<!-- ================= METODO ================= -->
+<section class="sec sec-metodo" id="metodo">
+  <div class="orb br"></div>
+  <div class="wrap">
+    <div class="center maxw sr-hidden">
+      <span class="eyebrow">O m&eacute;todo</span>
+      <h2>Um caminho claro, <span class="red-grad">do zero ao baterista completo</span></h2>
+      <p class="lead">O Tocando Bateria do Zero &eacute; dividido em cursos: cada um resolve uma pe&ccedil;a da sua evolu&ccedil;&atilde;o &mdash; ritmos, viradas, rudimentos, t&eacute;cnicas de m&atilde;o, t&eacute;cnica de p&eacute;s, din&acirc;micas, partitura, tribais, worship, gospel chops, afina&ccedil;&atilde;o. <strong>Voc&ecirc; come&ccedil;a pelo que precisa agora e vai somando.</strong></p>
+    </div>
+
+    <div class="pil-grid">
+      <div class="pil-card sr-hidden">
+        <div class="pil-ico"><svg viewBox="0 0 24 24"><path d="M5 3v18"/><path d="M19 3v18"/><path d="M5 8h14"/><path d="M5 16h14"/></svg></div>
+        <h3>Pr&aacute;tico desde a primeira aula</h3>
+        <p>Nada de teoria solta. Voc&ecirc; toca no primeiro dia e aplica em m&uacute;sica de verdade na primeira semana.</p>
+      </div>
+      <div class="pil-card sr-hidden">
+        <div class="pil-ico"><svg viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M3 12h12"/><path d="M3 18h7"/><circle cx="18" cy="17" r="3"/></svg></div>
+        <h3>Did&aacute;tica que descomplica</h3>
+        <p>Explica&ccedil;&atilde;o clara, passo a passo, no ritmo de quem est&aacute; aprendendo &mdash; o motivo n&uacute;mero 1 pelo qual meus alunos compram e voltam.</p>
+      </div>
+      <div class="pil-card sr-hidden">
+        <div class="pil-ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H7l-3 3V5Z"/><path d="M9 10h6"/></svg></div>
+        <h3>Corre&ccedil;&atilde;o humana, feita por mim</h3>
+        <p>Voc&ecirc; grava o exerc&iacute;cio, me envia e eu analiso e corrijo. N&atilde;o &eacute; equipe, n&atilde;o &eacute; IA, n&atilde;o &eacute; f&oacute;rum. Sou eu.</p>
+      </div>
+    </div>
+
+    <div class="sec-cta sr-hidden"><a class="btn" href="#oferta">Ver os cursos e come&ccedil;ar</a></div>
+  </div>
+</section>
+
+<!-- ================= O QUE VOCE RECEBE ================= -->
+<section class="sec sec-recebe">
+  <div class="wrap">
+    <div class="center maxw sr-hidden">
+      <span class="eyebrow outline">O que est&aacute; inclu&iacute;do</span>
+      <h2>Todo curso vem completo &mdash; <span class="red-grad">e com suporte direto comigo</span></h2>
+    </div>
+
+    <div class="ben-bento">
+      <div class="ben-card feat sr-hidden">
+        <div class="ben-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9Z"/></svg></div>
+        <h3>Videoaulas completas</h3>
+        <p>Cada curso gravado do come&ccedil;o ao fim, em sequ&ecirc;ncia &mdash; sem pular etapa.</p>
+        <span class="num">01</span>
+      </div>
+      <div class="ben-card sr-hidden">
+        <div class="ben-ico"><svg viewBox="0 0 24 24"><path d="M14 3v5h5"/><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-5Z"/><path d="M9 13h6"/><path d="M9 17h4"/></svg></div>
+        <h3>PDFs com as partituras</h3>
+        <p>O material escrito de tudo o que voc&ecirc; toca na aula, pronto para imprimir e estudar.</p>
+        <span class="num">02</span>
+      </div>
+      <div class="ben-card sr-hidden">
+        <div class="ben-ico"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></div>
+        <h3>MP3 para aplica&ccedil;&atilde;o</h3>
+        <p>As m&uacute;sicas para voc&ecirc; aplicar o que aprendeu. <span class="conf">Dispon&iacute;vel em cursos selecionados</span></p>
+        <span class="num">03</span>
+      </div>
+      <div class="ben-card sr-hidden">
+        <div class="ben-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.7"/><path d="M12 17h.01"/></svg></div>
+        <h3>Tira-d&uacute;vidas direto comigo</h3>
+        <p>Voc&ecirc; pergunta e eu respondo. Sem fila, sem atendente.</p>
+        <span class="num">04</span>
+      </div>
+      <div class="ben-card feat sr-hidden">
+        <div class="ben-ico"><svg viewBox="0 0 24 24"><path d="M15 10l4.5-2.5v9L15 14"/><rect x="3" y="6" width="12" height="12" rx="2"/></svg></div>
+        <h3>Corre&ccedil;&atilde;o de v&iacute;deo</h3>
+        <p>Grave o exerc&iacute;cio, me envie e eu aponto exatamente o que ajustar &mdash; postura, tempo, din&acirc;mica. &Eacute; a parte que mais acelera a evolu&ccedil;&atilde;o do aluno.</p>
+        <span class="num">05</span>
+      </div>
+    </div>
+
+    <div class="sec-cta sr-hidden"><a class="btn" href="#oferta">Quero come&ccedil;ar com tudo isso</a></div>
+  </div>
+</section>
+
+<!-- ================= TICKER RETO ================= -->
+<div class="strips" aria-hidden="true">
+  <div class="strip red">
+    <div class="marquee-track strip-a">
+      <div class="mq-seg"><span>Videoaulas</span><span class="dot">&bull;</span><span>Partitura em PDF</span><span class="dot">&bull;</span><span>MP3 de aplica&ccedil;&atilde;o</span><span class="dot">&bull;</span><span>Corre&ccedil;&atilde;o de v&iacute;deo</span><span class="dot">&bull;</span><span>Suporte com o Mateus</span><span class="dot">&bull;</span></div>
+      <div class="mq-seg"><span>Videoaulas</span><span class="dot">&bull;</span><span>Partitura em PDF</span><span class="dot">&bull;</span><span>MP3 de aplica&ccedil;&atilde;o</span><span class="dot">&bull;</span><span>Corre&ccedil;&atilde;o de v&iacute;deo</span><span class="dot">&bull;</span><span>Suporte com o Mateus</span><span class="dot">&bull;</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CATALOGO ================= -->
+<section class="sec sec-catalogo" id="cursos">
+  <div class="orb tl"></div>
+  <div class="wrap">
+    <div class="center maxw sr-hidden">
+      <span class="eyebrow">Cat&aacute;logo</span>
+      <h2>Escolha por onde come&ccedil;ar. <span class="red-grad">Ou leve o caminho inteiro.</span></h2>
+      <p class="lead">S&atilde;o <span class="conf">34 cursos</span> que cobrem a forma&ccedil;&atilde;o completa de um baterista. Cada um pode ser comprado separadamente &mdash; ou voc&ecirc; leva tudo de uma vez no pacote completo.</p>
+    </div>
+
+    <div class="tri-grid">
+      <div class="tri-card sr-hidden">
+        <div class="tri-head"><span class="tri-num">01</span><h3>Fundamentos</h3></div>
+        <ul>
+          <li>Ritmos b&aacute;sicos 2.0</li>
+          <li>Viradas b&aacute;sicas</li>
+          <li>Partitura 1 e Partitura 2</li>
+          <li>Rudimentos</li>
+          <li>T&eacute;cnicas de m&atilde;o</li>
+          <li>T&eacute;cnicas com os p&eacute;s</li>
+          <li>M&atilde;o fraca</li>
+        </ul>
+      </div>
+      <div class="tri-card sr-hidden">
+        <div class="tri-head"><span class="tri-num">02</span><h3>Din&acirc;mica e controle</h3></div>
+        <ul>
+          <li>Din&acirc;micas 1, 2 e 3</li>
+          <li>Metr&ocirc;nomo</li>
+          <li>Duas m&atilde;os no chimbal</li>
+          <li>Duas m&atilde;os com din&acirc;micas</li>
+          <li>Ritmos na caixa</li>
+        </ul>
+      </div>
+      <div class="tri-card sr-hidden">
+        <div class="tri-head"><span class="tri-num">03</span><h3>Viradas e aplica&ccedil;&atilde;o</h3></div>
+        <ul>
+          <li>Viradas lineares</li>
+          <li>Aplica&ccedil;&atilde;o de rudimentos 1, 2, 3 e 4</li>
+          <li>60 grooves &mdash; partes 1, 2 e 3</li>
+        </ul>
+      </div>
+      <div class="tri-card sr-hidden">
+        <div class="tri-head"><span class="tri-num">04</span><h3>Bateria na igreja</h3></div>
+        <ul>
+          <li>Bateria no louvor</li>
+          <li>Viradas no louvor</li>
+          <li>Worship 1 e Worship 2</li>
+          <li>Hinos da Harpa</li>
+        </ul>
+      </div>
+      <div class="tri-card sr-hidden">
+        <div class="tri-head"><span class="tri-num">05</span><h3>Estilos</h3></div>
+        <ul>
+          <li>Rock 1 e Rock 2</li>
+          <li>Forr&oacute;</li>
+          <li>Reggae</li>
+          <li>Tribais</li>
+        </ul>
+      </div>
+      <div class="tri-card sr-hidden">
+        <div class="tri-head"><span class="tri-num">06</span><h3>Bastidores do instrumento</h3></div>
+        <ul>
+          <li>Afina&ccedil;&atilde;o de bateria</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="cat-nota sr-hidden"><span class="conf">Lista e nome comercial de cada curso a validar com o Mateus</span></p>
+
+    <div class="sec-cta sr-hidden"><a class="btn" href="#oferta">Montar o meu caminho</a></div>
+  </div>
+</section>
+
+<!-- ================= MARCOS / TIMELINE ================= -->
+<section class="sec sec-marcos">
+  <div class="wrap">
+    <div class="center maxw sr-hidden">
+      <span class="eyebrow outline">Em quanto tempo</span>
+      <h2>Primeira aula, primeiro ritmo. <span class="red-grad">Primeira semana, primeira m&uacute;sica.</span></h2>
+      <p class="lead">Boa parte dos alunos aprende os ritmos j&aacute; na primeira aula e toca a primeira m&uacute;sica na primeira semana. Cada pessoa tem o seu tempo &mdash; alguns levam um pouco mais. Mas <strong>todos que seguem o m&eacute;todo chegam l&aacute;</strong>. A virada de chave costuma acontecer nos primeiros meses, e muitos j&aacute; sentem diferen&ccedil;a nas primeiras semanas.</p>
+    </div>
+
+    <div class="tline" id="tl">
+      <div class="tl-item"><div class="tl-mark"></div><h3>1 semana</h3><p>Aluno aprendeu a primeira m&uacute;sica completa.</p></div>
+      <div class="tl-item"><div class="tl-mark"></div><h3>Menos de 1 m&ecirc;s</h3><p>Aluno tocou na igreja pela primeira vez.</p></div>
+      <div class="tl-item"><div class="tl-mark"></div><h3>1 semana</h3><p>Aluno aprendeu o que n&atilde;o tinha aprendido em meses de escola de m&uacute;sica.</p></div>
+    </div>
+    <p class="tl-nota">Resultados relatados por alunos. O tempo de evolu&ccedil;&atilde;o varia de pessoa para pessoa.</p>
+
+    <div class="sec-cta sr-hidden"><a class="btn" href="#oferta">Come&ccedil;ar a minha primeira semana</a></div>
+  </div>
+</section>
+
+<!-- ================= SOBRE ================= -->
+<section class="sec sec-sobre" id="sobre">
+  <div class="wrap">
+    <div class="sobre-grid">
+      <div class="sobre-visual sr-hidden">
+        <div class="deco-ring r1"></div>
+        <div class="deco-ring r2"></div>
+        <div class="sobre-foto"><img src="assets/mateus-sobre.jpg" alt="Mateus Kerr, professor do Tocando Bateria do Zero, com a caixa da bateria" loading="lazy"></div>
+      </div>
+      <div class="sobre-txt sr-hidden">
+        <span class="eyebrow">Quem vai te ensinar</span>
+        <h2>Sou o Mateus Kerr</h2>
+        <p>Toco bateria h&aacute; <strong>29 anos</strong> e dou aula h&aacute; <strong>25</strong>. O Tocando Bateria do Zero existe h&aacute; 10 anos, e come&ccedil;ou no YouTube com um objetivo simples: ensinar quem nunca tinha encostado numa baqueta a tocar de verdade.</p>
+        <p>De l&aacute; pra c&aacute;, <strong>mais de 12.500 alunos</strong> passaram pelos meus cursos on-line. E todo o suporte continua passando por mim: sou eu que respondo as d&uacute;vidas, assisto aos v&iacute;deos que os alunos me mandam e corrijo.</p>
+        <p>Meu prop&oacute;sito &eacute; esse: <strong>ensinar bateria de forma pr&aacute;tica, clara e financeiramente acess&iacute;vel</strong>.</p>
+        <div class="selos">
+          <span class="selo">Endorse Odery Drums</span>
+          <span class="selo">Endorse Pad Gorilla</span>
+          <span class="selo">Parceiro bateraclube.com.br</span>
+        </div>
+        <div style="margin-top:30px"><a class="btn" href="#oferta">Estudar com o Mateus</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROVA SOCIAL ================= -->
+<section class="sec sec-prova">
+  <div class="wrap">
+    <div class="center maxw sr-hidden">
+      <span class="eyebrow outline">Prova social</span>
+      <h2>O que os alunos mandam <span class="red-grad">no meu WhatsApp</span></h2>
+    </div>
+
+    <div class="dep-grid">
+      <div class="dep-card sr-hidden">
+        <p>&ldquo;Irm&atilde;o, suas aulas s&atilde;o as melhores. Como n&atilde;o te conheci antes? Em semanas evolu&iacute; o que em meses n&atilde;o evolu&iacute;.&rdquo;</p>
+        <div class="dep-meta"><span class="av">A</span> <span class="conf">Aluno &mdash; nome a autorizar</span>
+          <span class="dep-check"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg>WhatsApp</span></div>
+      </div>
+      <div class="dep-card sr-hidden">
+        <p>&ldquo;Que din&acirc;mica boa essa que voc&ecirc; usou! Descomplicou o que era complicado para mim. T&ocirc; na quarta aula j&aacute; do m&oacute;dulo 1 de partitura, ansioso pelo pr&oacute;ximo.&rdquo;</p>
+        <div class="dep-meta"><span class="av">A</span> <span class="conf">Aluno &mdash; nome a autorizar</span>
+          <span class="dep-check"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg>WhatsApp</span></div>
+      </div>
+      <div class="dep-card sr-hidden">
+        <p>&ldquo;S&oacute; vim parabenizar os cursos, muito de boa qualidade. Aprendi duas viradas muito massas at&eacute; agora; o curso de gospel chops e viradas lineares est&aacute; muito bom.&rdquo;</p>
+        <div class="dep-meta"><span class="av">A</span> <span class="conf">Aluno &mdash; nome a autorizar</span>
+          <span class="dep-check"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg>WhatsApp</span></div>
+      </div>
+      <div class="dep-card sr-hidden">
+        <p>&ldquo;Com apenas os primeiros passos eu aprendi a tocar reggae no seu curso. Nem estou em casa para tocar na bateria, estou estudando no pad e fazendo bumbo no ch&atilde;o &mdash; e j&aacute; com varia&ccedil;&otilde;es de bumbo.&rdquo;</p>
+        <div class="dep-meta"><span class="av">A</span> <span class="conf">Aluno &mdash; nome a autorizar</span>
+          <span class="dep-check"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg>WhatsApp</span></div>
+      </div>
+    </div>
+
+    <div class="sec-cta sr-hidden"><a class="btn" href="#oferta">Quero evoluir assim tamb&eacute;m</a></div>
+  </div>
+</section>
+
+<!-- ================= OFERTA ================= -->
+<section class="sec sec-oferta" id="oferta">
+  <div class="orb br"></div>
+  <div class="wrap">
+    <div class="center maxw sr-hidden">
+      <span class="eyebrow">A oferta</span>
+      <h2>Monte o seu caminho &mdash; <span class="red-grad">ou leve tudo de uma vez</span></h2>
+    </div>
+
+    <div class="of-grid">
+      <div class="of-col">
+        <div class="of-card sr-hidden">
+          <h3>Curso avulso</h3>
+          <p>Escolha o curso que resolve o seu problema de agora. Videoaulas, PDF com partitura e suporte direto comigo.</p>
+          <div class="of-price"><span class="conf">Pre&ccedil;o unit&aacute;rio</span></div>
+          <div style="margin-top:22px"><a class="btn full" href="https://wa.me/5516988347173?text=Ol%C3%A1%2C%20Mateus!%20Quero%20escolher%20um%20curso%20avulso." target="_blank" rel="noopener">Escolher meu curso</a></div>
+        </div>
+
+        <div class="of-card sr-hidden">
+          <h3>Quanto mais completa a forma&ccedil;&atilde;o, menos voc&ecirc; paga por curso</h3>
+          <table class="of-desc-tab">
+            <tr><td>3 cursos</td><td>R$ 15,00 de desconto</td></tr>
+            <tr><td>6 cursos</td><td>R$ 60,00 de desconto</td></tr>
+            <tr><td>Acima de 6 cursos</td><td>R$ 10,00 off em cada</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="of-main sr-hidden">
+        <span class="of-badge">Melhor escolha</span>
+        <h3>Pacote Completo &mdash; todos os cursos</h3>
+        <p>A forma&ccedil;&atilde;o inteira, do primeiro toque ao avan&ccedil;ado: todos os cursos, todos os PDFs com partitura, os MP3 de aplica&ccedil;&atilde;o e o suporte direto comigo.</p>
+        <div style="margin-top:22px">
+          <span class="of-old">De R$ 1.305,00 por</span>
+          <div class="of-new">R$ 697</div>
+          <span style="font-size:13.5px;color:var(--texto2)"><span class="conf">Parcelamento na Hotmart</span></span>
+        </div>
+        <ul class="of-list">
+          <li><strong>Todos os cursos</strong> do cat&aacute;logo, das trilhas 01 a 06</li>
+          <li><strong>PDFs com as partituras</strong> de tudo o que voc&ecirc; toca</li>
+          <li><strong>MP3 de aplica&ccedil;&atilde;o</strong> para treinar com m&uacute;sica</li>
+          <li><strong>Tira-d&uacute;vidas e corre&ccedil;&atilde;o de v&iacute;deo</strong> direto comigo</li>
+          <li><strong>Garantia de 7 dias</strong> na Hotmart</li>
+        </ul>
+        <a class="btn lg full" href="https://wa.me/5516988347173?text=Ol%C3%A1%2C%20Mateus!%20Quero%20o%20pacote%20completo%20dos%20cursos%20de%20bateria." target="_blank" rel="noopener">Quero o pacote completo</a>
+        <p style="margin-top:12px;text-align:center;font-size:12.5px;color:var(--texto2)"><span class="conf">Link de checkout da Hotmart</span></p>
+        <div class="pag">
+          <span>Pix</span><span>Cart&atilde;o direto comigo</span><span>Hotmart</span><span>Combinar no WhatsApp</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="obj sr-hidden">
+      <h4>&ldquo;Achei o pacote completo caro.&rdquo;</h4>
+      <p>Entendo &mdash; e &eacute; por isso que voc&ecirc; n&atilde;o precisa come&ccedil;ar por ele. Escolha um curso, veja se a minha did&aacute;tica funciona para voc&ecirc; e v&aacute; somando. <strong>Quem leva mais cursos paga menos por cada um.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GARANTIA ================= -->
+<section class="sec sec-gar">
+  <div class="wrap">
+    <div class="gar-grid sr-hidden">
+      <div class="gar-seal">
+        <svg class="seal-rot" viewBox="0 0 210 210" aria-hidden="true">
+          <defs><path id="seal-path" d="M 105 105 m -84 0 a 84 84 0 1 1 168 0 a 84 84 0 1 1 -168 0"/></defs>
+          <text><textPath href="#seal-path" startOffset="0">GARANTIA DE 7 DIAS &middot; O RISCO &Eacute; MEU &middot; </textPath></text>
+        </svg>
+        <div class="gar-core"><div><b>7</b><span>dias</span></div></div>
+      </div>
+      <div class="gar-txt">
+        <h2>7 dias para testar. <span class="red-grad">O risco &eacute; meu.</span></h2>
+        <p>Comprou, entrou, assistiu, baixou as partituras e treinou. Se em 7 dias voc&ecirc; achar que n&atilde;o &eacute; para voc&ecirc;, pede o reembolso na Hotmart e devolvemos tudo. <strong>Sem burocracia.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec sec-faq" id="faq">
+  <div class="wrap">
+    <div class="center maxw sr-hidden">
+      <span class="eyebrow outline">D&uacute;vidas frequentes</span>
+      <h2>O que os alunos <span class="red-grad">perguntam antes de come&ccedil;ar</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item sr-hidden"><summary>Nunca toquei bateria na vida. Consigo acompanhar?</summary><div class="faq-a">Sim. O m&eacute;todo come&ccedil;a do zero absoluto: como segurar a baqueta, postura, primeiros toques. Foi feito exatamente para quem nunca tocou.</div></details>
+      <details class="faq-item sr-hidden"><summary>Preciso ter bateria em casa?</summary><div class="faq-a">Muitos alunos come&ccedil;am treinando no pad. <span class="conf">Recomenda&ccedil;&atilde;o oficial para quem ainda n&atilde;o tem bateria a confirmar com o Mateus</span></div></details>
+      <details class="faq-item sr-hidden"><summary>Como funciona o suporte?</summary><div class="faq-a">Voc&ecirc; fala direto comigo. Manda a d&uacute;vida e eu respondo; grava o exerc&iacute;cio em v&iacute;deo e eu analiso e corrijo. Todo o suporte &eacute; humano e feito por mim.</div></details>
+      <details class="faq-item sr-hidden"><summary>O que vem junto com cada curso?</summary><div class="faq-a">Videoaulas completas, PDFs com as partituras e MP3 para aplica&ccedil;&atilde;o, al&eacute;m do tira-d&uacute;vidas comigo.</div></details>
+      <details class="faq-item sr-hidden"><summary>Preciso comprar tudo de uma vez?</summary><div class="faq-a">N&atilde;o. Voc&ecirc; pode comprar um curso por vez. Levando 3, 6 ou mais, o desconto aumenta; e existe o pacote completo com o melhor pre&ccedil;o por curso.</div></details>
+      <details class="faq-item sr-hidden"><summary>Por quanto tempo tenho acesso?</summary><div class="faq-a"><span class="conf">Tempo de acesso &mdash; vital&iacute;cio ou por per&iacute;odo &mdash; a confirmar</span></div></details>
+      <details class="faq-item sr-hidden"><summary>Como fa&ccedil;o para pagar?</summary><div class="faq-a">Pix, cart&atilde;o direto comigo ou pela Hotmart. Se preferir, chame no WhatsApp que a gente resolve por l&aacute;.</div></details>
+      <details class="faq-item sr-hidden"><summary>E se eu n&atilde;o gostar?</summary><div class="faq-a">Voc&ecirc; tem 7 dias de garantia na Hotmart. Pediu, devolvemos.</div></details>
+    </div>
+
+    <div class="sec-cta sr-hidden"><a class="btn" href="#oferta">Tirei minha d&uacute;vida, quero come&ccedil;ar</a></div>
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
+<section class="sec-final">
+  <div class="final-bg"><img src="assets/mateus-tocando.jpg" alt="" loading="lazy" aria-hidden="true"></div>
+  <div class="orb tl"></div>
+  <div class="wrap">
+    <div class="final-inner sr-hidden">
+      <span class="eyebrow" style="margin:0 auto 18px">&Uacute;ltimo passo</span>
+      <h2>A sua igreja precisa de um baterista. <span class="red-grad">Pode ser voc&ecirc;.</span></h2>
+      <p>Comece hoje pelo primeiro ritmo. Em uma semana voc&ecirc; j&aacute; est&aacute; tocando m&uacute;sica. E eu estou do outro lado para corrigir o que precisar.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn lg" href="https://wa.me/5516988347173?text=Ol%C3%A1%2C%20Mateus!%20Quero%20o%20pacote%20completo%20dos%20cursos%20de%20bateria." target="_blank" rel="noopener">Quero o pacote completo</a>
+        <a class="btn wa" href="https://wa.me/5516988347173?text=Ol%C3%A1%2C%20Mateus!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20cursos%20de%20bateria." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+      <div class="cta-seals" style="justify-content:center">
+        <span>Acesso imediato</span><span>Garantia de 7 dias</span><span>Suporte direto com o Mateus</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RODAPE ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="assets/logo-branco.png" alt="Tocando Bateria do Zero">
+        <p>Tocando Bateria do Zero &mdash; Mateus Kerr.<br>Ensinando bateria do zero ao avan&ccedil;ado h&aacute; 10 anos.</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5516988347173" target="_blank" rel="noopener">WhatsApp (16) 98834-7173</a></li>
+          <li><a href="https://instagram.com/mateus_kerr" target="_blank" rel="noopener">Instagram @Mateus_kerr</a></li>
+          <li><a href="mailto:Mateusko@yahoo.com.br">Mateusko@yahoo.com.br</a></li>
+          <li><span class="conf">Link do canal no YouTube</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Navega&ccedil;&atilde;o</h4>
+        <ul>
+          <li><a href="#metodo">O m&eacute;todo</a></li>
+          <li><a href="#cursos">Cat&aacute;logo de cursos</a></li>
+          <li><a href="#sobre">Quem sou</a></li>
+          <li><a href="#oferta">Pre&ccedil;os</a></li>
+          <li><a href="#faq">D&uacute;vidas frequentes</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      Tocando Bateria do Zero &copy; 2026. Todos os direitos reservados. &nbsp;<span class="conf">Pol&iacute;tica de Privacidade e Termos de Uso</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5516988347173?text=Ol%C3%A1%2C%20Mateus!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20cursos%20de%20bateria." target="_blank" rel="noopener" aria-label="Falar com o Mateus no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.84 13.83c-.25.7-1.46 1.36-2.02 1.41-.54.06-1.02.26-3.43-.72-2.89-1.17-4.72-4.14-4.86-4.33-.14-.19-1.16-1.55-1.16-2.96s.73-2.1 1-2.39c.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.25.6.83 2.06.9 2.21.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.29.72 1.19 1.55 1.93 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.29.37-.24.62-.14.25.09 1.6.75 1.87.89.28.14.46.21.53.33.07.12.07.68-.18 1.34Z"/></svg>
+</a>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  document.body.classList.add('has-preview-bar');
+
+  /* header com fundo mais solido apos rolar */
+  var head=document.getElementById('head');
+  function onScrollHead(){ if(!head) return; head.classList.toggle('scrolled', window.scrollY>40); }
+  window.addEventListener('scroll',onScrollHead,{passive:true}); onScrollHead();
+
+  /* scroll reveal global (IntersectionObserver) com stagger por irmao */
+  var els=[].slice.call(document.querySelectorAll('.sr-hidden'));
+  if(reduce || !('IntersectionObserver' in window)){
+    els.forEach(function(e){ e.classList.add('sr-visible'); });
+  } else {
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        var el=en.target;
+        var sibs=el.parentNode?[].slice.call(el.parentNode.children).filter(function(c){return c.classList&&c.classList.contains('sr-hidden');}):[];
+        var i=Math.max(0,sibs.indexOf(el));
+        setTimeout(function(){ el.classList.add('sr-visible'); }, Math.min(i,5)*90);
+        io.unobserve(el);
+      });
+    },{threshold:0,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(e){ io.observe(e); });
+    /* rede de seguranca: em scroll rapido o IO pode nao amostrar o elemento.
+       Este sweep revela tudo que ja entrou na area visivel. */
+    var sweeping=false;
+    function sweep(){
+      sweeping=false;
+      var vh=window.innerHeight;
+      for(var i=els.length-1;i>=0;i--){
+        var el=els[i];
+        if(el.classList.contains('sr-visible')){ els.splice(i,1); continue; }
+        var r=el.getBoundingClientRect();
+        if(r.top < vh*0.94){ el.classList.add('sr-visible'); io.unobserve(el); els.splice(i,1); }
+      }
+    }
+    function onScrollSweep(){ if(!sweeping){ sweeping=true; requestAnimationFrame(sweep); } }
+    window.addEventListener('scroll',onScrollSweep,{passive:true});
+    window.addEventListener('resize',onScrollSweep,{passive:true});
+  }
+
+  /* timeline: linha preenchendo no scroll + revelacao dos marcos em stagger */
+  var tl=document.getElementById('tl');
+  if(tl){
+    var items=[].slice.call(tl.querySelectorAll('.tl-item'));
+    if(reduce || !('IntersectionObserver' in window)){
+      tl.style.setProperty('--fill','1');
+      items.forEach(function(it){ it.classList.add('show'); });
+    } else {
+      var tio=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(!en.isIntersecting) return;
+          var idx=items.indexOf(en.target);
+          setTimeout(function(){ en.target.classList.add('show'); }, Math.max(0,idx)*160);
+          tio.unobserve(en.target);
+        });
+      },{threshold:.3});
+      items.forEach(function(it){ tio.observe(it); });
+
+      var ticking=false;
+      function fill(){
+        ticking=false;
+        var r=tl.getBoundingClientRect(), vh=window.innerHeight;
+        var start=vh*0.80, end=vh*0.40;
+        var p=(start-r.top)/((start-end)+r.height);
+        tl.style.setProperty('--fill', Math.max(0,Math.min(1,p)).toFixed(4));
+      }
+      function onScrollFill(){ if(!ticking){ ticking=true; requestAnimationFrame(fill); } }
+      window.addEventListener('scroll',onScrollFill,{passive:true,capture:true});
+      document.addEventListener('scroll',onScrollFill,{passive:true,capture:true});
+      window.addEventListener('resize',onScrollFill,{passive:true});
+      fill();
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
