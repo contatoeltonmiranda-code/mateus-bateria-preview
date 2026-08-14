@@ -268,8 +268,8 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .arco figure:nth-child(5){z-index:5}
 .arco figure:nth-child(6){z-index:6}
 .arco figure:nth-child(7){z-index:7}
-.arco figure img{width:100%;height:100%;object-fit:cover;display:block;
-  filter:grayscale(.5) contrast(1.05) brightness(.86);transition:filter .45s ease,transform .6s ease}
+.arco figure img,.arco figure video{width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(.42) contrast(1.05) brightness(.9);transition:filter .45s ease,transform .6s ease}
 .arco figure::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(180deg,rgba(7,10,17,0) 42%,rgba(7,10,17,.72) 100%)}
 .arco figure:nth-child(1){transform:translateY(52px) rotate(-10deg)}
@@ -283,7 +283,7 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
   .arco:hover figure{filter:saturate(.7);opacity:.72}
   .arco figure:hover{transform:translateY(-22px) rotate(0deg) scale(1.06);z-index:9;opacity:1;filter:none;
     outline-color:var(--linha-forte);box-shadow:0 26px 52px rgba(0,0,0,.7),0 0 0 1px rgba(61,123,255,.35)}
-  .arco figure:hover img{filter:grayscale(0) contrast(1.06) brightness(1);transform:scale(1.04)}
+  .arco figure:hover img,.arco figure:hover video{filter:grayscale(0) contrast(1.06) brightness(1);transform:scale(1.04)}
 }
 @media(max-width:1050px){.arco figure{flex:0 0 154px;height:246px;margin-left:-28px;border-radius:78px 78px 16px 16px}}
 @media(max-width:820px){
@@ -299,9 +299,9 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
   box-shadow:0 0 12px rgba(61,123,255,.5)}
 .dor-bridge b{color:var(--neon-claro);font-weight:700}
 
-/* ===== MOCKUP DE CELULAR — espaco reservado ate o Elton trocar pela arte real ===== */
-.mock{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:0;margin:40px auto 8px;
-  max-width:640px;padding:10px 0 6px;perspective:1200px}
+/* ===== MOCKUPS — notebook + 3 telemoveis com as capas reais dos cursos ===== */
+.mock{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:0;margin:46px auto 8px;
+  max-width:960px;padding:10px 0 6px;perspective:1400px}
 .mock::before{content:"";position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:min(680px,110%);
   aspect-ratio:16/11;pointer-events:none;z-index:0;
   background:radial-gradient(56% 54% at 50% 50%,rgba(61,123,255,.2),rgba(61,123,255,.07) 46%,transparent 73%);
@@ -314,14 +314,41 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .phone img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85) contrast(1.04)}
 .phone::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
   background:linear-gradient(150deg,rgba(61,123,255,.18) 0%,rgba(7,10,17,0) 42%,rgba(7,10,17,.68) 100%)}
-.phone.p1{transform:rotate(-7deg) translateY(10px);margin-right:-46px}
-.phone.p2{transform:rotate(6deg) translateY(28px) scale(.94);z-index:0}
+/* tres telemoveis de tamanhos diferentes + um portatil ao centro */
+.phone.p1{width:176px;transform:rotate(-9deg) translateY(16px);margin-right:-58px;z-index:3}
+.phone.p2{width:150px;transform:rotate(-5deg) translateY(46px);margin-right:-46px;z-index:2}
+.phone.p3{width:164px;transform:rotate(8deg) translateY(30px);margin-left:-58px;z-index:3}
+.note{position:relative;z-index:1;width:392px;flex:0 0 auto}
+.note-screen{position:relative;border-radius:14px 14px 4px 4px;background:#05070C;border:2px solid #1B2740;
+  border-bottom-width:3px;overflow:hidden;box-shadow:0 26px 54px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.05)}
+.note-screen img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:saturate(.9) contrast(1.04)}
+.note-screen::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(150deg,rgba(61,123,255,.16) 0%,rgba(7,10,17,0) 46%,rgba(7,10,17,.5) 100%)}
+.note-base{height:13px;margin:0 -26px;border-radius:0 0 12px 12px;
+  background:linear-gradient(180deg,#243149 0%,#111A2C 100%);
+  box-shadow:0 16px 30px rgba(0,0,0,.6)}
+.note-base::after{content:"";display:block;width:74px;height:4px;margin:4px auto 0;border-radius:0 0 5px 5px;
+  background:rgba(255,255,255,.14)}
 @media(hover:hover){
-  .mock:hover .phone.p1{transform:rotate(-5deg) translateY(0)}
-  .mock:hover .phone.p2{transform:rotate(4deg) translateY(18px) scale(.96)}
+  .mock:hover .phone.p1{transform:rotate(-7deg) translateY(6px)}
+  .mock:hover .phone.p2{transform:rotate(-4deg) translateY(36px)}
+  .mock:hover .phone.p3{transform:rotate(6deg) translateY(20px)}
 }
 .mock-nota{margin-top:16px;text-align:center}
-@media(max-width:560px){.phone{width:158px;border-radius:26px}.phone.p1{margin-right:-32px}}
+@media(max-width:980px){
+  .mock{max-width:620px}
+  .note{width:300px}
+  .phone.p1{width:138px;margin-right:-44px}
+  .phone.p2{display:none}
+  .phone.p3{width:128px;margin-left:-44px}
+}
+@media(max-width:620px){
+  .mock{max-width:100%}
+  .note{width:210px}
+  .phone{border-radius:22px}
+  .phone.p1{width:104px;margin-right:-30px}
+  .phone.p3{width:96px;margin-left:-30px}
+}
 
 /* ===== 03 O METODO — octogono irmao do cartao com entalhe em V ===== */
 .sec-metodo{background:var(--preto);overflow-x:clip}
@@ -442,12 +469,20 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
   box-shadow:0 16px 38px rgba(0,0,0,.55);transition:transform .32s ease,box-shadow .32s ease}
 .acr-q b{font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:66px;line-height:1;color:#FFFFFF;
   text-shadow:0 6px 22px rgba(0,0,0,.34)}
-.acr-q.q1{left:0;top:0;background:linear-gradient(140deg,#93B8FF 0%,#3D7BFF 100%)}
-.acr-q.q2{right:0;top:0;background:linear-gradient(140deg,#5C93FF 0%,#2454C8 100%)}
-.acr-q.q3{left:0;top:235px;background:linear-gradient(140deg,#3D7BFF 0%,#1E4AB4 100%)}
-.acr-q.q4{right:0;top:235px;background:linear-gradient(140deg,#2E62D8 0%,#15306B 100%)}
-.acr-q.q5{left:0;bottom:0;background:linear-gradient(140deg,#2454C8 0%,#12295C 100%)}
-.acr-q.q6{right:0;bottom:0;background:linear-gradient(140deg,#1B3F8F 0%,#0C1E45 100%)}
+/* ronda 7: os cartoes das pontas fecham a volta do slide — a quina virada para o
+   centro ganha um raio grande, como se abracassem o carrossel. */
+.acr-q.q1{left:0;top:0;border-radius:22px 22px 96px 22px;
+  background:linear-gradient(140deg,#93B8FF 0%,#3D7BFF 100%)}
+.acr-q.q2{right:0;top:0;border-radius:22px 22px 22px 96px;
+  background:linear-gradient(140deg,#5C93FF 0%,#2454C8 100%)}
+.acr-q.q3{left:0;top:235px;border-radius:22px 10px 10px 22px;
+  background:linear-gradient(140deg,#3D7BFF 0%,#1E4AB4 100%)}
+.acr-q.q4{right:0;top:235px;border-radius:10px 22px 22px 10px;
+  background:linear-gradient(140deg,#2E62D8 0%,#15306B 100%)}
+.acr-q.q5{left:0;bottom:0;border-radius:22px 96px 22px 22px;
+  background:linear-gradient(140deg,#2454C8 0%,#12295C 100%)}
+.acr-q.q6{right:0;bottom:0;border-radius:96px 22px 22px 22px;
+  background:linear-gradient(140deg,#1B3F8F 0%,#0C1E45 100%)}
 .acr-q:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(0,0,0,.64)}
 .acr-core{position:absolute;left:50%;top:50%;z-index:3;width:172px;height:172px;transform:translate(-50%,-50%);
   border-radius:50%;display:grid;place-items:center;text-align:center;
@@ -563,7 +598,14 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .tl-nota{margin-top:6px;font-size:13.5px;color:var(--texto2);text-align:center;font-style:italic}
 
 /* ===== 07 SOBRE — cartao de autor + moldura conica ===== */
-.sec-sobre{background:var(--preto);overflow:hidden}
+/* ronda 7: a arte do cliente ("Prancheta 1") passa a ser o fundo da seccao, na cor
+   natural (sem veu). A coluna da esquerda fica VAZIA — e nela que o Mateus da arte aparece. */
+.sec-sobre{background:var(--preto) url("assets/sobre-bg.jpg") no-repeat left center/auto 106%;overflow:hidden}
+.sobre-vazio{min-height:420px}
+@media(max-width:960px){
+  .sec-sobre{background-position:center top;background-size:auto 62%}
+  .sobre-vazio{min-height:300px}
+}
 .sec-sobre::before{content:"";position:absolute;top:0;right:0;width:56%;height:5px;z-index:3;pointer-events:none;
   background:linear-gradient(270deg,var(--neon),var(--neon-esc) 48%,transparent);
   filter:drop-shadow(0 0 9px rgba(61,123,255,.45))}
@@ -600,7 +642,8 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
   mask-image:linear-gradient(90deg,#000 0%,#000 22%,rgba(0,0,0,.35) 62%,rgba(0,0,0,0) 96%);
   font-size:min(16.4vw - 8px,196px)}
 @media(max-width:760px){.wm{top:170px;font-size:min(21vw,120px)}}
-.prova-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px}
+.prova-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:42px}
+@media(min-width:1200px){.prova-grid{grid-template-columns:repeat(5,1fr)}}
 /* ronda 5: o cartao passou a ser SO o print — sem transcricao, avatar ou rotulo */
 .prova-shot{position:relative;margin:0;padding:0;border-radius:16px;overflow:hidden;background:#0A1424;flex:1 1 auto;display:flex}
 .prova-shot img{display:block;width:100%;height:100%;aspect-ratio:13/21;object-fit:cover;object-position:center bottom;border-radius:16px}
@@ -689,24 +732,42 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .nao-card h3{font-size:21px;color:#DCE4F2;margin-bottom:8px;line-height:1.16}
 .nao-card p{font-size:14.5px;color:var(--neon-claro);line-height:1.58;font-weight:600}
 .nao-fecho{text-align:center;max-width:760px;margin:40px auto 0;font-size:15.5px;color:var(--texto);line-height:1.66}
-/* objecao: aspas gigantes como marca d'agua, sem cara de caixa generica */
-.obj{position:relative;max-width:880px;margin:54px auto 0;padding:38px 44px 34px 108px;
-  background:linear-gradient(150deg,#0E1524 0%,#16223A 100%);border:none;border-radius:22px;overflow:hidden;
-  box-shadow:0 20px 46px rgba(0,0,0,.5)}
-.obj::before{content:"";position:absolute;inset:0;border-radius:22px;padding:1px;
-  background:linear-gradient(135deg,rgba(147,184,255,.75) 0%,rgba(21,48,107,.45) 45%,rgba(61,123,255,.05) 100%);
+/* ronda 7: o Mateus recortado (sem fundo) e um balao a flutuar que sai da boca dele */
+.obj{position:relative;max-width:1000px;margin:60px auto 0;display:grid;
+  grid-template-columns:330px 1fr;gap:0 4px;align-items:start;background:none;border:none;box-shadow:none;
+  padding:0}
+.obj-foto{position:relative;z-index:2;align-self:start}
+.obj-foto img{width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(0,0,0,.6))}
+.obj-foto::before{content:"";position:absolute;left:50%;bottom:-6%;transform:translateX(-50%);
+  width:96%;aspect-ratio:1/.42;border-radius:50%;pointer-events:none;z-index:-1;
+  background:radial-gradient(ellipse at center,rgba(61,123,255,.3),transparent 68%);filter:blur(12px);
+  animation:orbBreath 6.4s ease-in-out infinite}
+.obj-balao{position:relative;z-index:3;margin:26px 0 0 -22px;padding:32px 36px 30px;
+  background:linear-gradient(150deg,#0E1524 0%,#16223A 100%);border-radius:26px;
+  box-shadow:0 20px 46px rgba(0,0,0,.5);animation:balaoFloat 5.6s ease-in-out infinite}
+.obj-balao::before{content:"";position:absolute;inset:0;border-radius:26px;padding:1.4px;
+  background:linear-gradient(135deg,rgba(147,184,255,.8) 0%,rgba(21,48,107,.45) 45%,rgba(61,123,255,.05) 100%);
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
   mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;
   pointer-events:none;z-index:0}
-.obj::after{content:"\201C";position:absolute;left:26px;top:-14px;font-family:'Anton',Impact,sans-serif;
-  font-size:150px;line-height:1;color:rgba(61,123,255,.16);pointer-events:none;z-index:0}
-.obj>*{position:relative;z-index:1}
+/* cauda apontada para a boca do Mateus (canto inferior esquerdo do balao) */
+.obj-balao::after{content:"";position:absolute;left:-19px;top:44px;width:38px;height:30px;z-index:0;
+  background:linear-gradient(150deg,#0E1524 0%,#16223A 100%);
+  -webkit-clip-path:polygon(100% 0,100% 100%,0 62%);clip-path:polygon(100% 0,100% 100%,0 62%)}
+.obj-balao>*{position:relative;z-index:1}
+@keyframes balaoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media(prefers-reduced-motion:reduce){.obj-balao,.obj-foto::before{animation:none}}
 .obj h4{font-family:'Anton',Impact,sans-serif;font-size:26px;margin-bottom:12px;color:var(--branco);
   text-transform:uppercase;letter-spacing:.8px;line-height:1.14}
 .obj p{font-size:16px;color:var(--texto);line-height:1.7}
 .obj p strong{color:var(--neon-claro);font-weight:700}
-@media(max-width:620px){.obj{padding:30px 24px 26px;border-radius:18px}
-  .obj::after{left:14px;top:-20px;font-size:110px}}
+@media(max-width:860px){
+  .obj{grid-template-columns:1fr;gap:0;max-width:560px}
+  .obj-foto{max-width:280px;margin:0 auto -14px;align-self:center}
+  .obj-balao{margin:0;padding:28px 24px 26px}
+  .obj-balao::after{left:50%;top:-18px;bottom:auto;transform:translateX(-50%);width:30px;height:22px;
+    -webkit-clip-path:polygon(0 100%,100% 100%,50% 0);clip-path:polygon(0 100%,100% 100%,50% 0)}
+}
 
 /* ===== 11 GARANTIA — "07" gigante + anel FIXO atras (ronda 3) ===== */
 .sec-gar{background:var(--preto);overflow:hidden}
@@ -763,13 +824,17 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .faq-a .tbc{margin-top:10px}
 
 /* ===== 13 FECHO ===== */
-.sec-final{background:var(--preto);overflow-x:clip;isolation:isolate}
+.sec-final{background:var(--preto);overflow-x:clip;isolation:isolate;padding:150px 0 156px}
+@media(max-width:760px){.sec-final{padding:104px 0 110px}}
 .sec-final::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;z-index:3;pointer-events:none;
   background:linear-gradient(90deg,transparent,var(--neon),transparent)}
 .final-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .final-bg img{width:100%;height:100%;object-fit:cover;object-position:center 34%;filter:grayscale(.4) contrast(1.05)}
+/* clareira no centro: o veu abre no meio da imagem e fecha nas bordas */
 .final-bg::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(8,8,8,.94) 0%,rgba(8,8,8,.88) 45%,rgba(8,8,8,.97) 100%)}
+  background:
+    radial-gradient(58% 52% at 50% 46%,rgba(8,8,8,.34) 0%,rgba(8,8,8,.72) 58%,rgba(8,8,8,.93) 100%),
+    linear-gradient(180deg,rgba(8,8,8,.86) 0%,rgba(8,8,8,.42) 42%,rgba(8,8,8,.9) 100%)}
 .sec-final h2{font-size:clamp(32px,4.2vw,58px);margin-bottom:18px}
 .sec-final .lead{max-width:620px;margin:0 auto 30px}
 
@@ -940,14 +1005,14 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       <p class="lead sr-hidden">Voc&ecirc; j&aacute; assistiu dezenas de v&iacute;deos de bateria. Aprendeu uma virada aqui, um ritmo ali. Mas na hora do culto trava: a virada n&atilde;o entra no tempo, o andamento corre, e a din&acirc;mica n&atilde;o acompanha o momento da m&uacute;sica.</p>
     </div>
 
-    <div class="arco sr-hidden" aria-label="Bastidores do est&uacute;dio do Mateus">
-      <figure><img src="assets/gal-1.jpg" alt="Mateus Kerr tocando bateria no est&uacute;dio" loading="lazy"></figure>
-      <figure><img src="assets/gal-2.jpg" alt="Mateus Kerr durante uma aula gravada" loading="lazy"></figure>
-      <figure><img src="assets/gal-3.jpg" alt="Kit de bateria do est&uacute;dio do Tocando Bateria do Zero" loading="lazy"></figure>
-      <figure><img src="assets/gal-4.jpg" alt="Mateus Kerr com as baquetas" loading="lazy"></figure>
-      <figure><img src="assets/gal-5.jpg" alt="Mateus Kerr tocando a caixa" loading="lazy"></figure>
-      <figure><img src="assets/gal-6.jpg" alt="Mateus Kerr no est&uacute;dio" loading="lazy"></figure>
-      <figure><img src="assets/gal-7.jpg" alt="Mateus Kerr atr&aacute;s do kit completo" loading="lazy"></figure>
+    <div class="arco sr-hidden" id="arco" aria-label="Bastidores do est&uacute;dio do Mateus">
+      <figure><video src="assets/video/gv-1.mp4" poster="assets/video/gv-1.jpg" muted loop playsinline preload="none" aria-label="Mateus Kerr tocando bateria"></video></figure>
+      <figure><video src="assets/video/gv-2.mp4" poster="assets/video/gv-2.jpg" muted loop playsinline preload="none" aria-label="Mateus Kerr tocando bateria"></video></figure>
+      <figure><video src="assets/video/gv-3.mp4" poster="assets/video/gv-3.jpg" muted loop playsinline preload="none" aria-label="Mateus Kerr tocando bateria"></video></figure>
+      <figure><video src="assets/video/gv-4.mp4" poster="assets/video/gv-4.jpg" muted loop playsinline preload="none" aria-label="Mateus Kerr tocando bateria"></video></figure>
+      <figure><video src="assets/video/gv-5.mp4" poster="assets/video/gv-5.jpg" muted loop playsinline preload="none" aria-label="Mateus Kerr tocando bateria"></video></figure>
+      <figure><video src="assets/video/gv-6.mp4" poster="assets/video/gv-6.jpg" muted loop playsinline preload="none" aria-label="Mateus Kerr tocando bateria"></video></figure>
+      <figure><video src="assets/video/gv-7.mp4" poster="assets/video/gv-7.jpg" muted loop playsinline preload="none" aria-label="Mateus Kerr tocando bateria"></video></figure>
     </div>
 
     <p class="dor-bridge sr-hidden"><b>N&atilde;o &eacute; falta de talento. &Eacute; falta de sequ&ecirc;ncia.</b> Ningu&eacute;m aprende a tocar juntando peda&ccedil;os fora de ordem &mdash; aprende seguindo um caminho, do primeiro toque at&eacute; o avan&ccedil;ado.</p>
@@ -1005,10 +1070,14 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
     </div>
 
     <div class="mock sr-hidden" aria-hidden="true">
-      <div class="phone p1"><img src="assets/gal-4.jpg" alt="" loading="lazy"></div>
-      <div class="phone p2"><img src="assets/gal-2.jpg" alt="" loading="lazy"></div>
+      <div class="phone p2"><img src="assets/mk-pes.jpg" alt="" loading="lazy"></div>
+      <div class="phone p1"><img src="assets/mk-ritmos.jpg" alt="" loading="lazy"></div>
+      <div class="note">
+        <div class="note-screen"><img src="assets/mk-note.jpg" alt="" loading="lazy"></div>
+        <div class="note-base"></div>
+      </div>
+      <div class="phone p3"><img src="assets/mk-partitura.jpg" alt="" loading="lazy"></div>
     </div>
-    <p class="mock-nota sr-hidden"><span class="tbc"><b>A confirmar</b>Espa&ccedil;o reservado: trocar pelo mockup real da &aacute;rea de membros no celular.</span></p>
 
     <div class="dor-grid">
       <div class="dor-item sr-hidden sr-left">
@@ -1250,16 +1319,37 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
 
     <div class="prova-grid">
       <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-1.jpg" alt="Conversa de aluno no WhatsApp elogiando os cursos" loading="lazy"></figure>
+        <figure class="prova-shot"><img src="assets/dep-1.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
       </div>
       <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-2.jpg" alt="Conversa de aluno no WhatsApp sobre a evolu&ccedil;&atilde;o com o m&eacute;todo" loading="lazy"></figure>
+        <figure class="prova-shot"><img src="assets/dep-2.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
       </div>
       <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-3.jpg" alt="Conversa de aluno no WhatsApp sobre as aulas de partitura" loading="lazy"></figure>
+        <figure class="prova-shot"><img src="assets/dep-3.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
       </div>
       <div class="prova-card sr-hidden">
         <figure class="prova-shot"><img src="assets/dep-4.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
+      </div>
+      <div class="prova-card sr-hidden">
+        <figure class="prova-shot"><img src="assets/dep-5.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
+      </div>
+      <div class="prova-card sr-hidden">
+        <figure class="prova-shot"><img src="assets/dep-6.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
+      </div>
+      <div class="prova-card sr-hidden">
+        <figure class="prova-shot"><img src="assets/dep-7.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
+      </div>
+      <div class="prova-card sr-hidden">
+        <figure class="prova-shot"><img src="assets/dep-8.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
+      </div>
+      <div class="prova-card sr-hidden">
+        <figure class="prova-shot"><img src="assets/dep-9.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
+      </div>
+      <div class="prova-card sr-hidden">
+        <figure class="prova-shot"><img src="assets/dep-10.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
+      </div>
+      <div class="prova-card sr-hidden">
+        <figure class="prova-shot"><img src="assets/dep-11.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
       </div>
     </div>
     <p class="prova-nota sr-hidden"><span class="tbc"><b>A confirmar</b>Autoriza&ccedil;&atilde;o dos alunos para publicar os prints das conversas.</span></p>
@@ -1325,8 +1415,11 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       Escolher meu curso</a></div>
 
     <div class="obj sr-hidden">
-      <h4>&ldquo;Achei o pacote completo caro.&rdquo;</h4>
-      <p>Entendo &mdash; e &eacute; por isso que voc&ecirc; n&atilde;o precisa come&ccedil;ar por ele. Escolha um curso, veja se a minha did&aacute;tica funciona para voc&ecirc; e v&aacute; somando. <strong>Quem leva mais cursos paga menos por cada um.</strong></p>
+      <div class="obj-foto"><img src="assets/mateus-recorte.png" alt="Mateus Kerr" loading="lazy"></div>
+      <div class="obj-balao">
+        <h4>&ldquo;Achei o pacote completo caro.&rdquo;</h4>
+        <p>Entendo &mdash; e &eacute; por isso que voc&ecirc; n&atilde;o precisa come&ccedil;ar por ele. Escolha um curso, veja se a minha did&aacute;tica funciona para voc&ecirc; e v&aacute; somando. <strong>Quem leva mais cursos paga menos por cada um.</strong></p>
+      </div>
     </div>
   </div>
 </section>
@@ -1362,11 +1455,7 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
 <section class="sec sec-sobre" id="sobre">
   <div class="wrap">
     <div class="sobre-split">
-      <div class="sobre-visual sr-hidden sr-left">
-        <div class="hero-glow" aria-hidden="true"></div>
-        <div class="hero-ring" aria-hidden="true"></div>
-        <div class="hero-frame"><img src="assets/mateus-tocando.jpg" alt="Mateus Kerr tocando bateria no est&uacute;dio" loading="lazy"></div>
-      </div>
+      <div class="sobre-vazio" aria-hidden="true"></div>
       <div class="sobre-body sr-hidden sr-right">
         <h2>Sou o <span class="neon-grad">Mateus Kerr</span></h2>
         <div class="autor-txt">
@@ -1560,6 +1649,29 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       if(e.getBoundingClientRect().top < vh*0.94){ e.classList.add('show'); io.unobserve(e); }
     });
   },{passive:true});
+})();
+
+/* ===== Galeria em video: toca sem som quando a seccao entra no ecra, para ao sair ===== */
+(function(){
+  var box=document.getElementById('arco'); if(!box) return;
+  var vids=Array.prototype.slice.call(box.querySelectorAll('video'));
+  if(!vids.length) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  vids.forEach(function(v){ v.muted=true; v.defaultMuted=true; v.setAttribute('muted',''); });
+  if(reduce||!('IntersectionObserver' in window)) return;
+  function toca(){
+    vids.forEach(function(v){
+      if(v.preload==='none'){ v.preload='auto'; v.load(); }
+      var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){});
+    });
+  }
+  function para(){ vids.forEach(function(v){ v.pause(); }); }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ toca(); } else { para(); } });
+  },{threshold:.25});
+  io.observe(box);
+  /* separador de aba: nao deixar video a correr em segundo plano */
+  document.addEventListener('visibilitychange',function(){ if(document.hidden) para(); });
 })();
 
 /* ===== Carrossel coverflow do catalogo ===== */
