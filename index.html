@@ -390,13 +390,14 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 
 /* ===== 05 CATALOGO — nucleo central + 6 blocos a volta (ref: acronimo do Dany) ===== */
 .sec-catalogo{background:var(--preto);overflow-x:clip}
-.acr{position:relative;z-index:2;display:grid;grid-template-columns:1fr 460px 1fr;
-  grid-template-rows:repeat(3,auto);gap:34px 30px;margin-top:56px;align-items:center}
-.acr-stage{grid-column:2;grid-row:1/4;justify-self:center;position:relative;width:460px;height:620px}
+.acr{position:relative;z-index:2;display:grid;grid-template-columns:1fr 620px 1fr;
+  grid-template-rows:repeat(3,auto);gap:34px 26px;margin-top:56px;align-items:center}
+.acr-stage{grid-column:2;grid-row:1/4;justify-self:center;position:relative;width:620px;height:660px}
 /* carrossel coverflow (ref: o "o que esta incluido" da LP do Dany): os cartoes estao
    todos empilhados no centro; o que muda e a distancia ao indice ativo — |d|=0 fica
    nitido e grande, |d|>=1 encolhe, desfoca e recua. */
-.cf{--cf-w:290px;--cf-off:132px;--cf-h:470px;--cf-fig:.62;position:relative;width:100%}
+.cf{--cf-w:274px;--cf-off:118px;--cf-h:450px;--cf-fig:.7;position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);width:294px;z-index:5}
 .cf-stage{position:relative;height:var(--cf-h);overflow-x:clip;overflow-y:visible;overflow-clip-margin:22px}
 .cf-card{position:absolute;top:0;left:50%;width:var(--cf-w);height:var(--cf-h);margin-left:calc(var(--cf-w) / -2);
   display:flex;flex-direction:column;overflow:hidden;border-radius:18px;background:var(--grad-card);
@@ -406,26 +407,19 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .cf-card[data-pos="0"]{border-color:var(--linha-forte);
   box-shadow:0 26px 60px rgba(0,0,0,.72),0 0 0 1px rgba(147,184,255,.16)}
 .cf-card[data-pos]:not([data-pos="0"]){cursor:pointer}
-/* ronda 5: no lugar da foto volta o cartao com a LETRA grande da trilha — o mesmo
-   bloco em gradiente que existia antes do carrossel, agora na forma do slide */
+/* ronda 6: a foto volta ao slide (as letras foram para os cartoes a volta do palco) */
 .cf-fig{position:relative;flex:0 0 auto;height:calc(var(--cf-h) * var(--cf-fig));overflow:hidden;
-  border-radius:18px 18px 0 0;display:grid;place-items:center;background:var(--grad-neon)}
-.cf-fig .cf-letra{font-family:'Anton',Impact,sans-serif;font-size:150px;line-height:.86;color:#FFFFFF;
-  text-shadow:0 10px 30px rgba(0,0,0,.36);letter-spacing:1px}
-.cf-fig::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(circle at 30% 22%,rgba(255,255,255,.22),transparent 62%),
-             linear-gradient(180deg,rgba(7,10,17,0) 58%,rgba(7,10,17,.5) 100%)}
-.cf-card:nth-child(1) .cf-fig{background:linear-gradient(140deg,#93B8FF 0%,#3D7BFF 100%)}
-.cf-card:nth-child(2) .cf-fig{background:linear-gradient(140deg,#5C93FF 0%,#2454C8 100%)}
-.cf-card:nth-child(3) .cf-fig{background:linear-gradient(140deg,#3D7BFF 0%,#1E4AB4 100%)}
-.cf-card:nth-child(4) .cf-fig{background:linear-gradient(140deg,#2E62D8 0%,#15306B 100%)}
-.cf-card:nth-child(5) .cf-fig{background:linear-gradient(140deg,#2454C8 0%,#12295C 100%)}
-.cf-card:nth-child(6) .cf-fig{background:linear-gradient(140deg,#1B3F8F 0%,#0C1E45 100%)}
+  border-radius:18px 18px 0 0;background:transparent;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 52%,rgba(0,0,0,.72) 74%,rgba(0,0,0,.28) 90%,rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 52%,rgba(0,0,0,.72) 74%,rgba(0,0,0,.28) 90%,rgba(0,0,0,0) 100%)}
+.cf-fig img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.7) contrast(1.05) brightness(.9)}
+.cf-fig::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(10,23,48,.5) 0%,rgba(10,23,48,.26) 48%,rgba(7,10,17,0) 76%)}
 .cf-n{position:absolute;top:12px;left:12px;z-index:2;width:33px;height:33px;border-radius:9px;display:grid;
   place-items:center;font-family:'Anton',Impact,sans-serif;font-size:15px;line-height:1;color:#FFFFFF;
   background:rgba(7,10,17,.5);border:1px solid rgba(255,255,255,.32)}
-.cf-body{position:relative;z-index:2;flex:1 1 auto;margin-top:0;padding:18px 20px 22px;
-  display:flex;flex-direction:column;justify-content:center;gap:6px}
+.cf-body{position:relative;z-index:2;flex:1 1 auto;margin-top:calc(var(--cf-h) * -.2);padding:0 20px 20px;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
 .cf-body h3{font-size:21px;line-height:1.14;color:var(--branco);letter-spacing:.3px}
 .cf-body p{font-size:13.4px;line-height:1.45;color:var(--texto)}
 .cf-nav{position:absolute;top:calc(var(--cf-h) / 2);transform:translateY(-50%);z-index:20;width:42px;height:42px;
@@ -435,21 +429,23 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .cf-nav svg{width:17px;height:17px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .cf-nav:hover{background:rgba(10,23,48,.94);border-color:var(--neon)}
 .cf-nav:focus-visible{outline:2px solid var(--neon-claro);outline-offset:3px}
-.cf-prev{left:-6px}
-.cf-next{right:-6px}
+.cf-prev{left:-22px}
+.cf-next{right:-22px}
 .cf-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
 .cf-dot{width:9px;height:9px;padding:0;border-radius:50%;cursor:pointer;background:rgba(61,123,255,.26);
   border:1px solid rgba(61,123,255,.42);transition:width .25s ease,background .25s ease,border-radius .25s ease}
 .cf-dot[aria-current="true"]{width:24px;border-radius:5px;background:var(--grad-neon);border-color:transparent}
 .cf-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.acr-q{position:absolute;width:215px;height:194px;border-radius:22px;display:grid;place-items:center;
+/* ronda 6: os 6 cartoes voltam para a VOLTA do palco (3 de cada lado) e o carrossel
+   com as fotos ocupa o vao central, no lugar do antigo circulo. */
+.acr-q{position:absolute;z-index:4;width:158px;height:190px;border-radius:22px;display:grid;place-items:center;
   box-shadow:0 16px 38px rgba(0,0,0,.55);transition:transform .32s ease,box-shadow .32s ease}
-.acr-q b{font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:76px;line-height:1;color:#FFFFFF;
+.acr-q b{font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:66px;line-height:1;color:#FFFFFF;
   text-shadow:0 6px 22px rgba(0,0,0,.34)}
 .acr-q.q1{left:0;top:0;background:linear-gradient(140deg,#93B8FF 0%,#3D7BFF 100%)}
 .acr-q.q2{right:0;top:0;background:linear-gradient(140deg,#5C93FF 0%,#2454C8 100%)}
-.acr-q.q3{left:0;top:213px;width:152px;background:linear-gradient(140deg,#3D7BFF 0%,#1E4AB4 100%)}
-.acr-q.q4{right:0;top:213px;width:152px;background:linear-gradient(140deg,#2E62D8 0%,#15306B 100%)}
+.acr-q.q3{left:0;top:235px;background:linear-gradient(140deg,#3D7BFF 0%,#1E4AB4 100%)}
+.acr-q.q4{right:0;top:235px;background:linear-gradient(140deg,#2E62D8 0%,#15306B 100%)}
 .acr-q.q5{left:0;bottom:0;background:linear-gradient(140deg,#2454C8 0%,#12295C 100%)}
 .acr-q.q6{right:0;bottom:0;background:linear-gradient(140deg,#1B3F8F 0%,#0C1E45 100%)}
 .acr-q:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(0,0,0,.64)}
@@ -477,19 +473,20 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .acr-txt li{font-size:14.2px;color:var(--texto);line-height:1.45}
 .acr-txt.esq li::after{content:"";display:none}
 @media(max-width:1180px){
-  .acr{grid-template-columns:1fr 380px 1fr;gap:26px 20px}
-  .acr-stage{width:380px;height:540px}
-  .acr-q{width:176px;height:168px}
-  .acr-q.q3,.acr-q.q4{top:186px;width:124px}
-  .acr-core{width:150px;height:150px}
-  .acr-q b{font-size:62px}
-  .acr-core{width:158px;height:158px}
-  .acr-core .ac-mid{font-size:32px}
+  .acr{grid-template-columns:1fr 520px 1fr;gap:26px 18px}
+  .acr-stage{width:520px;height:600px}
+  .acr-q{width:130px;height:166px}
+  .acr-q.q3,.acr-q.q4{top:217px}
+  .acr-q b{font-size:54px}
+  .cf{--cf-w:236px;--cf-off:100px;--cf-h:410px;width:252px}
+  .cf-prev{left:-20px}
+  .cf-next{right:-20px}
 }
 @media(max-width:940px){
   .acr{grid-template-columns:1fr;gap:22px}
-  .acr-stage{width:100%;max-width:420px;height:auto;margin:0 auto 8px;grid-column:1;grid-row:auto}
-  .cf{--cf-w:250px;--cf-off:104px;--cf-h:410px}
+  .acr-stage{width:100%;max-width:420px;height:430px;margin:0 auto 8px;grid-column:1;grid-row:auto}
+  .acr-q{display:none}
+  .cf{--cf-w:250px;--cf-off:104px;--cf-h:410px;width:100%}
   .acr-txt.esq,.acr-txt.dir{grid-column:1;text-align:left;background:var(--grad-card);
     border:1px solid rgba(61,123,255,.22);border-radius:18px;padding:24px 26px}
   .acr-txt h3{display:flex;align-items:center;gap:12px}
@@ -1113,30 +1110,36 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
         </ul>
       </div>
       <div class="acr-stage">
+        <div class="acr-q q1" aria-hidden="true"><b>01</b></div>
+        <div class="acr-q q2" aria-hidden="true"><b>02</b></div>
+        <div class="acr-q q3" aria-hidden="true"><b>03</b></div>
+        <div class="acr-q q4" aria-hidden="true"><b>04</b></div>
+        <div class="acr-q q5" aria-hidden="true"><b>05</b></div>
+        <div class="acr-q q6" aria-hidden="true"><b>06</b></div>
         <div class="cf" id="cfCat" tabindex="0" role="group" aria-label="Trilhas do cat&aacute;logo">
           <div class="cf-stage">
             <article class="cf-card" data-pos="0">
-              <div class="cf-fig"><span class="cf-n">01</span><b class="cf-letra">F</b></div>
+              <div class="cf-fig"><span class="cf-n">01</span><img src="assets/gal-1.jpg" alt="Fundamentos" loading="lazy"></div>
               <div class="cf-body"><h3>Fundamentos</h3><p>Ritmos, viradas, partitura, rudimentos e t&eacute;cnica de m&atilde;os e p&eacute;s.</p></div>
             </article>
             <article class="cf-card">
-              <div class="cf-fig"><span class="cf-n">02</span><b class="cf-letra">D</b></div>
+              <div class="cf-fig"><span class="cf-n">02</span><img src="assets/gal-2.jpg" alt="Din&acirc;mica e controle" loading="lazy"></div>
               <div class="cf-body"><h3>Din&acirc;mica e controle</h3><p>Din&acirc;micas, metr&ocirc;nomo, duas m&atilde;os no chimbal e ritmos na caixa.</p></div>
             </article>
             <article class="cf-card">
-              <div class="cf-fig"><span class="cf-n">03</span><b class="cf-letra">V</b></div>
+              <div class="cf-fig"><span class="cf-n">03</span><img src="assets/gal-3.jpg" alt="Viradas e aplica&ccedil;&atilde;o" loading="lazy"></div>
               <div class="cf-body"><h3>Viradas e aplica&ccedil;&atilde;o</h3><p>Viradas lineares, aplica&ccedil;&atilde;o de rudimentos e os 60 grooves.</p></div>
             </article>
             <article class="cf-card">
-              <div class="cf-fig"><span class="cf-n">04</span><b class="cf-letra">B</b></div>
+              <div class="cf-fig"><span class="cf-n">04</span><img src="assets/gal-4.jpg" alt="Bateria na igreja" loading="lazy"></div>
               <div class="cf-body"><h3>Bateria na igreja</h3><p>Bateria e viradas no louvor, worship e Hinos da Harpa.</p></div>
             </article>
             <article class="cf-card">
-              <div class="cf-fig"><span class="cf-n">05</span><b class="cf-letra">E</b></div>
+              <div class="cf-fig"><span class="cf-n">05</span><img src="assets/gal-5.jpg" alt="Estilos" loading="lazy"></div>
               <div class="cf-body"><h3>Estilos</h3><p>Rock, forr&oacute;, reggae e tribais.</p></div>
             </article>
             <article class="cf-card">
-              <div class="cf-fig"><span class="cf-n">06</span><b class="cf-letra">B</b></div>
+              <div class="cf-fig"><span class="cf-n">06</span><img src="assets/gal-6.jpg" alt="Bastidores do instrumento" loading="lazy"></div>
               <div class="cf-body"><h3>Bastidores do instrumento</h3><p>Afina&ccedil;&atilde;o de bateria.</p></div>
             </article>
           </div>
