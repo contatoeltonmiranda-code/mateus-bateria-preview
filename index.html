@@ -747,10 +747,11 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 /* ronda 8: o Mateus cresce (330 -> 560px de coluna, a figura chega aos ~500px de altura)
    e a seccao perde o padding de baixo para ele encostar na margem inferior. */
 .obj{position:relative;max-width:1180px;margin:72px auto calc(var(--pad-sec-b) * -1);display:grid;
-  grid-template-columns:560px 1fr;gap:0 4px;align-items:stretch;background:none;border:none;box-shadow:none;
+  grid-template-columns:400px 1fr;gap:0 10px;align-items:stretch;background:none;border:none;box-shadow:none;
   padding:0}
 .obj-foto{position:relative;z-index:2;align-self:end}
-.obj-foto img{width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(0,0,0,.6))}
+.obj-foto img{width:auto;max-width:100%;height:620px;margin-left:auto;display:block;
+  filter:drop-shadow(0 24px 40px rgba(0,0,0,.6))}
 .obj-foto::before{content:"";position:absolute;left:50%;bottom:-6%;transform:translateX(-50%);
   width:96%;aspect-ratio:1/.42;border-radius:50%;pointer-events:none;z-index:-1;
   background:radial-gradient(ellipse at center,rgba(61,123,255,.3),transparent 68%);filter:blur(12px);
@@ -775,12 +776,14 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .obj p{font-size:16px;color:var(--texto);line-height:1.7}
 .obj p strong{color:var(--neon-claro);font-weight:700}
 @media(max-width:1080px){
-  .obj{grid-template-columns:420px 1fr;max-width:100%}
+  .obj{grid-template-columns:330px 1fr;max-width:100%}
+  .obj-foto img{height:520px}
   .obj-balao{margin-top:40px}
 }
 @media(max-width:860px){
   .obj{grid-template-columns:1fr;gap:0;max-width:560px;margin-bottom:calc(var(--pad-sec-b) * -1)}
   .obj-foto{max-width:340px;margin:0 auto;align-self:center;order:2}
+  .obj-foto img{height:420px;margin:0 auto}
   .obj-balao{margin:0 0 -14px;padding:28px 24px 26px;order:1}
   .obj-balao::after{left:50%;top:-18px;bottom:auto;transform:translateX(-50%);width:30px;height:22px;
     -webkit-clip-path:polygon(0 100%,100% 100%,50% 0);clip-path:polygon(0 100%,100% 100%,50% 0)}
@@ -1428,7 +1431,7 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       Escolher meu curso</a></div>
 
     <div class="obj sr-hidden">
-      <div class="obj-foto"><img src="assets/mateus-recorte.png" alt="Mateus Kerr" loading="lazy"></div>
+      <div class="obj-foto"><img src="assets/mateus-recorte.webp" alt="Mateus Kerr" loading="lazy"></div>
       <div class="obj-balao">
         <h4>&ldquo;Achei o pacote completo caro.&rdquo;</h4>
         <p>Entendo &mdash; e &eacute; por isso que voc&ecirc; n&atilde;o precisa come&ccedil;ar por ele. Escolha um curso, veja se a minha did&aacute;tica funciona para voc&ecirc; e v&aacute; somando. <strong>Quem leva mais cursos paga menos por cada um.</strong></p>
