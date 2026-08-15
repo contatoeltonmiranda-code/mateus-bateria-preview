@@ -602,10 +602,13 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 /* ===== 07 SOBRE — cartao de autor + moldura conica ===== */
 /* ronda 7: a arte do cliente ("Prancheta 1") passa a ser o fundo da seccao, na cor
    natural (sem veu). A coluna da esquerda fica VAZIA — e nela que o Mateus da arte aparece. */
-.sec-sobre{background:var(--preto) url("assets/sobre-bg.jpg") no-repeat left center/cover;overflow:hidden}
+/* ronda 9: arte na resolucao original (2400px, WebP q92) — o JPEG reduzido a 2000px
+   estava a pixelar. `cover` + altura minima garantem que a arte cobre a seccao toda. */
+.sec-sobre{background:var(--preto) url("assets/sobre-bg.webp") no-repeat left center/cover;
+  overflow:hidden;padding:150px 0 156px;min-height:760px;display:flex;align-items:center}
 .sobre-vazio{min-height:420px}
 @media(max-width:960px){
-  .sec-sobre{background-position:60% center;background-size:cover}
+  .sec-sobre{background-position:60% center;background-size:cover;padding:104px 0 110px;min-height:0}
   .sobre-vazio{min-height:300px}
 }
 .sec-sobre::before{content:"";position:absolute;top:0;right:0;width:56%;height:5px;z-index:3;pointer-events:none;
@@ -1334,9 +1337,6 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
     <div class="prova-grid">
       <div class="prova-card sr-hidden">
         <figure class="prova-shot"><img src="assets/dep-1.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
-      </div>
-      <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-2.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
       </div>
       <div class="prova-card sr-hidden">
         <figure class="prova-shot"><img src="assets/dep-3.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
