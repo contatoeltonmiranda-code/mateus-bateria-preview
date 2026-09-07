@@ -177,6 +177,16 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
   filter:drop-shadow(0 10px 26px rgba(0,0,0,.6))}
 .hero h1{font-size:clamp(30px,3.7vw,52px);line-height:1.05;margin-bottom:20px}
 .hero .lead{font-size:clamp(16px,1.35vw,18.5px);max-width:560px;margin-bottom:30px}
+.hero .lead.hero-promise{font-size:clamp(14.5px,1.18vw,17px);letter-spacing:.4px;line-height:1.62;max-width:600px}
+
+/* ===== Rodada 11: relatos curtos de alunos no meio das dores ===== */
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:52px auto 0;max-width:1020px}
+.rel-card{position:relative;background:linear-gradient(150deg,#0E1524 0%,#16223A 100%);border:1px solid rgba(61,123,255,.24);border-radius:18px;padding:26px 24px 22px;box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.rel-card .rel-aspas{position:absolute;top:2px;left:16px;font-family:'Anton',Impact,sans-serif;font-size:54px;line-height:1;color:var(--neon);opacity:.5;pointer-events:none}
+.rel-card p{position:relative;font-size:14.5px;color:var(--branco);line-height:1.62;font-style:italic;margin:16px 0 18px}
+.rel-card .rel-av{position:absolute;right:18px;bottom:-15px;width:40px;height:40px;border-radius:50%;background:var(--grad-neon);display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.5)}
+.rel-card .rel-av svg{width:19px;height:19px;stroke:#FFFFFF;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:940px){.rel-grid{grid-template-columns:1fr;max-width:520px}}
 .hero .lead strong{color:var(--branco);font-weight:600}
 .hero-visual{position:relative;z-index:1}
 .hero-frame{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 26px 64px rgba(0,0,0,.72);z-index:2}
@@ -249,7 +259,7 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .quem-ico svg{width:38px;height:38px;stroke:var(--neon-claro);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .quem-linha{display:block;width:1px;height:38px;margin:32px 0 16px;
   background:repeating-linear-gradient(180deg,rgba(61,123,255,.75) 0 4px,transparent 4px 9px)}
-.quem-item p{font-size:15px;color:var(--branco);line-height:1.56;max-width:290px}
+.quem-item p{font-size:17px;color:var(--branco);line-height:1.5;max-width:300px}
 .quem-item p strong{color:var(--neon-claro);font-weight:700}
 /* galeria em arco: 7 fotos com o topo muito arredondado, cada uma rodada e
    deslocada em Y para desenhar a curva; no hover a foto sobe e endireita */
@@ -337,6 +347,13 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
   .mock:hover .phone.p3{transform:rotate(6deg) translateY(20px)}
 }
 .mock-nota{margin-top:16px;text-align:center}
+/* Rodada 11: mock mais leve na intro do metodo (menos imagem, mais texto) */
+.mock-lean{max-width:860px;margin:36px auto 2px}
+.mock-lean .note{width:396px}
+.mock-lean .phone.p1{width:198px}
+.mock-lean .phone.p3{width:184px}
+.mock-lean .phone.p2{display:none}
+.mock-lean::before{opacity:.65}
 @media(max-width:1080px){
   .mock{max-width:760px}
   .note{width:352px}
@@ -509,6 +526,37 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .acr-txt ul{list-style:none;display:flex;flex-direction:column;gap:7px}
 .acr-txt li{font-size:14.2px;color:var(--texto);line-height:1.45}
 .acr-txt.esq li::after{content:"";display:none}
+
+/* ===== Rodada 11: catalogo em 5 pacotes com preco ===== */
+.pac-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px;max-width:980px;margin-left:auto;margin-right:auto}
+.pac-card{position:relative;background:var(--grad-card);border:1px solid rgba(61,123,255,.22);border-radius:18px;padding:26px 26px 24px;box-shadow:0 18px 44px rgba(0,0,0,.4);transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.pac-card::after{content:"";position:absolute;top:0;left:26px;width:66px;height:4px;border-radius:0 0 4px 4px;background:var(--grad-neon)}
+.pac-card:hover{transform:translateY(-5px);border-color:rgba(147,184,255,.55);box-shadow:0 26px 60px rgba(0,0,0,.55)}
+.pac-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.pac-n{font-family:'Anton',Impact,sans-serif;font-size:30px;line-height:1;color:var(--neon);opacity:.9}
+.pac-preco{font-family:'Anton',Impact,sans-serif;font-size:18px;letter-spacing:.6px;color:#FFFFFF;background:rgba(61,123,255,.16);border:1px solid rgba(147,184,255,.4);border-radius:999px;padding:7px 16px;white-space:nowrap}
+.pac-card h3{font-size:24px;color:var(--neon-claro);line-height:1.12;margin-bottom:10px}
+.pac-card ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.pac-card li{position:relative;padding-left:20px;font-size:14.5px;color:var(--texto);line-height:1.5}
+.pac-card li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--grad-neon)}
+.pac-card.feat{background:linear-gradient(150deg,#16223A 0%,#1D2E52 100%);border-color:var(--linha-forte)}
+.pac-card.feat .pac-n{color:var(--neon-claro)}
+.pac-card.feat .pac-preco{background:var(--grad-neon);color:#071229;border-color:transparent}
+.pac-card.feat h3{font-size:30px;color:var(--neon-claro)}
+.pac-desc{font-size:15px;color:var(--texto);line-height:1.6;margin-bottom:16px}
+@media(max-width:760px){.pac-grid{grid-template-columns:1fr}}
+
+/* ===== Rodada 11: monte seu pacote — carrossel horizontal dos cursos ===== */
+.monta{margin-top:64px}
+.monta-dica{text-align:center;font-size:13.5px;color:var(--texto2);margin:10px 0 18px}
+.monta-track{display:flex;gap:12px;overflow-x:auto;padding:6px 4px 16px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(61,123,255,.5) transparent}
+.monta-track::-webkit-scrollbar{height:8px}
+.monta-track::-webkit-scrollbar-thumb{background:rgba(61,123,255,.45);border-radius:8px}
+.monta-track::-webkit-scrollbar-track{background:rgba(61,123,255,.08);border-radius:8px}
+.monta-item{flex:0 0 auto;width:204px;scroll-snap-align:start;background:var(--grad-card);border:1px solid rgba(61,123,255,.22);border-radius:14px;padding:16px 16px 14px;cursor:pointer;transition:border-color .3s ease,transform .35s ease,box-shadow .35s ease}
+.monta-item:hover{transform:translateY(-4px);border-color:rgba(147,184,255,.5)}
+.monta-item.sel{border-color:var(--neon-claro);box-shadow:inset 0 0 0 1.5px rgba(147,184,255,.6),0 14px 34px rgba(61,123,255,.25);transform:translateY(-4px)}
+.monta-item b{display:block;font-size:14px;color:var(--branco);line-height:1.4;font-weight:600}
 @media(max-width:1180px){
   .acr{grid-template-columns:1fr 520px 1fr;gap:26px 18px}
   .acr-stage{width:520px;height:600px}
@@ -967,14 +1015,14 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
 
 <!-- ==================== 01 — HERO ==================== -->
 <section class="hero" id="topo">
-  <div class="hero-media"><img src="assets/hero-mateus.jpg" alt="Mateus Kerr tocando bateria no est&uacute;dio do Tocando Bateria do Zero" fetchpriority="high"></div>
+  <div class="hero-media"><img src="assets/hero-mateus-2.webp" alt="Mateus Kerr tocando bateria no est&uacute;dio do Tocando Bateria do Zero" fetchpriority="high"></div>
   <div class="hero-scrim"></div>
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy">
         <div class="hero-logo"><img src="assets/logo-branco.png" alt="Tocando Bateria do Zero — Mateus Kerr"></div>
-        <h1>Aprenda a tocar bateria do zero e <span class="neon-grad">assuma o seu lugar no louvor</span></h1>
-        <p class="lead">Do primeiro toque na baqueta &agrave;s viradas lineares e ao gospel chops: videoaulas em ordem, <strong>partitura em PDF</strong>, MP3 para aplicar e <strong>corre&ccedil;&atilde;o dos seus v&iacute;deos feita por mim</strong>, direto.</p>
+        <h1>Aprenda a tocar bateria <span class="neon-grad">do zero ao avan&ccedil;ado</span></h1>
+        <p class="lead hero-promise">DOS PRIMEIROS TOQUES AOS RITMOS MAIS COMPLEXOS, PRA TOCAR NA IGREJA OU POR HOBBY. UM CURSO COMPLETO COM VIDEOAULAS SEQUENCIAIS + PDF + M&Uacute;SICAS PARA APLICA&Ccedil;&Atilde;O E TUDO ISSO AINDA COM <strong>SUPORTE DIRETO COMIGO!</strong></p>
         <div class="cta-row">
           <a class="btn lg" href="#oferta">Quero come&ccedil;ar a tocar</a>
         </div>
@@ -988,9 +1036,9 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
     </div>
 
     <div class="cred">
-      <div class="cred-item"><b>+12.500</b><span>alunos j&aacute; passaram pelos cursos</span></div>
-      <div class="cred-item"><b>29 anos</b><span>tocando bateria</span></div>
-      <div class="cred-item"><b>25 anos</b><span>dando aula</span></div>
+      <div class="cred-item"><b>+12.800</b><span>alunos j&aacute; passaram pelos cursos</span></div>
+      <div class="cred-item"><b>28 anos</b><span>tocando bateria</span></div>
+      <div class="cred-item"><b>25 anos</b><span>dando aulas</span></div>
       <div class="cred-item"><b>10 anos</b><span>de canal ensinando do zero</span></div>
     </div>
   </div>
@@ -1021,8 +1069,8 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
 <section class="sec sec-dor">
   <div class="wrap">
     <div class="sec-head center maxw">
-      <h2 class="sr-hidden">Voc&ecirc; n&atilde;o precisa de mais um v&iacute;deo solto. <span class="neon-grad">Precisa de uma ordem.</span></h2>
-      <p class="lead sr-hidden">Voc&ecirc; j&aacute; assistiu dezenas de v&iacute;deos de bateria. Aprendeu uma virada aqui, um ritmo ali. Mas na hora do culto trava: a virada n&atilde;o entra no tempo, o andamento corre, e a din&acirc;mica n&atilde;o acompanha o momento da m&uacute;sica.</p>
+      <h2 class="sr-hidden">Voc&ecirc; n&atilde;o precisa de mais um v&iacute;deo solto! <span class="neon-grad">Voc&ecirc; precisa de UM DIRECIONAMENTO!</span></h2>
+      <p class="lead sr-hidden"><strong>N&atilde;o &eacute; falta de talento.</strong> &Eacute; falta de estrat&eacute;gia e de um direcionamento claro para saber onde voc&ecirc; precisa chegar! Um caminho do zero ao avan&ccedil;ado!</p>
     </div>
 
     <div class="arco sr-hidden" id="arco" aria-label="Bastidores do est&uacute;dio do Mateus">
@@ -1035,43 +1083,69 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       <figure><video src="assets/video/gv-7.mp4" poster="assets/video/gv-7.jpg" muted loop playsinline preload="none" aria-label="Mateus Kerr tocando bateria"></video></figure>
     </div>
 
-    <p class="dor-bridge sr-hidden"><b>N&atilde;o &eacute; falta de talento. &Eacute; falta de sequ&ecirc;ncia.</b> Ningu&eacute;m aprende a tocar juntando peda&ccedil;os fora de ordem &mdash; aprende seguindo um caminho, do primeiro toque at&eacute; o avan&ccedil;ado.</p>
+    <div class="rel-grid sr-hidden">
+      <div class="rel-card">
+        <span class="rel-aspas" aria-hidden="true">&ldquo;</span>
+        <p>Obrigado pelas corre&ccedil;&otilde;es Mateus!, eu n&atilde;o imaginava que voc&ecirc; daria essa aten&ccedil;&atilde;o e esse retorno esclarecendo e orientando. Sensacional! Obrigado</p>
+        <span class="rel-av" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></span>
+      </div>
+      <div class="rel-card">
+        <span class="rel-aspas" aria-hidden="true">&ldquo;</span>
+        <p>Melhor Curso que j&aacute; comprei de Bateria. J&aacute; comprei outros cursos de outros bateristas mas ningu&eacute;m tem a mesma did&aacute;tica e ningu&eacute;m d&aacute; o suporte que voc&ecirc; me d&aacute;! Obrigado</p>
+        <span class="rel-av" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></span>
+      </div>
+      <div class="rel-card">
+        <span class="rel-aspas" aria-hidden="true">&ldquo;</span>
+        <p>O seu curso &eacute; de alt&iacute;ssimo n&iacute;vel e foi o melhor que j&aacute; vi! Deus aben&ccedil;oe</p>
+        <span class="rel-av" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></span>
+      </div>
+    </div>
 
     <h3 class="center sr-hidden" style="margin-top:56px;font-size:26px;color:var(--branco)">Se voc&ecirc; se reconhece aqui, este m&eacute;todo &eacute; para voc&ecirc;</h3>
     <div class="quem-grid">
       <div class="quem-item sr-hidden">
-        <span class="quem-ico"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></span>
+        <span class="quem-ico"><svg viewBox="0 0 24 24"><path d="M12 3v3"/><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/></svg></span>
         <span class="quem-linha" aria-hidden="true"></span>
-        <p>Sabe alguns ritmos, mas <strong>n&atilde;o consegue tirar uma m&uacute;sica inteira sozinho</strong>.</p>
-      </div>
-      <div class="quem-item sr-hidden">
-        <span class="quem-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-        <span class="quem-linha" aria-hidden="true"></span>
-        <p>A virada sai, mas voc&ecirc; <strong>perde o tempo quando volta pro ritmo</strong>.</p>
-      </div>
-      <div class="quem-item sr-hidden">
-        <span class="quem-ico"><svg viewBox="0 0 24 24"><path d="M7 4v7"/><path d="M17 4v7"/><path d="M4 11h16"/><path d="M9 20h6"/><path d="M12 14v6"/></svg></span>
-        <span class="quem-linha" aria-hidden="true"></span>
-        <p><strong>Coordena&ccedil;&atilde;o entre m&atilde;os e p&eacute;s</strong> ainda &eacute; o seu maior obst&aacute;culo.</p>
+        <p>Est&aacute; iniciando do zero e <strong>precisa de um direcionamento</strong></p>
       </div>
       <div class="quem-item sr-hidden">
         <span class="quem-ico"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-7h6v7"/><path d="M12 3v3"/></svg></span>
         <span class="quem-linha" aria-hidden="true"></span>
-        <p>Sua igreja precisa de baterista e voc&ecirc; <strong>quer estar pronto para servir</strong>.</p>
+        <p>Sua Igreja est&aacute; sem baterista e <strong>voc&ecirc; est&aacute; disposto a servir</strong></p>
+      </div>
+      <div class="quem-item sr-hidden">
+        <span class="quem-ico"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></span>
+        <span class="quem-linha" aria-hidden="true"></span>
+        <p>N&atilde;o consegue <strong>tocar uma m&uacute;sica inteira</strong> ainda</p>
+      </div>
+      <div class="quem-item sr-hidden">
+        <span class="quem-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <span class="quem-linha" aria-hidden="true"></span>
+        <p>Voc&ecirc; <strong>perde o tempo das viradas</strong></p>
       </div>
       <div class="quem-item sr-hidden">
         <span class="quem-ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M7 9h10"/><path d="M7 13h6"/><path d="M15 15.5l2 2 3-3.5"/></svg></span>
         <span class="quem-linha" aria-hidden="true"></span>
-        <p>Nunca leu uma partitura de bateria e <strong>acha que isso &eacute; para poucos</strong>.</p>
+        <p>N&atilde;o sabe ler partitura e <strong>acha que isso &eacute; pra poucos</strong></p>
       </div>
       <div class="quem-item sr-hidden">
         <span class="quem-ico"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M7 11v5c0 1.7 2.2 3 5 3s5-1.3 5-3v-5"/></svg></span>
         <span class="quem-linha" aria-hidden="true"></span>
-        <p>J&aacute; tentou escola de m&uacute;sica e <strong>sentiu que evoluiu pouco perto do que investiu</strong>.</p>
+        <p>Tentou uma escola de m&uacute;sica e sentiu que <strong>o professor estava te enrolando</strong></p>
+      </div>
+      <div class="quem-item sr-hidden">
+        <span class="quem-ico"><svg viewBox="0 0 24 24"><path d="M7 4v7"/><path d="M17 4v7"/><path d="M4 11h16"/><path d="M9 20h6"/><path d="M12 14v6"/></svg></span>
+        <span class="quem-linha" aria-hidden="true"></span>
+        <p><strong>Dificuldade em coordena&ccedil;&atilde;o</strong> entre m&atilde;os e p&eacute;s</p>
+      </div>
+      <div class="quem-item sr-hidden">
+        <span class="quem-ico"><svg viewBox="0 0 24 24"><path d="M4 17c4-9 12-9 16 0"/><circle cx="4" cy="17" r="2"/><circle cx="20" cy="17" r="2"/></svg></span>
+        <span class="quem-linha" aria-hidden="true"></span>
+        <p>J&aacute; toca mas quer melhorar <strong>nas viradas, nos ritmos e tocar como um profissional</strong></p>
       </div>
     </div>
 
-    <div class="sec-cta sr-hidden"><a class="btn" href="#oferta">Quero seguir um caminho, n&atilde;o v&iacute;deos soltos</a></div>
+    <div class="sec-cta sr-hidden"><a class="btn" href="#oferta">Quero seguir um caminho! Eu quero aprender mais!</a></div>
   </div>
 </section>
 
@@ -1085,11 +1159,11 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
   </div>
   <div class="wrap">
     <div class="sec-head center maxw">
-      <h2 class="sr-hidden">Um caminho claro, <span class="neon-grad">do zero ao baterista completo</span></h2>
-      <p class="lead sr-hidden">O Tocando Bateria do Zero &eacute; dividido em cursos: cada um resolve uma pe&ccedil;a da sua evolu&ccedil;&atilde;o &mdash; ritmos, viradas, rudimentos, t&eacute;cnicas de m&atilde;o, t&eacute;cnica de p&eacute;s, din&acirc;micas, partitura, tribais, worship, gospel chops, afina&ccedil;&atilde;o. <strong>Voc&ecirc; come&ccedil;a pelo que precisa agora e vai somando.</strong></p>
+      <h2 class="sr-hidden">Um caminho claro pra se tornar <span class="neon-grad">um baterista completo!</span></h2>
+      <p class="lead sr-hidden">O TOCANDO BATERIA DO ZERO &Eacute; DIVIDIDO POR CURSOS E CADA UM DESTES CURSOS RESOLVE UMA PE&Ccedil;A DA SUA EVOLU&Ccedil;&Atilde;O &mdash; ritmos, viradas, rudimentos, t&eacute;cnicas de m&atilde;o, t&eacute;cnicas de p&eacute;s, din&acirc;micas, partitura, tribais, worship, gospel chops, afina&ccedil;&atilde;o. <strong>Voc&ecirc; come&ccedil;a pelo que precisa agora e constr&oacute;i, passo a passo, o baterista que quer se tornar.</strong></p>
     </div>
 
-    <div class="mock sr-hidden" aria-hidden="true">
+    <div class="mock mock-lean sr-hidden" aria-hidden="true">
       <div class="phone p2"><img src="assets/mk-pes.jpg" alt="" loading="lazy"></div>
       <div class="phone p1"><img src="assets/mk-ritmos.jpg" alt="" loading="lazy"></div>
       <div class="note">
@@ -1103,15 +1177,8 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       <div class="dor-item sr-hidden sr-left">
         <div class="dor-octo"><span class="ph"><svg viewBox="0 0 24 24"><path d="M5 3v18"/><path d="M19 3v18"/><path d="M5 8h14"/><path d="M5 16h14"/></svg></span></div>
         <div class="dor-card">
-          <h3>Pr&aacute;tico desde a primeira aula</h3>
-          <p>Nada de teoria solta. Voc&ecirc; toca no primeiro dia e aplica em m&uacute;sica de verdade na primeira semana.</p>
-        </div>
-      </div>
-      <div class="dor-item sr-hidden sr-left">
-        <div class="dor-octo"><span class="ph"><svg viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M3 12h12"/><path d="M3 18h7"/><circle cx="18" cy="17" r="3"/></svg></span></div>
-        <div class="dor-card">
-          <h3>Did&aacute;tica que descomplica</h3>
-          <p>Explica&ccedil;&atilde;o clara, passo a passo, no ritmo de quem est&aacute; aprendendo &mdash; o motivo n&uacute;mero 1 pelo qual meus alunos compram e voltam.</p>
+          <h3>Pr&aacute;tico desde a primeira aula + did&aacute;tica clara e objetiva</h3>
+          <p>Nada de teoria solta: voc&ecirc; toca no primeiro dia e aplica em m&uacute;sica de verdade, com explica&ccedil;&atilde;o clara e passo a passo &mdash; o motivo n&uacute;mero 1 pelo qual meus alunos compram e voltam.</p>
         </div>
       </div>
       <div class="dor-item sr-hidden sr-left">
@@ -1138,7 +1205,7 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       <div class="bcard feat sr-hidden">
         <span class="bi"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9Z"/></svg></span>
         <h3>Videoaulas completas</h3>
-        <p>Cada curso gravado do come&ccedil;o ao fim, em sequ&ecirc;ncia &mdash; sem pular etapa.</p>
+        <p>Cada curso gravado do come&ccedil;o ao fim, em sequ&ecirc;ncia &mdash; sem pular etapa. Cada curso tem 4 blocos de aulas com aproximadamente 1h30 a 2h de conte&uacute;do.</p>
       </div>
       <div class="bcard sr-hidden">
         <span class="bi"><svg viewBox="0 0 24 24"><path d="M14 3v5h5"/><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-5Z"/><path d="M9 13h6"/><path d="M9 17h4"/></svg></span>
@@ -1147,9 +1214,8 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       </div>
       <div class="bcard sr-hidden">
         <span class="bi"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></span>
-        <h3>MP3 para aplica&ccedil;&atilde;o</h3>
-        <p>As m&uacute;sicas para voc&ecirc; aplicar o que aprendeu.</p>
-        <span class="tbc blk"><b>A confirmar</b>Dispon&iacute;vel em cursos selecionados &mdash; falta a lista de quais cursos incluem MP3.</span>
+        <h3>M&uacute;sicas para aplica&ccedil;&atilde;o &mdash; playalongs</h3>
+        <p>Todos os cursos de ritmos e viradas possuem m&uacute;sicas para aplicar o que voc&ecirc; aprendeu na aula.</p>
       </div>
       <div class="bcard sr-hidden">
         <span class="bi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.7"/><path d="M12 17h.01"/></svg></span>
@@ -1170,10 +1236,10 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
 <!-- ==================== STRIP ==================== -->
 <div class="strip" aria-hidden="true">
   <div class="marquee-track">
-    <div class="mq-seg"><span>Videoaulas</span><span class="dot">&bull;</span><span>Partitura em PDF</span><span class="dot">&bull;</span><span>MP3 de aplica&ccedil;&atilde;o</span><span class="dot">&bull;</span><span>Corre&ccedil;&atilde;o de v&iacute;deo</span><span class="dot">&bull;</span><span>Suporte com o Mateus</span><span class="dot">&bull;</span></div>
-    <div class="mq-seg"><span>Videoaulas</span><span class="dot">&bull;</span><span>Partitura em PDF</span><span class="dot">&bull;</span><span>MP3 de aplica&ccedil;&atilde;o</span><span class="dot">&bull;</span><span>Corre&ccedil;&atilde;o de v&iacute;deo</span><span class="dot">&bull;</span><span>Suporte com o Mateus</span><span class="dot">&bull;</span></div>
-      <div class="mq-seg"><span>Videoaulas</span><span class="dot">&bull;</span><span>Partitura em PDF</span><span class="dot">&bull;</span><span>MP3 de aplica&ccedil;&atilde;o</span><span class="dot">&bull;</span><span>Corre&ccedil;&atilde;o de v&iacute;deo</span><span class="dot">&bull;</span><span>Suporte com o Mateus</span><span class="dot">&bull;</span></div>
-      <div class="mq-seg"><span>Videoaulas</span><span class="dot">&bull;</span><span>Partitura em PDF</span><span class="dot">&bull;</span><span>MP3 de aplica&ccedil;&atilde;o</span><span class="dot">&bull;</span><span>Corre&ccedil;&atilde;o de v&iacute;deo</span><span class="dot">&bull;</span><span>Suporte com o Mateus</span><span class="dot">&bull;</span></div>
+    <div class="mq-seg"><span>Videoaulas</span><span class="dot">&bull;</span><span>Partitura em PDF</span><span class="dot">&bull;</span><span>M&uacute;sicas para aplica&ccedil;&atilde;o</span><span class="dot">&bull;</span><span>Corre&ccedil;&atilde;o de v&iacute;deo</span><span class="dot">&bull;</span><span>Suporte com o Mateus</span><span class="dot">&bull;</span></div>
+    <div class="mq-seg"><span>Videoaulas</span><span class="dot">&bull;</span><span>Partitura em PDF</span><span class="dot">&bull;</span><span>M&uacute;sicas para aplica&ccedil;&atilde;o</span><span class="dot">&bull;</span><span>Corre&ccedil;&atilde;o de v&iacute;deo</span><span class="dot">&bull;</span><span>Suporte com o Mateus</span><span class="dot">&bull;</span></div>
+      <div class="mq-seg"><span>Videoaulas</span><span class="dot">&bull;</span><span>Partitura em PDF</span><span class="dot">&bull;</span><span>M&uacute;sicas para aplica&ccedil;&atilde;o</span><span class="dot">&bull;</span><span>Corre&ccedil;&atilde;o de v&iacute;deo</span><span class="dot">&bull;</span><span>Suporte com o Mateus</span><span class="dot">&bull;</span></div>
+      <div class="mq-seg"><span>Videoaulas</span><span class="dot">&bull;</span><span>Partitura em PDF</span><span class="dot">&bull;</span><span>M&uacute;sicas para aplica&ccedil;&atilde;o</span><span class="dot">&bull;</span><span>Corre&ccedil;&atilde;o de v&iacute;deo</span><span class="dot">&bull;</span><span>Suporte com o Mateus</span><span class="dot">&bull;</span></div>
   </div>
 </div>
 
@@ -1185,147 +1251,59 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       <p class="lead sr-hidden">S&atilde;o 34 cursos que cobrem a forma&ccedil;&atilde;o completa de um baterista. Cada um pode ser comprado separadamente &mdash; ou voc&ecirc; leva tudo de uma vez no pacote completo.</p>
     </div>
 
-    <div class="acr">
-      <div class="acr-txt esq sr-hidden sr-left" data-n="01">
-        <h3 data-n="01">Fundamentos</h3>
+    <div class="pac-grid">
+      <div class="pac-card sr-hidden">
+        <div class="pac-top"><span class="pac-n" aria-hidden="true">01</span><span class="pac-preco">R$ 180,00</span></div>
+        <h3>Baterista Iniciante</h3>
         <ul>
-          <li>Ritmos b&aacute;sicos 2.0</li>
+          <li>Ritmos B&aacute;sicos</li>
           <li>Viradas b&aacute;sicas</li>
-          <li>Partitura 1 e Partitura 2</li>
-          <li>Rudimentos</li>
-          <li>T&eacute;cnicas de m&atilde;o</li>
-          <li>T&eacute;cnicas com os p&eacute;s</li>
-          <li>M&atilde;o fraca</li>
+          <li>Teoria e partitura 1 e 2</li>
+          <li>40 rudimentos</li>
+          <li>T&eacute;cnicas de m&atilde;os</li>
         </ul>
       </div>
-      <div class="acr-stage">
-        <div class="acr-q q1" aria-hidden="true"><b>01</b></div>
-        <div class="acr-q q2" aria-hidden="true"><b>02</b></div>
-        <div class="acr-q q3" aria-hidden="true"><b>03</b></div>
-        <div class="acr-q q4" aria-hidden="true"><b>04</b></div>
-        <div class="acr-q q5" aria-hidden="true"><b>05</b></div>
-        <div class="acr-q q6" aria-hidden="true"><b>06</b></div>
-        <div class="cf" id="cfCat" tabindex="0" role="group" aria-label="Trilhas do cat&aacute;logo">
-          <div class="cf-stage">
-            <article class="cf-card" data-pos="0">
-              <div class="cf-fig"><span class="cf-n">01</span><img src="assets/gal-1.jpg" alt="Fundamentos" loading="lazy"></div>
-              <div class="cf-body"><h3>Fundamentos</h3><p>Ritmos, viradas, partitura, rudimentos e t&eacute;cnica de m&atilde;os e p&eacute;s.</p></div>
-            </article>
-            <article class="cf-card">
-              <div class="cf-fig"><span class="cf-n">02</span><img src="assets/gal-2.jpg" alt="Din&acirc;mica e controle" loading="lazy"></div>
-              <div class="cf-body"><h3>Din&acirc;mica e controle</h3><p>Din&acirc;micas, metr&ocirc;nomo, duas m&atilde;os no chimbal e ritmos na caixa.</p></div>
-            </article>
-            <article class="cf-card">
-              <div class="cf-fig"><span class="cf-n">03</span><img src="assets/gal-3.jpg" alt="Viradas e aplica&ccedil;&atilde;o" loading="lazy"></div>
-              <div class="cf-body"><h3>Viradas e aplica&ccedil;&atilde;o</h3><p>Viradas lineares, aplica&ccedil;&atilde;o de rudimentos e os 60 grooves.</p></div>
-            </article>
-            <article class="cf-card">
-              <div class="cf-fig"><span class="cf-n">04</span><img src="assets/gal-4.jpg" alt="Bateria na igreja" loading="lazy"></div>
-              <div class="cf-body"><h3>Bateria na igreja</h3><p>Bateria e viradas no louvor, worship e Hinos da Harpa.</p></div>
-            </article>
-            <article class="cf-card">
-              <div class="cf-fig"><span class="cf-n">05</span><img src="assets/gal-5.jpg" alt="Estilos" loading="lazy"></div>
-              <div class="cf-body"><h3>Estilos</h3><p>Rock, forr&oacute;, reggae e tribais.</p></div>
-            </article>
-            <article class="cf-card">
-              <div class="cf-fig"><span class="cf-n">06</span><img src="assets/gal-6.jpg" alt="Bastidores do instrumento" loading="lazy"></div>
-              <div class="cf-body"><h3>Bastidores do instrumento</h3><p>Afina&ccedil;&atilde;o de bateria.</p></div>
-            </article>
-          </div>
-          <button class="cf-nav cf-prev" type="button" aria-label="Trilha anterior"><svg viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"></polyline></svg></button>
-          <button class="cf-nav cf-next" type="button" aria-label="Pr&oacute;xima trilha"><svg viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
-          <div class="cf-dots">
-            <button class="cf-dot" type="button" data-go="0" aria-current="true" aria-label="Trilha 1"></button>
-            <button class="cf-dot" type="button" data-go="1" aria-label="Trilha 2"></button>
-            <button class="cf-dot" type="button" data-go="2" aria-label="Trilha 3"></button>
-            <button class="cf-dot" type="button" data-go="3" aria-label="Trilha 4"></button>
-            <button class="cf-dot" type="button" data-go="4" aria-label="Trilha 5"></button>
-            <button class="cf-dot" type="button" data-go="5" aria-label="Trilha 6"></button>
-          </div>
-          <span class="cf-live" aria-live="polite"></span>
-        </div>
-      </div>
-      <div class="acr-txt dir sr-hidden sr-right" data-n="02">
-        <h3 data-n="02">Din&acirc;mica e controle</h3>
+      <div class="pac-card sr-hidden">
+        <div class="pac-top"><span class="pac-n" aria-hidden="true">02</span><span class="pac-preco">R$ 237,00</span></div>
+        <h3>Viradas e aplica&ccedil;&otilde;es</h3>
         <ul>
+          <li>Viradas b&aacute;sicas</li>
+          <li>Viradas nos louvores</li>
+          <li>Gospel chops</li>
+          <li>Viradas no worship</li>
+          <li>Aplica&ccedil;&otilde;es de rudimentos 1, 2, 3 e 4</li>
+        </ul>
+      </div>
+      <div class="pac-card sr-hidden">
+        <div class="pac-top"><span class="pac-n" aria-hidden="true">03</span><span class="pac-preco">R$ 287,00</span></div>
+        <h3>Tr&ecirc;s Pilares Essenciais</h3>
+        <ul>
+          <li>T&eacute;cnicas de m&atilde;os e p&eacute;s</li>
+          <li>40 rudimentos</li>
           <li>Din&acirc;micas 1, 2 e 3</li>
-          <li>Metr&ocirc;nomo</li>
-          <li>Duas m&atilde;os no chimbal</li>
-          <li>Duas m&atilde;os com din&acirc;micas</li>
-          <li>Ritmos na caixa</li>
-        </ul>
-      </div>
-      <div class="acr-txt esq sr-hidden sr-left" data-n="03">
-        <h3 data-n="03">Viradas e aplica&ccedil;&atilde;o</h3>
-        <ul>
-          <li>Viradas lineares</li>
           <li>Aplica&ccedil;&atilde;o de rudimentos 1, 2, 3 e 4</li>
-          <li>60 grooves &mdash; partes 1, 2 e 3</li>
         </ul>
       </div>
-      <div class="acr-txt dir sr-hidden sr-right" data-n="04">
-        <h3 data-n="04">Bateria na igreja</h3>
+      <div class="pac-card sr-hidden">
+        <div class="pac-top"><span class="pac-n" aria-hidden="true">04</span><span class="pac-preco">R$ 297,00</span></div>
+        <h3>Bateria da Igreja</h3>
         <ul>
-          <li>Bateria no louvor</li>
-          <li>Viradas no louvor</li>
-          <li>Worship 1 e Worship 2</li>
-          <li>Hinos da Harpa</li>
+          <li>Ritmos B&aacute;sicos e Viradas B&aacute;sicas</li>
+          <li>Rudimentos e t&eacute;cnicas de m&atilde;os</li>
+          <li>Hinos da harpa e bateria no louvor</li>
+          <li>Viradas nos louvores e corinho de fogo</li>
+          <li>Worship 1 e 2 e tribais</li>
         </ul>
       </div>
-      <div class="acr-txt esq sr-hidden sr-left" data-n="05">
-        <h3 data-n="05">Estilos</h3>
-        <ul>
-          <li>Rock 1 e Rock 2</li>
-          <li>Forr&oacute;</li>
-          <li>Reggae</li>
-          <li>Tribais</li>
-        </ul>
-      </div>
-      <div class="acr-txt dir sr-hidden sr-right" data-n="06">
-        <h3 data-n="06">Bastidores do instrumento</h3>
-        <ul>
-          <li>Afina&ccedil;&atilde;o de bateria</li>
-        </ul>
+      <div class="pac-card feat sr-hidden sr-scale">
+        <div class="pac-top"><span class="pac-n" aria-hidden="true">05</span><span class="pac-preco">R$ 767,00</span></div>
+        <h3>Curso Completo</h3>
+        <p class="pac-desc">Os 34 cursos &mdash; do zero ao avan&ccedil;ado. A forma&ccedil;&atilde;o inteira, com o melhor pre&ccedil;o por curso.</p>
+        <a class="btn" href="#oferta">Ver o pacote completo</a>
       </div>
     </div>
-
-    <p class="cat-nota sr-hidden"><span class="tbc"><b>A confirmar</b>Lista e nome comercial de cada curso a validar com o Mateus.</span></p>
 
     <div class="sec-cta sr-hidden"><a class="btn" href="#oferta">Montar o meu caminho</a></div>
-  </div>
-</section>
-
-<!-- ==================== 06 — OS MARCOS ==================== -->
-<section class="sec sec-fluxo">
-  <div class="wrap">
-    <div class="sec-head center maxw">
-      <h2 class="sr-hidden">Primeira aula, primeiro ritmo. <span class="neon-grad">Primeira semana, primeira m&uacute;sica.</span></h2>
-      <p class="lead sr-hidden">Boa parte dos alunos aprende os ritmos j&aacute; na primeira aula e toca a primeira m&uacute;sica na primeira semana. Cada pessoa tem o seu tempo &mdash; alguns levam um pouco mais. Mas <strong>todos que seguem o m&eacute;todo chegam l&aacute;</strong>. A virada de chave costuma acontecer nos primeiros meses, e muitos j&aacute; sentem diferen&ccedil;a nas primeiras semanas.</p>
-    </div>
-
-    <div class="estrada mob" id="estrada">
-      <svg class="est-road" viewBox="0 0 1000 470" preserveAspectRatio="none" aria-hidden="true">
-        <path class="berma" d="M80,140 L680,140 C840,140 840,330 680,330 L120,330"/>
-        <path class="asfalto" d="M80,140 L680,140 C840,140 840,330 680,330 L120,330"/>
-        <path class="faixa" d="M80,140 L680,140 C840,140 840,330 680,330 L120,330"/>
-        <g id="estSetas"></g>
-      </svg>
-      <div class="est-p cima forte">
-        <div class="est-dot"><svg viewBox="0 0 24 24"><path d="M6 3h12"/><path d="M6 21h12"/><path d="M17 3v4l-5 5-5-5V3"/><path d="M17 21v-4l-5-5-5 5v4"/></svg><span class="est-n">1</span></div>
-        <div class="est-card"><h3>1 semana</h3><p>Aluno aprendeu a primeira m&uacute;sica completa.</p></div>
-      </div>
-      <div class="est-p cima">
-        <div class="est-dot"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-7h6v7"/></svg><span class="est-n">2</span></div>
-        <div class="est-card"><h3>Menos de 1 m&ecirc;s</h3><p>Aluno tocou na igreja pela primeira vez.</p></div>
-      </div>
-      <div class="est-p baixo forte">
-        <div class="est-dot"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="13.5" r="7"/><circle cx="10.5" cy="13.5" r="2.6"/><line x1="12.4" y1="11.6" x2="21" y2="3"/><polyline points="16 3 21 3 21 8"/></svg><span class="est-n">3</span></div>
-        <div class="est-card"><h3>1 semana</h3><p>Aluno aprendeu o que n&atilde;o tinha aprendido em meses de escola de m&uacute;sica.</p></div>
-      </div>
-    </div>
-    <p class="tl-nota">Resultados relatados por alunos. O tempo de evolu&ccedil;&atilde;o varia de pessoa para pessoa.</p>
-
-    <div class="sec-cta sr-hidden"><a class="btn" href="#oferta">Come&ccedil;ar a minha primeira semana</a></div>
   </div>
 </section>
 
@@ -1339,34 +1317,19 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
 
     <div class="prova-grid">
       <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-1.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
+        <figure class="prova-shot"><img src="assets/dep-c5.jpg" alt="Aluno elogiando os conte&uacute;dos dos cursos no WhatsApp" loading="lazy"></figure>
       </div>
       <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-3.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
+        <figure class="prova-shot"><img src="assets/dep-c6.jpg" alt="Aluno dizendo que est&aacute; adorando as aulas no WhatsApp" loading="lazy"></figure>
       </div>
       <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-4.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
+        <figure class="prova-shot"><img src="assets/dep-c10.jpg" alt="Aluno dando feedback positivo sobre a did&aacute;tica no WhatsApp" loading="lazy"></figure>
       </div>
       <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-5.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
+        <figure class="prova-shot"><img src="assets/dep-c11.jpg" alt="Aluno parabenizando os cursos no WhatsApp" loading="lazy"></figure>
       </div>
       <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-6.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
-      </div>
-      <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-7.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
-      </div>
-      <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-8.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
-      </div>
-      <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-9.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
-      </div>
-      <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-10.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
-      </div>
-      <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-11.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
+        <figure class="prova-shot"><img src="assets/dep-c12.jpg" alt="Aluno dizendo que o curso &eacute; sensacional e que indica para qualquer pessoa" loading="lazy"></figure>
       </div>
     </div>
 
@@ -1385,28 +1348,46 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       <aside class="price-aside">
         <h4>O que vem com o pacote completo</h4>
         <ul>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg></span><span><strong>Todos os cursos</strong> do cat&aacute;logo, das trilhas 01 a 06</span></li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg></span><span><strong>PDFs com as partituras</strong> de tudo o que voc&ecirc; toca</span></li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg></span><span><strong>MP3 de aplica&ccedil;&atilde;o</strong> para treinar com m&uacute;sica</span></li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg></span><span><strong>Tira-d&uacute;vidas e corre&ccedil;&atilde;o de v&iacute;deo</strong> direto comigo</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg></span><span><strong>Todos os cursos do 1 ao 34</strong></span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg></span><span><strong>PDF com partituras</strong> e figuras usadas durante as aulas</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg></span><span><strong>MP3 com playalongs</strong> (m&uacute;sicas para aplica&ccedil;&atilde;o)</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg></span><span><strong>Suporte direto comigo</strong> no WhatsApp</span></li>
           <li><span class="ck"><svg viewBox="0 0 24 24"><path d="m4 12 5 5L20 7"/></svg></span><span><strong>Garantia de 7 dias</strong> na Hotmart</span></li>
         </ul>
-        <span class="tbc"><b>A confirmar</b>Pre&ccedil;o unit&aacute;rio de cada curso avulso.</span>
       </aside>
 
       <div class="price-box">
         <span class="selo">Melhor escolha</span>
-        <div class="p-nome">Pacote Completo &mdash; todos os cursos</div>
-        <p class="p-desc">A forma&ccedil;&atilde;o inteira, do primeiro toque ao avan&ccedil;ado: todos os cursos, todos os PDFs com partitura, os MP3 de aplica&ccedil;&atilde;o e o suporte direto comigo.</p>
-        <p class="price-de">De R$ 1.305,00 por</p>
-        <div class="price-hoje">R$ 697</div>
-        <p class="price-nota">Pagamento na Hotmart, Pix ou cart&atilde;o direto comigo.</p>
-        <span class="tbc"><b>A confirmar</b>Parcelamento oferecido na Hotmart.</span>
+        <div class="p-nome">Pacote completo e todos os cursos</div>
+        <p class="p-desc">A forma&ccedil;&atilde;o inteira, do primeiro toque ao avan&ccedil;ado: todos os cursos, os PDFs com partitura, as m&uacute;sicas para aplica&ccedil;&atilde;o e o suporte direto comigo.</p>
+        <p class="price-de">De R$ 1.645,00 por</p>
+        <div class="price-hoje">R$ 767</div>
+        <p class="price-nota">Na Hotmart at&eacute; 12x (12x de R$ 79,40) &mdash; ou R$ 697,00 direto comigo no WhatsApp.</p>
         <a class="btn lg full" href="https://wa.me/5516988347173?text=Ol%C3%A1%2C%20Mateus!%20Quero%20o%20pacote%20completo%20dos%20cursos%20de%20bateria." target="_blank" rel="noopener" style="margin-top:18px">Quero o pacote completo</a>
         <span class="tbc" style="margin-top:12px"><b>A confirmar</b>Link de checkout da Hotmart.</span>
         <div class="price-selos"><span>Acesso imediato</span><span>Garantia de 7 dias</span><span>Suporte comigo</span></div>
         <div class="pag"><span>Pix</span><span>Cart&atilde;o direto comigo</span><span>Hotmart</span><span>Combinar no WhatsApp</span></div>
       </div>
+    </div>
+
+    <div class="obj sr-hidden" style="margin:72px auto 16px">
+      <div class="obj-foto"><img src="assets/mateus-recorte.webp" alt="Mateus Kerr" loading="lazy"></div>
+      <div class="obj-balao">
+        <h4>&ldquo;Achei o pacote completo caro.&rdquo;</h4>
+        <p>Entendo. Voc&ecirc; n&atilde;o precisa come&ccedil;ar j&aacute; com todos os cursos de uma vez! Escolha um curso por R$ 35,00 ou um pacote de 3 ou 6 cursos e veja se a minha did&aacute;tica funciona para voc&ecirc; e v&aacute; somando. <strong>Quem leva mais cursos paga menos por cada um, com descontos exclusivos!</strong> Est&aacute; na d&uacute;vida em qual curso pegar? Me chama no whats!</p>
+        <a class="btn wa" href="https://wa.me/5516988347173?text=Ol%C3%A1%2C%20Mateus!%20Estou%20em%20d%C3%BAvida%20sobre%20qual%20curso%20pegar.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener" style="margin-top:18px">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Z"/></svg>
+          Fale comigo no WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="monta sr-hidden">
+      <h3 class="center" style="font-size:24px;color:var(--branco)">Monte seu pacote de cursos como quiser: veja aqui o que vem em cada curso</h3>
+      <p class="monta-dica">Toque em um curso para destac&aacute;-lo &mdash; e me chame no WhatsApp que eu monto o seu pacote.</p>
+      <div class="monta-track" id="montaTrack" tabindex="0" role="group" aria-label="Cursos dispon&iacute;veis para montar o pacote"></div>
+      <div class="sec-cta"><a class="btn wa" href="https://wa.me/5516988347173?text=Ol%C3%A1%2C%20Mateus!%20Quero%20montar%20meu%20pacote%20de%20cursos." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Z"/></svg>
+        Me chama no WhatsApp pra montar meu pacote</a></div>
     </div>
 
     <h3 class="center sr-hidden" style="margin-top:56px;font-size:24px;color:var(--branco)">Quanto mais completa a forma&ccedil;&atilde;o, menos voc&ecirc; paga por curso</h3>
@@ -1424,19 +1405,10 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
         <h3>Acima de 6 cursos</h3><p>R$ 10,00 de desconto em cada curso</p>
       </div>
     </div>
-    <p class="nao-fecho sr-hidden">Escolha o curso que resolve o seu problema de agora: videoaulas, PDF com partitura e suporte direto comigo.
-      <span class="tbc"><b>A confirmar</b>Pre&ccedil;o unit&aacute;rio do curso avulso.</span></p>
+    <p class="nao-fecho sr-hidden">Escolha o curso que resolve o seu problema de agora: videoaulas, PDF com partitura e suporte direto comigo.</p>
     <div class="sec-cta sr-hidden"><a class="btn wa" href="https://wa.me/5516988347173?text=Ol%C3%A1%2C%20Mateus!%20Quero%20escolher%20um%20curso%20avulso." target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Z"/></svg>
       Escolher meu curso</a></div>
-
-    <div class="obj sr-hidden">
-      <div class="obj-foto"><img src="assets/mateus-recorte.webp" alt="Mateus Kerr" loading="lazy"></div>
-      <div class="obj-balao">
-        <h4>&ldquo;Achei o pacote completo caro.&rdquo;</h4>
-        <p>Entendo &mdash; e &eacute; por isso que voc&ecirc; n&atilde;o precisa come&ccedil;ar por ele. Escolha um curso, veja se a minha did&aacute;tica funciona para voc&ecirc; e v&aacute; somando. <strong>Quem leva mais cursos paga menos por cada um.</strong></p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1460,7 +1432,7 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       </div>
       <div class="gar-body sr-hidden sr-right">
         <h2>7 dias para testar.<br><span class="neon-grad">O risco &eacute; meu.</span></h2>
-        <p>Comprou, entrou, assistiu, baixou as partituras e treinou. Se em 7 dias voc&ecirc; achar que n&atilde;o &eacute; para voc&ecirc;, pede o reembolso na Hotmart e devolvemos tudo. <strong>Sem burocracia.</strong></p>
+        <p>Comprou, entrou, assistiu e treinou! Se em 7 dias voc&ecirc; achar que n&atilde;o &eacute; para voc&ecirc;, pede o reembolso na Hotmart e devolvemos tudo. <strong>Sem burocracia.</strong></p>
         <a class="btn" href="#oferta" style="margin-top:22px">Come&ccedil;ar sem risco</a>
       </div>
     </div>
@@ -1473,11 +1445,10 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
     <div class="sobre-split">
       <div class="sobre-vazio" aria-hidden="true"></div>
       <div class="sobre-body sr-hidden sr-right">
-        <h2>Sou o <span class="neon-grad">Mateus Kerr</span></h2>
+        <h2>EU SOU <span class="neon-grad">MATEUS KERR</span></h2>
         <div class="autor-txt">
-          <p>Toco bateria h&aacute; <strong>29 anos</strong> e dou aula h&aacute; <strong>25</strong>. O Tocando Bateria do Zero existe h&aacute; 10 anos, e come&ccedil;ou no YouTube com um objetivo simples: ensinar quem nunca tinha encostado numa baqueta a tocar de verdade.</p>
-          <p>De l&aacute; pra c&aacute;, <strong>mais de 12.500 alunos</strong> passaram pelos meus cursos on-line. E todo o suporte continua passando por mim: sou eu que respondo as d&uacute;vidas, assisto aos v&iacute;deos que os alunos me mandam e corrijo.</p>
-          <p>Meu prop&oacute;sito &eacute; esse: <strong>ensinar bateria de forma pr&aacute;tica, clara e financeiramente acess&iacute;vel</strong>.</p>
+          <p>Toco bateria h&aacute; <strong>28 anos</strong> e dou aula h&aacute; <strong>25</strong>. O canal Tocando Bateria do Zero existe h&aacute; 10 anos, e come&ccedil;ou no YouTube com um objetivo simples: ensinar quem nunca tinha encostado numa baqueta a tocar de verdade. Ent&atilde;o criei o curso TOCANDO BATERIA DO ZERO para que todos pudessem ter acesso a um conte&uacute;do <strong>PR&Aacute;TICO</strong>, did&aacute;tico e de f&aacute;cil entendimento. E hoje <strong>mais de 12.800 alunos</strong> j&aacute; passaram pelos meus cursos on-line. E quero que voc&ecirc; seja parte disso! Todo o suporte continua sendo direto comigo: sou eu que respondo as d&uacute;vidas e assisto aos v&iacute;deos que os alunos me enviam pra serem corrigidos. Meu prop&oacute;sito &eacute; esse: <strong>ensinar bateria de forma pr&aacute;tica, clara e financeiramente acess&iacute;vel</strong>. Est&aacute; com alguma d&uacute;vida? Me chame e vamos conversar!</p>
+          <p>Depois de ver muitos bateristas estudando de maneira errada e n&atilde;o tendo acesso a aulas de bateria, eu desenvolvi um m&eacute;todo para ajud&aacute;-los a terem os melhores resultados.</p>
         </div>
         <div class="dif-grid">
           <div class="dif-item">
@@ -1595,78 +1566,6 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
   if(pb){ var cl=pb.querySelector('.close'); if(cl) cl.addEventListener('click',function(){ setTimeout(syncBar,0); }); }
 })();
 
-/* ===== Estrada serpenteante: os pontos assentam sobre o traco real do SVG
-   (getPointAtLength), por isso acompanham qualquer largura. Abaixo de 800px
-   a estrada passa a carril vertical (classe .mob). ===== */
-(function(){
-  var box=document.getElementById("estrada");
-  if(!box)return;
-  var svg=box.querySelector(".est-road");
-  var road=svg?svg.querySelector(".asfalto"):null;
-  var setasG=svg?svg.querySelector("#estSetas"):null;
-  var pts=Array.prototype.slice.call(box.querySelectorAll(".est-p"));
-  var FRAC=[0.055,0.38,0.945];
-  var SETAS=[0.2,0.52,0.8];
-  var LARG=1000,ALT=470;
-  function setas(L){
-    if(!setasG||!road)return;
-    while(setasG.firstChild){setasG.removeChild(setasG.firstChild);}
-    SETAS.forEach(function(f){
-      var a=road.getPointAtLength(L*f),b=road.getPointAtLength(Math.min(L,L*f+2));
-      var ang=Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI;
-      var el=document.createElementNS("http://www.w3.org/2000/svg","path");
-      el.setAttribute("class","est-seta");
-      el.setAttribute("d","M-11,-11 L0,0 L-11,11");
-      el.setAttribute("transform","translate("+a.x.toFixed(1)+","+a.y.toFixed(1)+") rotate("+ang.toFixed(1)+")");
-      setasG.appendChild(el);
-    });
-  }
-  function coloca(){
-    var pai=box.parentElement;
-    var mob=((pai&&pai.clientWidth)||window.innerWidth)<800;
-    if(mob){
-      box.classList.add("mob");
-      pts.forEach(function(el){el.style.left="";el.style.top="";});
-      return;
-    }
-    box.classList.remove("mob");
-    if(!road||!road.getTotalLength)return;
-    var L=road.getTotalLength();
-    pts.forEach(function(el,i){
-      var pt=road.getPointAtLength(L*(FRAC[i]||0));
-      el.style.left=(pt.x/LARG*100).toFixed(3)+"%";
-      el.style.top=(pt.y/ALT*100).toFixed(3)+"%";
-    });
-    setas(L);
-  }
-  coloca();
-  var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(coloca,150);},{passive:true});
-  var reduz=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;
-  if(reduz||!("IntersectionObserver" in window)){
-    pts.forEach(function(e){e.classList.add("show")});
-    return;
-  }
-  /* threshold 0: os .est-p tem area zero no desktop e nunca chegariam a 0.1 */
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(e.isIntersecting){
-        var i=pts.indexOf(e.target);
-        setTimeout(function(){e.target.classList.add("show")},(i<0?0:i)*140);
-        io.unobserve(e.target);
-      }
-    });
-  },{threshold:0,rootMargin:"0px 0px -40px 0px"});
-  pts.forEach(function(e){io.observe(e)});
-  /* rede de seguranca: em scroll rapido o IO pode nao amostrar o ponto */
-  window.addEventListener('scroll',function(){
-    var vh=window.innerHeight;
-    pts.forEach(function(e){
-      if(e.classList.contains('show'))return;
-      if(e.getBoundingClientRect().top < vh*0.94){ e.classList.add('show'); io.unobserve(e); }
-    });
-  },{passive:true});
-})();
-
 /* ===== Galeria em video: toca sem som quando a seccao entra no ecra, para ao sair ===== */
 (function(){
   var box=document.getElementById('arco'); if(!box) return;
@@ -1690,48 +1589,27 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
   document.addEventListener('visibilitychange',function(){ if(document.hidden) para(); });
 })();
 
-/* ===== Carrossel coverflow do catalogo ===== */
+/* ===== Monte seu pacote: carrossel horizontal dos cursos (clique destaca) ===== */
 (function(){
-  var cf=document.getElementById('cfCat'); if(!cf) return;
-  var cards=Array.prototype.slice.call(cf.querySelectorAll('.cf-card'));
-  if(!cards.length) return;
-  var prev=cf.querySelector('.cf-prev'), next=cf.querySelector('.cf-next');
-  var dots=Array.prototype.slice.call(cf.querySelectorAll('.cf-dot'));
-  var live=cf.querySelector('.cf-live');
-  var idx=0, n=cards.length, meio=Math.floor(n/2);
-  function dist(i){ var d=i-idx; if(d>meio) d-=n; if(d<-meio) d+=n; return d; }
-  function render(){
-    cards.forEach(function(c,i){
-      var d=dist(i), ad=Math.abs(d), dd=Math.max(-2,Math.min(2,d));
-      c.style.transform='translate3d(calc(var(--cf-off) * '+dd+'),0,0) scale('+(1-Math.min(ad,2)*0.22)+')';
-      c.style.filter=ad?'blur('+(Math.min(ad,2)*3.2)+'px)':'none';
-      c.style.opacity=ad>2?'0':(ad===0?'1':(ad===1?'.58':'.2'));
-      c.style.zIndex=String(20-Math.min(ad,3));
-      c.style.pointerEvents=ad>1?'none':'auto';
-      c.setAttribute('data-pos', ad===0?'0':String(dd));
-    });
-    dots.forEach(function(b,i){ if(i===idx){b.setAttribute('aria-current','true');} else {b.removeAttribute('aria-current');} });
-    if(live) live.textContent='Trilha '+(idx+1)+' de '+n;
-  }
-  function go(i){ i=((i%n)+n)%n; if(i===idx) return; idx=i; render(); }
-  if(prev) prev.addEventListener('click',function(){go(idx-1);});
-  if(next) next.addEventListener('click',function(){go(idx+1);});
-  dots.forEach(function(b){ b.addEventListener('click',function(){go(parseInt(b.getAttribute('data-go'),10)||0);}); });
-  cards.forEach(function(c,i){ c.addEventListener('click',function(){ if(i!==idx) go(i); }); });
-  cf.addEventListener('keydown',function(e){
-    if(e.key==='ArrowLeft'){e.preventDefault();go(idx-1);}
-    else if(e.key==='ArrowRight'){e.preventDefault();go(idx+1);}
+  var track=document.getElementById('montaTrack'); if(!track) return;
+  var cursos=['Ritmos básicos 2.0','Viradas básicas','Teoria e partitura 1','Teoria e partitura 2','40 rudimentos','Técnicas de mãos','Técnicas com os pés','Mão fraca','Dinâmicas 1','Dinâmicas 2','Dinâmicas 3','Metrônomo','Duas mãos no chimbal','Duas mãos com dinâmicas','Ritmos na caixa','Viradas lineares','Aplicação de rudimentos 1','Aplicação de rudimentos 2','Aplicação de rudimentos 3','Aplicação de rudimentos 4','60 grooves — parte 1','60 grooves — parte 2','60 grooves — parte 3','Gospel chops','Bateria no louvor','Viradas nos louvores','Viradas no worship','Worship 1','Worship 2','Hinos da Harpa','Corinho de fogo','Tribais','Rock 1','Rock 2','Forró','Reggae','Afinação de bateria'];
+  var frag=document.createDocumentFragment();
+  cursos.forEach(function(nome,i){
+    var el=document.createElement('div');
+    el.className='monta-item';
+    el.setAttribute('role','button');
+    el.setAttribute('tabindex','0');
+    el.setAttribute('aria-pressed','false');
+    el.innerHTML='<b>'+nome+'</b>';
+    function marca(){
+      var sel=el.classList.toggle('sel');
+      el.setAttribute('aria-pressed',sel?'true':'false');
+    }
+    el.addEventListener('click',marca);
+    el.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); marca(); } });
+    frag.appendChild(el);
   });
-  var x0=null, stage=cf.querySelector('.cf-stage');
-  if(stage&&window.PointerEvent){
-    stage.addEventListener('pointerdown',function(e){ x0=e.clientX; });
-    stage.addEventListener('pointerup',function(e){
-      if(x0===null) return; var dx=e.clientX-x0; x0=null;
-      if(Math.abs(dx)>42) go(idx+(dx<0?1:-1));
-    });
-    stage.addEventListener('pointercancel',function(){x0=null;});
-  }
-  render();
+  track.appendChild(frag);
 })();
 
 /* ===== Scroll reveal global (stagger entre irmaos) ===== */
