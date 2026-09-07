@@ -388,14 +388,16 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .bcard p{position:relative;z-index:1;font-size:14px;color:var(--texto);line-height:1.55}
 .bcard.feat{background:linear-gradient(150deg,#16223A 0%,#1D2E52 100%);border-color:var(--linha-forte)}
 .bcard.feat h3{color:var(--neon-claro);font-size:27px}
-/* 7 cards: 3 linhas de pares + o ultimo em largura total */
+/* 7 cards na distribuicao assimetrica do bento antigo (ronda 3 / ref Dany),
+   adaptada sem buraco: 2 largos em cima, 1 alto a esquerda, 2 largos empilhados
+   a direita e a base fecha com 2 largos */
 .bcard:nth-child(1){grid-column:1/3;grid-row:1}
 .bcard:nth-child(2){grid-column:3/5;grid-row:1}
-.bcard:nth-child(3){grid-column:1/3;grid-row:2}
-.bcard:nth-child(4){grid-column:3/5;grid-row:2}
-.bcard:nth-child(5){grid-column:1/3;grid-row:3}
-.bcard:nth-child(6){grid-column:3/5;grid-row:3}
-.bcard:nth-child(7){grid-column:1/5;grid-row:4}
+.bcard:nth-child(3){grid-column:1/2;grid-row:2/4}
+.bcard:nth-child(4){grid-column:2/5;grid-row:2}
+.bcard:nth-child(5){grid-column:2/5;grid-row:3}
+.bcard:nth-child(6){grid-column:1/3;grid-row:4}
+.bcard:nth-child(7){grid-column:3/5;grid-row:4}
 @media(hover:hover){
   .bento:hover .bcard{opacity:.45;filter:blur(2.5px)}
   .bento:hover .bcard:hover{opacity:1;filter:blur(0);transform:translateY(-6px);border-color:var(--linha-forte);
@@ -599,10 +601,12 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .sec-sobre::before{content:"";position:absolute;top:0;right:0;width:56%;height:5px;z-index:3;pointer-events:none;
   background:linear-gradient(270deg,var(--neon),var(--neon-esc) 48%,transparent);
   filter:drop-shadow(0 0 9px rgba(61,123,255,.45))}
-/* rodada 12: filete em gradiente na base da seccao (a foto nao termina "no nada") */
-.sec-sobre::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:2px;z-index:3;pointer-events:none;
-  background:linear-gradient(90deg,transparent,var(--neon),transparent);
-  filter:drop-shadow(0 0 7px rgba(61,123,255,.4))}
+/* rodada 12b: o filete de 2px existia e renderizava, mas era imperceptivel —
+   gradiente quase todo transparente e cravado na quina entre dois fundos escuros.
+   3px + patamar central em neon-claro deixam a linha visivel de ponta a ponta. */
+.sec-sobre::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:3px;z-index:3;pointer-events:none;
+  background:linear-gradient(90deg,transparent 0%,var(--neon) 16%,var(--neon-claro) 50%,var(--neon) 84%,transparent 100%);
+  filter:drop-shadow(0 0 8px rgba(61,123,255,.55))}
 .sobre-split{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:center}
 .sobre-visual{position:relative}
 /* texto solto na seccao (o cartao saiu na ronda 3) */
@@ -1319,9 +1323,6 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       </div>
       <div class="prova-card sr-hidden">
         <figure class="prova-shot"><img src="assets/dep-11.jpg" alt="Conversa de aluno no WhatsApp sobre os cursos" loading="lazy"></figure>
-      </div>
-      <div class="prova-card sr-hidden">
-        <figure class="prova-shot"><img src="assets/dep-12.jpg" alt="Aluno dizendo que o curso &eacute; sensacional e que indica para qualquer pessoa" loading="lazy"></figure>
       </div>
     </div>
 
