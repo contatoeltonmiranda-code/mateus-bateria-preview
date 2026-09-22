@@ -338,47 +338,40 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
     box-shadow:0 18px 44px rgba(0,0,0,.62)}
 }
 
-/* ===== 05 CATALOGO — a tela na parede com o video de apresentacao (ronda 13) ===== */
+/* ===== 05 CATALOGO — caminho completo em colunas (ronda 13c, ref print 29) ===== */
 .sec-catalogo{background:var(--preto);overflow-x:clip}
-.cena{position:relative;z-index:2;margin-top:52px;padding:64px 24px 250px;overflow:hidden}
-.cena::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:linear-gradient(180deg,var(--preto) 0%,#0B1220 48%,#0A0F1A 100%)}
-/* a foto do kit na base da cena, com fade no topo (a tela fica na parede, atras) */
-.cena::after{content:"";position:absolute;left:0;right:0;bottom:0;height:290px;z-index:0;pointer-events:none;
-  background:url("assets/gal-1.jpg") center 62%/cover no-repeat;
-  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 38%);
-  mask-image:linear-gradient(180deg,transparent 0%,#000 38%);
-  filter:brightness(.6) saturate(.9) contrast(1.05)}
-/* a tela de TV pendurada na parede */
-.tela{position:relative;z-index:2;max-width:1020px;margin:0 auto;
+/* bloco central: cabecalho + video de apresentacao (no lugar da foto do print) */
+.cat-caminho{position:relative;z-index:2;max-width:980px;margin:52px auto 0;text-align:center;
   background:linear-gradient(160deg,#0A0F1A 0%,#0D1526 100%);
-  border:2px solid #1D2B47;border-radius:22px;padding:34px 34px 30px;
+  border:2px solid #1D2B47;border-radius:22px;padding:42px 40px 40px;
   box-shadow:0 30px 70px rgba(0,0,0,.72),0 0 0 1px rgba(61,123,255,.16),0 0 46px rgba(61,123,255,.13)}
-.tela::after{content:"";position:absolute;left:50%;bottom:-16px;transform:translateX(-50%);
-  width:150px;height:16px;border-radius:0 0 12px 12px;background:#0D1524;
-  border:2px solid #1D2B47;border-top:none}
-.tela-top{text-align:center;margin-bottom:26px}
-.tela-top h3{font-size:clamp(23px,2.9vw,38px);color:var(--branco);line-height:1.12}
-.tela-top h3 b{color:var(--neon-claro);font-weight:400}
-.tela-tag{display:block;font-size:12.5px;letter-spacing:2.8px;text-transform:uppercase;color:var(--texto);
-  font-weight:600;margin-top:10px}
-.tela-grid{display:grid;grid-template-columns:290px 1fr;gap:28px;align-items:center}
-.tela-video{position:relative;border-radius:14px;overflow:hidden;background:#05070C;
+.cat-caminho h3{font-family:'Anton',Impact,sans-serif;font-size:clamp(24px,2.7vw,36px);color:var(--branco);
+  text-transform:uppercase;letter-spacing:1.2px;line-height:1.14}
+.cat-caminho h3 b{color:var(--neon-claro);font-weight:400}
+.cat-tag{display:block;font-size:12.5px;letter-spacing:2.8px;text-transform:uppercase;color:var(--texto);
+  font-weight:600;margin-top:12px}
+.cat-video{max-width:340px;margin:30px auto 0;border-radius:16px;overflow:hidden;background:#05070C;
   border:1px solid rgba(61,123,255,.3);box-shadow:0 16px 40px rgba(0,0,0,.55)}
-.tela-video video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#05070C}
-.tela-lista{display:flex;flex-wrap:wrap;gap:9px;align-content:center}
-.tela-lista .tt{flex:0 0 100%;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
-  color:var(--neon);margin-top:6px}
-.tela-lista .tt:first-child{margin-top:0}
-.tela-lista span:not(.tt){font-size:13px;padding:7px 14px;border:1px solid rgba(61,123,255,.3);
-  border-radius:50px;background:rgba(61,123,255,.07);color:#D7E4FF;line-height:1.3}
-@media(max-width:940px){
-  .tela{padding:26px 22px 24px}
-  .tela-grid{grid-template-columns:1fr;gap:22px}
-  .tela-video{max-width:300px;margin:0 auto}
-  .cena{padding:44px 18px 210px}
+.cat-video video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#05070C}
+/* as 6 categorias em colunas, cursos em lista */
+.cat-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 22px;margin-top:46px;position:relative;z-index:2}
+.cat-col{background:linear-gradient(150deg,#0E1524 0%,#131F36 100%);border:1px solid rgba(61,123,255,.22);
+  border-radius:16px;padding:22px 22px 16px;box-shadow:0 14px 34px rgba(0,0,0,.42)}
+.cat-col h4{font-family:'Anton',Impact,sans-serif;font-size:15px;letter-spacing:2.2px;text-transform:uppercase;
+  color:var(--neon-claro);line-height:1.3;padding-bottom:10px;margin-bottom:12px;
+  border-bottom:1px solid rgba(61,123,255,.28)}
+.cat-col ul{list-style:none;display:flex;flex-direction:column}
+.cat-col li{font-size:13.8px;color:#D7E4FF;line-height:1.45;padding:6.5px 0;display:flex;gap:9px;align-items:baseline;
+  border-bottom:1px solid rgba(255,255,255,.055)}
+.cat-col li:last-child{border-bottom:none}
+.cat-col li::before{content:"";flex-shrink:0;width:4px;height:4px;border-radius:50%;
+  background:var(--neon);transform:translateY(-2px)}
+@media(max-width:980px){.cat-cols{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:940px){.cat-caminho{padding:30px 22px 28px}}
+@media(max-width:640px){
+  .cat-cols{grid-template-columns:1fr;gap:14px;max-width:420px;margin-left:auto;margin-right:auto}
+  .cat-col li{font-size:14.2px}
 }
-@media(max-width:560px){.cena{padding:36px 14px 170px}}
 
 /* ===== LIGHTBOX — zoom dos depoimentos (ronda 13) ===== */
 .lb{position:fixed;inset:0;z-index:1200;background:rgba(3,5,9,.92);display:flex;align-items:center;
@@ -393,14 +386,19 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .lb-fechar:hover{background:rgba(255,255,255,.18)}
 @media(max-width:560px){.lb{padding:14px}.lb-fechar{top:10px;right:10px}}
 .cat-nota{margin-top:28px;text-align:center}
+/* ronda 13c: fecho do carrossel centralizado */
+.nao-fecho{text-align:center;margin-top:36px;font-size:16.5px;color:var(--texto);line-height:1.65;
+  max-width:720px;margin-left:auto;margin-right:auto}
+.nao-fecho strong{color:var(--branco);font-weight:600}
 
 /* ===== ESCADA SAiu — carrossel de banners dos cursos (ronda 13) ===== */
-/* loop infinito: a track tem 2 copias do set e a animacao anda -50%; pausa no hover */
-.ban{position:relative;margin-top:44px;overflow:hidden;padding:6px 0}
+/* ronda 13c: full-bleed 100vw, loop mais devagar (64s -> 128s), texto de baixo centralizado */
+.ban{position:relative;margin-top:44px;overflow:hidden;padding:6px 0;
+  margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
 .ban::before,.ban::after{content:"";position:absolute;top:0;bottom:0;width:64px;z-index:3;pointer-events:none}
 .ban::before{left:0;background:linear-gradient(90deg,#0D111B 18%,transparent)}
 .ban::after{right:0;background:linear-gradient(270deg,#0D111B 18%,transparent)}
-.ban-track{display:flex;gap:14px;width:max-content;animation:banScroll 64s linear infinite;will-change:transform}
+.ban-track{display:flex;gap:14px;width:max-content;animation:banScroll 128s linear infinite;will-change:transform}
 .ban:hover .ban-track{animation-play-state:paused}
 .ban-item{flex:0 0 auto;display:block;width:128px;border-radius:14px;overflow:hidden;
   border:1px solid rgba(61,123,255,.24);background:var(--grad-card);box-shadow:0 10px 26px rgba(0,0,0,.45);
@@ -464,18 +462,14 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
   mask-image:linear-gradient(90deg,#000 0%,#000 22%,rgba(0,0,0,.35) 62%,rgba(0,0,0,0) 96%);
   font-size:min(16.4vw - 8px,196px)}
 @media(max-width:760px){.wm{top:170px;font-size:min(21vw,120px)}}
-.prova-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:42px;align-items:flex-start}
-.prova-card{flex:0 1 calc(25% - 11px)}
-@media(min-width:1200px){.prova-card{flex:0 1 calc(20% - 12px)}}
-@media(max-width:1040px){.prova-card{flex:0 1 calc(50% - 7px)}}
-@media(max-width:560px){.prova-card{flex:0 1 100%;max-width:400px}}
-@media(min-width:1200px){.prova-grid{grid-template-columns:repeat(5,1fr)}}
+.prova-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px;align-items:start}
 /* ronda 5: o cartao passou a ser SO o print — sem transcricao, avatar ou rotulo */
 /* ronda 13: os prints viraram recortes so da mensagem, cada um com altura propria —
    o cartao abraça a altura natural da imagem (sem aspect-ratio fixo) */
 .prova-shot{position:relative;margin:0;padding:0;border-radius:16px;overflow:hidden;background:#0A1424;flex:1 1 auto;display:flex;cursor:zoom-in}
 .prova-shot img{display:block;width:100%;height:auto;border-radius:16px}
 @media(max-width:1040px){.prova-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.prova-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
 @media(max-width:560px){.prova-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}}
 .prova-card{position:relative;background:linear-gradient(150deg,#0E1524 0%,#16223A 100%);border-radius:18px;
   padding:8px;overflow:hidden;display:flex;flex-direction:column}
@@ -503,30 +497,38 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .sec-oferta::after{bottom:0}
 /* ===== 10 OFERTA — 3 combo cards (ronda 13; o cartao R$ 767 saiu) ===== */
 .combo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1100px;margin:48px auto 0;align-items:stretch}
+/* ronda 13c: cada combo com accent proprio (var --acc / --acc-rgb); o Louvor (feat) e o mais claro e ganha mais destaque */
 .combo{position:relative;display:flex;flex-direction:column;gap:14px;background:var(--grad-card);
-  border:1px solid rgba(61,123,255,.22);border-radius:20px;padding:32px 28px 28px;
+  border:1px solid rgba(var(--acc-rgb),.3);border-radius:20px;padding:32px 28px 28px;
   transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
-.combo:hover{transform:translateY(-5px);border-color:var(--linha-forte);box-shadow:0 22px 48px rgba(0,0,0,.6)}
-.combo .k{font-size:11.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--neon);line-height:1.4}
+.combo::before{content:"";position:absolute;top:0;left:26px;right:26px;height:4px;border-radius:0 0 5px 5px;
+  background:linear-gradient(90deg,var(--acc),rgba(var(--acc-rgb),.25));box-shadow:0 3px 14px rgba(var(--acc-rgb),.45)}
+.combo:hover{transform:translateY(-5px);border-color:rgba(var(--acc-rgb),.6);box-shadow:0 22px 48px rgba(0,0,0,.6),0 14px 40px rgba(var(--acc-rgb),.14)}
+.combo-i{--acc:#35C7FF;--acc-rgb:53,199,255}
+.combo-l{--acc:#9CC5FF;--acc-rgb:156,197,255}
+.combo-p{--acc:#7E9BFF;--acc-rgb:126,155,255}
+.combo .k{font-size:11.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--acc);line-height:1.4}
 .combo h3{font-size:clamp(24px,2.2vw,29px);color:var(--branco);line-height:1.1}
 .combo .d{font-size:14.5px;color:var(--texto);line-height:1.62}
 .combo ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:2px}
 .combo li{display:flex;gap:10px;font-size:13.8px;color:#D7E4FF;align-items:flex-start;line-height:1.5}
 .combo li .ck{margin-top:1px}
-.ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--grad-neon);display:grid;place-items:center;
-  box-shadow:0 5px 15px rgba(61,123,255,.3)}
+.ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,var(--acc),rgba(var(--acc-rgb),.55));
+  display:grid;place-items:center;box-shadow:0 5px 15px rgba(var(--acc-rgb),.35)}
 .ck svg{width:11px;height:11px;stroke:#FFFFFF;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.combo.feat{background:linear-gradient(155deg,#1D2E52 0%,#15306B 100%);border-color:var(--linha-forte);
-  box-shadow:0 26px 60px rgba(0,0,0,.62)}
+.combo.feat{background:linear-gradient(155deg,#1D2E52 0%,#15306B 100%);border:1.5px solid rgba(156,197,255,.75);
+  box-shadow:0 26px 60px rgba(0,0,0,.62),0 18px 60px rgba(61,123,255,.26);transform:translateY(-8px)}
+.combo.feat::before{height:5px;left:22px;right:22px;background:linear-gradient(90deg,#E8F0FF,var(--acc));box-shadow:0 3px 18px rgba(156,197,255,.6)}
+.combo.feat:hover{transform:translateY(-13px);box-shadow:0 30px 66px rgba(0,0,0,.66),0 20px 66px rgba(61,123,255,.32)}
 .combo.feat .k{color:var(--neon-claro)}
 .combo-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);
-  background:var(--grad-neon-claro);color:#071229;font-size:11px;font-weight:800;letter-spacing:1.6px;
-  text-transform:uppercase;padding:7px 16px;border-radius:50px;box-shadow:0 8px 20px rgba(61,123,255,.4);white-space:nowrap}
-.combo-cursos{background:rgba(7,10,17,.4);border:1px dashed rgba(61,123,255,.38);border-radius:13px;
+  background:linear-gradient(135deg,#E8F0FF,#9CC5FF);color:#071229;font-size:11px;font-weight:800;letter-spacing:1.6px;
+  text-transform:uppercase;padding:7px 16px;border-radius:50px;box-shadow:0 8px 24px rgba(156,197,255,.5);white-space:nowrap}
+.combo-cursos{background:rgba(7,10,17,.4);border:1px dashed rgba(var(--acc-rgb),.4);border-radius:13px;
   padding:13px 16px;font-size:13.2px;color:#D7E4FF;line-height:1.6}
 .combo-cursos b{display:block;font-size:10.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;
-  color:var(--neon);margin-bottom:5px}
-.combo-preco{margin-top:auto;padding-top:14px;border-top:1px solid rgba(61,123,255,.2);text-align:center}
+  color:var(--acc);margin-bottom:5px}
+.combo-preco{margin-top:auto;padding-top:14px;border-top:1px solid rgba(var(--acc-rgb),.22);text-align:center}
 .combo-de{font-size:14.5px;color:var(--texto2);text-decoration:line-through}
 .combo-hoje{font-family:'Anton',Impact,sans-serif;font-size:clamp(38px,3.6vw,50px);line-height:1.05;color:#fff;
   letter-spacing:.5px}
@@ -835,7 +837,7 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
         <p>Sua Igreja est&aacute; sem baterista e <strong>voc&ecirc; est&aacute; disposto a servir</strong></p>
       </div>
       <div class="quem-item sr-hidden">
-        <span class="quem-ico"><svg viewBox="0 0 24 24"><g transform="translate(-1 0) scale(.5)"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2m0 4V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2m0 4.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></g><g transform="translate(10.4 10.4) scale(.55)"><path d="M16 12v-2.38c0-2.12 1.03-3.12 1-5.62c-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0m-4-3h4"/></g></svg></span>
+        <span class="quem-ico"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
         <span class="quem-linha" aria-hidden="true"></span>
         <p>N&atilde;o consegue <strong>tocar uma m&uacute;sica inteira</strong> ainda</p>
       </div>
@@ -855,7 +857,7 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
         <p>Tentou uma escola de m&uacute;sica e sentiu que <strong>o professor estava te enrolando</strong></p>
       </div>
       <div class="quem-item sr-hidden">
-        <span class="quem-ico"><svg viewBox="0 0 24 24"><path d="M7 4v7"/><path d="M17 4v7"/><path d="M4 11h16"/><path d="M9 20h6"/><path d="M12 14v6"/></svg></span>
+        <span class="quem-ico"><svg viewBox="0 0 24 24" aria-label="Mao e pe"><g transform="translate(-2 -0.5) scale(.5)"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></g><g transform="translate(12.5 11) scale(.5)"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C10.63 2 12 4 12 6.5s-2 4.5-2 6.5"/><path d="M12 16v-2.38c0-2.12 1.03-3.12 1-5.62.03-2.72 1.49-6 4.5-6C20.63 2 22 4 22 6.5s-2 4.5-2 6.5"/><path d="M3 16h6v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M13 16h6v4a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/></g></svg></span>
         <span class="quem-linha" aria-hidden="true"></span>
         <p><strong>Dificuldade em coordena&ccedil;&atilde;o</strong> entre m&atilde;os e p&eacute;s</p>
       </div>
@@ -941,32 +943,79 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       <p class="lead sr-hidden">S&atilde;o 34 cursos que cobrem a forma&ccedil;&atilde;o completa de um baterista. Cada um pode ser comprado separadamente &mdash; ou voc&ecirc; leva tudo de uma vez no pacote completo.</p>
     </div>
 
-    <div class="cena sr-hidden">
-      <div class="tela">
-        <div class="tela-top">
-          <h3>Os <b>34 cursos</b> do nosso curso de bateria</h3>
-          <span class="tela-tag">Conhe&ccedil;a o caminho que voc&ecirc; vai percorrer</span>
-        </div>
-        <div class="tela-grid">
-          <div class="tela-video">
-            <video id="videoExplicando" src="assets/video-explicando.mp4" poster="assets/video-explicando-poster.jpg"
-              muted loop playsinline preload="none" controls aria-label="Video do Mateus explicando o curso de bateria"></video>
-          </div>
-          <div class="tela-lista">
-            <span class="tt">Fundamentos</span>
-            <span>Ritmos b&aacute;sicos 2.0</span><span>Viradas b&aacute;sicas</span><span>Partitura 1</span><span>Partitura 2</span><span>Rudimentos</span><span>T&eacute;cnicas de m&atilde;o</span><span>T&eacute;cnicas com os p&eacute;s</span><span>M&atilde;o fraca</span>
-            <span class="tt">Din&acirc;mica e controle</span>
-            <span>Din&acirc;micas 1</span><span>Din&acirc;micas 2</span><span>Din&acirc;micas 3</span><span>Metr&ocirc;nomo</span><span>Duas m&atilde;os no chimbal</span><span>Duas m&atilde;os com din&acirc;micas</span><span>Ritmos na caixa</span>
-            <span class="tt">Viradas e aplica&ccedil;&atilde;o</span>
-            <span>Viradas lineares</span><span>Aplica&ccedil;&atilde;o de rudimentos 1 a 4</span><span>60 grooves 1 a 3</span>
-            <span class="tt">Bateria na igreja</span>
-            <span>Bateria no louvor</span><span>Viradas no louvor</span><span>Worship 1</span><span>Worship 2</span><span>Hinos da Harpa</span>
-            <span class="tt">Estilos</span>
-            <span>Rock 1</span><span>Rock 2</span><span>Forr&oacute;</span><span>Reggae</span><span>Tribais</span>
-            <span class="tt">Bastidores do instrumento</span>
-            <span>Afina&ccedil;&atilde;o de bateria</span>
-          </div>
-        </div>
+    <div class="cat-caminho sr-hidden">
+      <h3>Os <b>34 cursos</b> do nosso curso de bateria</h3>
+      <span class="cat-tag">Conhe&ccedil;a o caminho que voc&ecirc; vai percorrer</span>
+      <div class="cat-video">
+        <video id="videoExplicando" src="assets/video-explicando.mp4" poster="assets/video-explicando-poster.jpg"
+          muted loop playsinline preload="none" controls aria-label="Video do Mateus explicando o curso de bateria"></video>
+      </div>
+    </div>
+
+    <div class="cat-cols sr-hidden">
+      <div class="cat-col">
+        <h4>Fundamentos</h4>
+        <ul>
+          <li>Ritmos b&aacute;sicos 2.0</li>
+          <li>Viradas b&aacute;sicas</li>
+          <li>Partitura 1</li>
+          <li>Partitura 2</li>
+          <li>Rudimentos</li>
+          <li>T&eacute;cnicas de m&atilde;o</li>
+          <li>T&eacute;cnicas com os p&eacute;s</li>
+          <li>M&atilde;o fraca</li>
+        </ul>
+      </div>
+      <div class="cat-col">
+        <h4>Din&acirc;mica e controle</h4>
+        <ul>
+          <li>Din&acirc;micas 1</li>
+          <li>Din&acirc;micas 2</li>
+          <li>Din&acirc;micas 3</li>
+          <li>Metr&ocirc;nomo</li>
+          <li>Duas m&atilde;os no chimbal</li>
+          <li>Duas m&atilde;os com din&acirc;micas</li>
+          <li>Ritmos na caixa</li>
+        </ul>
+      </div>
+      <div class="cat-col">
+        <h4>Viradas e aplica&ccedil;&atilde;o</h4>
+        <ul>
+          <li>Viradas lineares</li>
+          <li>Aplica&ccedil;&atilde;o de rudimentos 1</li>
+          <li>Aplica&ccedil;&atilde;o de rudimentos 2</li>
+          <li>Aplica&ccedil;&atilde;o de rudimentos 3</li>
+          <li>Aplica&ccedil;&atilde;o de rudimentos 4</li>
+          <li>60 grooves 1</li>
+          <li>60 grooves 2</li>
+          <li>60 grooves 3</li>
+        </ul>
+      </div>
+      <div class="cat-col">
+        <h4>Bateria na igreja</h4>
+        <ul>
+          <li>Bateria no louvor</li>
+          <li>Viradas no louvor</li>
+          <li>Worship 1</li>
+          <li>Worship 2</li>
+          <li>Hinos da Harpa</li>
+        </ul>
+      </div>
+      <div class="cat-col">
+        <h4>Estilos</h4>
+        <ul>
+          <li>Rock 1</li>
+          <li>Rock 2</li>
+          <li>Forr&oacute;</li>
+          <li>Reggae</li>
+          <li>Tribais</li>
+        </ul>
+      </div>
+      <div class="cat-col">
+        <h4>Bastidores do instrumento</h4>
+        <ul>
+          <li>Afina&ccedil;&atilde;o de bateria</li>
+        </ul>
       </div>
     </div>
 
@@ -1027,7 +1076,7 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
     </div>
 
     <div class="combo-grid sr-hidden">
-      <div class="combo sr-hidden">
+      <div class="combo combo-i sr-hidden">
         <span class="k">Para quem est&aacute; come&ccedil;ando</span>
         <h3>Combo Iniciante</h3>
         <p class="d">M&oacute;dulos b&aacute;sicos de postura, ritmos, viradas, partitura, rudimentos e t&eacute;cnicas de m&atilde;o.</p>
@@ -1044,7 +1093,7 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
         <a class="btn full" href="https://wa.me/5516988347173?text=Ol%C3%A1%2C%20Mateus!%20Quero%20o%20Combo%20Iniciante." target="_blank" rel="noopener">Quero o Combo Iniciante</a>
       </div>
 
-      <div class="combo feat sr-hidden">
+      <div class="combo combo-l feat sr-hidden">
         <span class="combo-badge">Mais vendido</span>
         <span class="k">Combo</span>
         <h3>Bateria no Louvor</h3>
@@ -1063,7 +1112,7 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
         <a class="btn full" href="https://wa.me/5516988347173?text=Ol%C3%A1%2C%20Mateus!%20Quero%20ser%20elite%20do%20louvor." target="_blank" rel="noopener">Quero ser elite do louvor</a>
       </div>
 
-      <div class="combo sr-hidden">
+      <div class="combo combo-p sr-hidden">
         <span class="k">Para quem quer o caminho completo</span>
         <h3>Pacote Completo</h3>
         <p class="d">Curso completo de bateria com 34 cursos, avalia&ccedil;&atilde;o em v&iacute;deo direto com o professor.</p>
