@@ -301,65 +301,10 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
   .arco figure:nth-child(n){transform:none}
 }
 @media(max-width:520px){.arco figure{flex:0 0 calc(50% - 6px);height:190px;border-radius:62px 62px 12px 12px}}
-/* ===== MOCKUPS — notebook + 3 telemoveis com as capas reais dos cursos ===== */
-.mock{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:0;margin:52px auto 10px;
-  max-width:1120px;padding:14px 0 8px;perspective:1400px}
-.mock::before{content:"";position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:min(680px,110%);
-  aspect-ratio:16/11;pointer-events:none;z-index:0;
-  background:radial-gradient(56% 54% at 50% 50%,rgba(61,123,255,.2),rgba(61,123,255,.07) 46%,transparent 73%);
-  animation:orbBreath 7.2s ease-in-out infinite}
-.phone{position:relative;z-index:1;width:214px;aspect-ratio:9/19.5;border-radius:34px;background:#05070C;
-  border:2px solid #1B2740;box-shadow:0 30px 60px rgba(0,0,0,.72),inset 0 0 0 1px rgba(255,255,255,.05);
-  overflow:hidden;transition:transform .5s cubic-bezier(.22,.61,.36,1),box-shadow .5s ease}
-.phone::before{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);width:74px;height:16px;
-  border-radius:12px;background:#05070C;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07);z-index:3}
-/* contain: a capa do curso entra INTEIRA no ecra (as artes ja vem com margem propria) */
-.phone img{width:100%;height:100%;object-fit:contain;display:block;background:#090D16;
-  filter:saturate(.95) contrast(1.03)}
-.phone::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
-  background:linear-gradient(150deg,rgba(61,123,255,.18) 0%,rgba(7,10,17,0) 42%,rgba(7,10,17,.68) 100%)}
-/* tres telemoveis de tamanhos diferentes + um portatil ao centro */
-.phone.p1{width:236px;transform:rotate(-9deg) translateY(18px);margin-right:-64px;z-index:3}
-.phone.p2{width:196px;transform:rotate(-5deg) translateY(54px);margin-right:-52px;z-index:2}
-.phone.p3{width:220px;transform:rotate(8deg) translateY(34px);margin-left:-64px;z-index:3}
-.note{position:relative;z-index:1;width:470px;flex:0 0 auto}
-.note-screen{position:relative;border-radius:14px 14px 4px 4px;background:#05070C;border:2px solid #1B2740;
-  border-bottom-width:3px;overflow:hidden;box-shadow:0 26px 54px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.05)}
-.note-screen img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:saturate(.9) contrast(1.04)}
-.note-screen::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(150deg,rgba(61,123,255,.16) 0%,rgba(7,10,17,0) 46%,rgba(7,10,17,.5) 100%)}
-.note-base{height:13px;margin:0 -26px;border-radius:0 0 12px 12px;
-  background:linear-gradient(180deg,#243149 0%,#111A2C 100%);
-  box-shadow:0 16px 30px rgba(0,0,0,.6)}
-.note-base::after{content:"";display:block;width:74px;height:4px;margin:4px auto 0;border-radius:0 0 5px 5px;
-  background:rgba(255,255,255,.14)}
-@media(hover:hover){
-  .mock:hover .phone.p1{transform:rotate(-7deg) translateY(6px)}
-  .mock:hover .phone.p2{transform:rotate(-4deg) translateY(36px)}
-  .mock:hover .phone.p3{transform:rotate(6deg) translateY(20px)}
-}
-.mock-nota{margin-top:16px;text-align:center}
-/* Rodada 11: mock mais leve na intro do metodo (menos imagem, mais texto) */
-.mock-lean{max-width:860px;margin:36px auto 2px}
-.mock-lean .note{width:396px}
-.mock-lean .phone.p1{width:198px}
-.mock-lean .phone.p3{width:184px}
-.mock-lean .phone.p2{display:none}
-.mock-lean::before{opacity:.65}
-@media(max-width:1080px){
-  .mock{max-width:760px}
-  .note{width:352px}
-  .phone.p1{width:176px;margin-right:-52px}
-  .phone.p2{display:none}
-  .phone.p3{width:164px;margin-left:-52px}
-}
-@media(max-width:720px){
-  .mock{max-width:100%}
-  .note{width:256px}
-  .phone{border-radius:24px}
-  .phone.p1{width:128px;margin-right:-36px}
-  .phone.p3{width:120px;margin-left:-36px}
-}
+/* ===== MOCKUP DO KIT — imagem unica na intro do metodo (ronda 13 substitui o mock CSS de telemoveis+portatil) ===== */
+.mock-kit{display:block;width:100%;max-width:1040px;height:auto;margin:36px auto 2px;
+  border-radius:18px;border:1px solid rgba(61,123,255,.22);
+  box-shadow:0 26px 60px rgba(0,0,0,.6)}
 
 /* ===== 03 O METODO ===== */
 .sec-metodo{background:var(--preto);overflow-x:clip}
@@ -939,15 +884,8 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
       <p class="lead sr-hidden">O TOCANDO BATERIA DO ZERO &Eacute; DIVIDIDO POR CURSOS E CADA UM DESTES CURSOS RESOLVE UMA PE&Ccedil;A DA SUA EVOLU&Ccedil;&Atilde;O &mdash; ritmos, viradas, rudimentos, t&eacute;cnicas de m&atilde;o, t&eacute;cnicas de p&eacute;s, din&acirc;micas, partitura, tribais, worship, gospel chops, afina&ccedil;&atilde;o. <strong>Voc&ecirc; come&ccedil;a pelo que precisa agora e constr&oacute;i, passo a passo, o baterista que quer se tornar.</strong></p>
     </div>
 
-    <div class="mock mock-lean sr-hidden" aria-hidden="true">
-      <div class="phone p2"><img src="assets/mk-pes.jpg" alt="" loading="lazy"></div>
-      <div class="phone p1"><img src="assets/mk-ritmos.jpg" alt="" loading="lazy"></div>
-      <div class="note">
-        <div class="note-screen"><img src="assets/mk-note.jpg" alt="" loading="lazy"></div>
-        <div class="note-base"></div>
-      </div>
-      <div class="phone p3"><img src="assets/mk-partitura.jpg" alt="" loading="lazy"></div>
-    </div>
+    <img class="mock-kit sr-hidden" src="assets/mockup-kit.webp" alt="Kit do curso Tocando Bateria do Zero: o Mateus na bateria com a tela das videoaulas e a partitura dos ritmos projetadas ao lado"
+      width="2400" height="1340" loading="lazy" decoding="async">
 
     <div class="sec-head center maxw" style="margin-top:64px">
       <h3 class="sr-hidden" style="font-size:26px;color:var(--branco)">Todo curso vem completo &mdash; e com suporte direto comigo</h3>
