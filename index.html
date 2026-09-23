@@ -519,8 +519,11 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,var(--acc),rgba(var(--acc-rgb),.55));
   display:grid;place-items:center;box-shadow:0 5px 15px rgba(var(--acc-rgb),.35)}
 .ck svg{width:11px;height:11px;stroke:#FFFFFF;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.combo.feat{background:linear-gradient(155deg,#1D2E52 0%,#15306B 100%);border:1.5px solid rgba(156,197,255,.75);
+.combo.feat{background:linear-gradient(155deg,#1D2E52 0%,#15306B 100%) padding-box,conic-gradient(from var(--combo-angle),#3D7BFF,#E8F0FF,#9CC5FF,#3D7BFF) border-box;border:2px solid transparent;
   box-shadow:0 26px 60px rgba(0,0,0,.62),0 18px 60px rgba(61,123,255,.26);transform:translateY(-8px)}
+@property --combo-angle{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes comboBorder{to{--combo-angle:360deg}}
+.combo.feat{animation:comboBorder 5s linear infinite}
 .combo.feat::before{height:5px;left:22px;right:22px;background:linear-gradient(90deg,#E8F0FF,var(--acc));box-shadow:0 3px 18px rgba(156,197,255,.6)}
 .combo.feat:hover{transform:translateY(-13px);box-shadow:0 30px 66px rgba(0,0,0,.66),0 20px 66px rgba(61,123,255,.32)}
 .combo.feat .k{color:var(--neon-claro)}
