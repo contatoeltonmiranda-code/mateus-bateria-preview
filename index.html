@@ -350,7 +350,7 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 /* as 6 categorias em colunas, cursos em lista */
 .cat-col{background:linear-gradient(150deg,#0E1524 0%,#131F36 100%);border:1px solid rgba(61,123,255,.22);
   border-radius:16px;padding:22px 22px 16px;box-shadow:0 14px 34px rgba(0,0,0,.42)}
-.cat-col h4{font-family:'Anton',Impact,sans-serif;font-size:15px;letter-spacing:2.2px;text-transform:uppercase;
+.cat-col h4{font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
   color:var(--neon-claro);line-height:1.3;padding-bottom:10px;margin-bottom:12px;
   border-bottom:1px solid rgba(61,123,255,.28)}
 .cat-col ul{list-style:none;display:flex;flex-direction:column}
@@ -504,10 +504,12 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 .combo::before{content:"";position:absolute;top:0;left:26px;right:26px;height:4px;border-radius:0 0 5px 5px;
   background:linear-gradient(90deg,var(--acc),rgba(var(--acc-rgb),.25));box-shadow:0 3px 14px rgba(var(--acc-rgb),.45)}
 .combo:hover{transform:translateY(-5px);border-color:rgba(var(--acc-rgb),.6);box-shadow:0 22px 48px rgba(0,0,0,.6),0 14px 40px rgba(var(--acc-rgb),.14)}
-.combo-i{--acc:#35C7FF;--acc-rgb:53,199,255}
+.combo-i{--acc:#35C7FF;--acc-rgb:53,199,255;
+  background:linear-gradient(155deg,#071923 0%,#0A2836 50%,#0A1726 100%)}
 .combo-l{--acc:#9CC5FF;--acc-rgb:156,197,255}
 /* ronda 13e: laterais com cores visivelmente distintas (Iniciante ciano / Completo violeta) */
-.combo-p{--acc:#B48CFF;--acc-rgb:180,140,255}
+.combo-p{--acc:#B48CFF;--acc-rgb:180,140,255;
+  background:linear-gradient(155deg,#191126 0%,#28173A 50%,#151020 100%)}
 .combo .k{font-size:11.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--acc);line-height:1.4}
 .combo h3{font-size:clamp(24px,2.2vw,29px);color:var(--branco);line-height:1.1}
 .combo .d{font-size:14.5px;color:var(--texto);line-height:1.62}
@@ -535,9 +537,9 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
   letter-spacing:.5px}
 .combo-hoje small{font-size:20px;letter-spacing:1px}
 .combo .btn{margin-top:16px}
-.combo-i .btn{background:linear-gradient(135deg,#39D5FF 0%,#169AD4 52%,#0872AB 100%);
+.combo-i .btn{background:linear-gradient(135deg,#0878A8 0%,#08628D 52%,#064B70 100%);
   outline-color:rgba(53,199,255,.42);box-shadow:0 10px 30px rgba(53,199,255,.3)}
-.combo-p .btn{background:linear-gradient(135deg,#C4A6FF 0%,#9163E8 52%,#6336B6 100%);
+.combo-p .btn{background:linear-gradient(135deg,#6B3BB5 0%,#563092 52%,#3D216C 100%);
   outline-color:rgba(180,140,255,.42);box-shadow:0 10px 30px rgba(180,140,255,.3)}
 .combo-i .btn:hover{box-shadow:0 16px 42px rgba(53,199,255,.42)}
 .combo-p .btn:hover{box-shadow:0 16px 42px rgba(180,140,255,.42)}
@@ -978,16 +980,9 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
           </ul>
         </div>
         <div class="cat-col">
-          <h4>Viradas e aplica&ccedil;&atilde;o</h4>
+          <h4>Bastidores do instrumento</h4>
           <ul>
-            <li>Viradas lineares</li>
-            <li>Aplica&ccedil;&atilde;o de rudimentos 1</li>
-            <li>Aplica&ccedil;&atilde;o de rudimentos 2</li>
-            <li>Aplica&ccedil;&atilde;o de rudimentos 3</li>
-            <li>Aplica&ccedil;&atilde;o de rudimentos 4</li>
-            <li>60 grooves 1</li>
-            <li>60 grooves 2</li>
-            <li>60 grooves 3</li>
+            <li>Afina&ccedil;&atilde;o de bateria</li>
           </ul>
         </div>
       </div>
@@ -1017,9 +1012,16 @@ footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;p
           </ul>
         </div>
         <div class="cat-col">
-          <h4>Bastidores do instrumento</h4>
+          <h4>Viradas e aplica&ccedil;&atilde;o</h4>
           <ul>
-            <li>Afina&ccedil;&atilde;o de bateria</li>
+            <li>Viradas lineares</li>
+            <li>Aplica&ccedil;&atilde;o de rudimentos 1</li>
+            <li>Aplica&ccedil;&atilde;o de rudimentos 2</li>
+            <li>Aplica&ccedil;&atilde;o de rudimentos 3</li>
+            <li>Aplica&ccedil;&atilde;o de rudimentos 4</li>
+            <li>60 grooves 1</li>
+            <li>60 grooves 2</li>
+            <li>60 grooves 3</li>
           </ul>
         </div>
       </div>
