@@ -360,7 +360,20 @@ body.has-preview-bar{padding-top:var(--pb,42px)}
 /* r15: quebra de linha so desktop + video menor + arco ondulado dos cards */
 .br-d{display:none}
 @media(min-width:761px){.br-d{display:block}}
-@media(min-width:1021px){.cat-video{max-width:430px;align-self:center}}
+/* r16: cards acoplados ao video (mosaico sem gap, cantos arredondados so nas bordas externas) */
+@media(min-width:1021px){
+  .cat-lateral{gap:0}
+  .cat-video{max-width:430px;align-self:center;border-radius:0}
+  .cat-side{gap:0}
+  .cat-col{border-radius:0}
+  .cat-side:first-of-type .cat-col:nth-child(1){border-top-left-radius:18px}
+  .cat-side:first-of-type .cat-col:nth-child(3){border-bottom-left-radius:18px}
+  .cat-side:last-of-type .cat-col:nth-child(1){border-top-right-radius:18px}
+  .cat-side:last-of-type .cat-col:nth-child(3){border-bottom-right-radius:18px}
+  .cat-side:first-of-type .cat-col{border-right-width:0}
+  .cat-side:last-of-type .cat-col{border-left-width:0}
+  .cat-video video{height:100%}
+}
 .cat-col li::before{content:"";flex-shrink:0;width:4px;height:4px;border-radius:50%;
   background:var(--neon);transform:translateY(-2px)}
 @media(max-width:1020px){
